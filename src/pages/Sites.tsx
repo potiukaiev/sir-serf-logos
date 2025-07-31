@@ -245,11 +245,9 @@ const Sites = () => {
                     <span className="font-bold text-gaming-green">{site.bonus}</span>
                   </div>
                   {site.promocode && (
-                    <div className="flex items-center justify-between p-2 bg-gaming-orange/10 border border-gaming-orange/20 rounded-lg">
-                      <span className="text-sm text-gaming-orange">Promo Code</span>
-                      <code className="font-bold text-gaming-orange bg-gaming-orange/10 px-2 py-1 rounded text-xs">
-                        {site.promocode}
-                      </code>
+                    <div className="flex items-center justify-between p-3 bg-gaming-orange/20 border-2 border-gaming-orange/40 rounded-lg shadow-lg">
+                      <span className="text-sm font-semibold text-gaming-orange">Promo Code</span>
+                      <code className="font-bold text-white bg-gaming-orange px-3 py-2 rounded-md text-sm shadow-md tracking-wider">{site.promocode}</code>
                     </div>
                   )}
                   <div className="text-xs text-muted-foreground">

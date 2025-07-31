@@ -134,6 +134,74 @@ All colors MUST be HSL for proper theming.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Glassmorphism Premium Theme Overrides */
+  .glass-variant {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 47 96% 53%;
+    --primary-foreground: 240 10% 8%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 5% 64%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 47 96% 53%;
+    
+    /* Glass specific colors */
+    --glass-gold: 47 96% 53%;
+    --glass-platinum: 0 0% 80%;
+    --glass-silver: 0 0% 70%;
+    --glass-bronze: 30 80% 60%;
+    --glass-surface: 240 10% 12%;
+  }
+
+  .glass-variant {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .glass-variant .bg-gradient-gaming {
+    background: linear-gradient(135deg, 
+      hsla(var(--glass-gold), 0.2), 
+      hsla(var(--glass-platinum), 0.1));
+    border: 1px solid hsla(var(--glass-gold), 0.2);
+    backdrop-filter: blur(20px);
+  }
+
+  .glass-variant .bg-gradient-primary {
+    background: linear-gradient(135deg, 
+      hsl(var(--glass-gold)), 
+      hsl(var(--glass-bronze)));
+  }
+
+  .glass-variant .shadow-neon {
+    box-shadow: 0 8px 32px hsla(var(--glass-gold), 0.3),
+                0 0 0 1px hsla(var(--glass-gold), 0.1);
+  }
+
+  .glass-variant .animate-pulse-glow {
+    animation: glass-glow 3s ease-in-out infinite alternate;
+  }
+
+  .glass-variant .bg-card {
+    background: hsla(var(--glass-surface), 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-gold), 0.1);
+  }
+
+  @keyframes glass-glow {
+    0% { box-shadow: 0 0 20px hsla(var(--glass-gold), 0.3); }
+    100% { box-shadow: 0 0 30px hsla(var(--glass-gold), 0.5); }
+  }
 }
 
 @layer base {
