@@ -3,6 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import { Helmet } from "react-helmet-async";
 import { Shield, Star, Users, TrendingUp, CheckCircle, AlertTriangle, Mail, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -48,6 +51,32 @@ const About = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>About CaseHunters | Gaming Case Site Reviews & Safety</title>
+        <meta name="description" content="Learn about CaseHunters mission to provide verified reviews of CS2 and Dota 2 case sites. Promoting safe gaming, trusted platforms, and responsible gaming practices." />
+        <meta name="keywords" content="about casehunters, gaming site reviews, safe case sites, responsible gaming, gaming platform verification" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="About CaseHunters | Gaming Safety & Reviews" />
+        <meta property="og:description" content="Dedicated to promoting safe gaming and verified case site reviews." />
+        <meta property="og:url" content="https://casehunters.com/about" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "CaseHunters",
+            "url": "https://casehunters.com",
+            "description": "Gaming case site reviews and verification platform",
+            "foundingDate": "2024",
+            "sameAs": [
+              "https://twitter.com/casehunters",
+              "https://discord.gg/casehunters"
+            ]
+          })}
+        </script>
+      </Helmet>
       <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">

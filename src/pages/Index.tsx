@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { GamingAd } from "@/components/GamingAd";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
@@ -50,6 +51,48 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>CaseHunters - Best CS2 & Dota 2 Case Sites | Verified Gaming Platforms</title>
+        <meta name="description" content="Discover the best verified CS2, Dota 2, and gaming case sites. Compare bonuses, read reviews, and find trusted platforms for skin hunting. 150+ verified sites with detailed reviews." />
+        <meta name="keywords" content="CS2 case sites, Dota 2 case sites, gaming case sites, skin gambling, CS2 skins, Dota 2 items, verified gaming platforms, case opening sites" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://casehunters.com/" />
+        <meta property="og:title" content="CaseHunters - Best CS2 & Dota 2 Case Sites" />
+        <meta property="og:description" content="Discover verified CS2 and Dota 2 case sites. Compare bonuses and find trusted platforms for skin hunting." />
+        <meta property="og:image" content="https://casehunters.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://casehunters.com/" />
+        <meta property="twitter:title" content="CaseHunters - Best CS2 & Dota 2 Case Sites" />
+        <meta property="twitter:description" content="Discover verified CS2 and Dota 2 case sites. Compare bonuses and find trusted platforms for skin hunting." />
+        <meta property="twitter:image" content="https://casehunters.com/og-image.jpg" />
+        
+        {/* Additional SEO */}
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" content="https://casehunters.com/" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "CaseHunters",
+            "url": "https://casehunters.com",
+            "description": "The #1 directory for verified CS2 and Dota 2 case sites",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://casehunters.com/sites?search={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </script>
+      </Helmet>
       <ParallaxBackground />
       {/* Gaming Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">

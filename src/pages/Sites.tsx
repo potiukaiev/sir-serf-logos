@@ -9,6 +9,7 @@ import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { Helmet } from "react-helmet-async";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -124,6 +125,42 @@ const Sites = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>All Case Sites | CaseHunters - CS2, Dota 2 & Gaming Platforms</title>
+        <meta name="description" content="Browse our complete directory of verified CS2, Dota 2, and gaming case sites. Find platforms with best bonuses, instant withdrawals, and trusted reviews." />
+        <meta name="keywords" content="case sites directory, CS2 case sites list, Dota 2 case platforms, gaming case sites, verified case sites, skin gambling sites" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="All Case Sites | CaseHunters Directory" />
+        <meta property="og:description" content="Complete directory of verified gaming case sites with reviews and bonuses." />
+        <meta property="og:url" content="https://casehunters.com/sites" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Gaming Case Sites Directory",
+            "description": "Verified CS2 and Dota 2 case sites with reviews and ratings",
+            "numberOfItems": sortedSites.length,
+            "itemListElement": sortedSites.map((site, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "WebSite",
+                "name": site.name,
+                "description": site.description,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": site.rating,
+                  "bestRating": 5,
+                  "worstRating": 1
+                }
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">

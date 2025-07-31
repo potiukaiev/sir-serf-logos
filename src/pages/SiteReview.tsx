@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { Helmet } from "react-helmet-async";
 import { 
   Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Users, Clock, 
   CreditCard, Globe, MessageCircle, CheckCircle, XCircle, AlertTriangle,
@@ -103,6 +104,48 @@ const SiteReview = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>{siteData.name} Review | Detailed Analysis | CaseHunters</title>
+        <meta name="description" content={`Detailed review of ${siteData.name} - ${siteData.description}. Rating: ${siteData.rating}/5 based on ${siteData.totalReviews} reviews. Features, pros, cons, and user feedback.`} />
+        <meta name="keywords" content={`${siteData.name} review, ${siteData.name} rating, case site review, ${siteData.games.join(', ')} case site`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${siteData.name} Review | CaseHunters`} />
+        <meta property="og:description" content={`${siteData.description} - Rating: ${siteData.rating}/5`} />
+        <meta property="og:url" content={`https://casehunters.com/review/${siteId}`} />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "WebSite",
+              "name": siteData.name,
+              "description": siteData.description,
+              "url": `https://${siteData.name.toLowerCase()}.com`
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": siteData.rating,
+              "bestRating": 5,
+              "worstRating": 1
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "CaseHunters"
+            },
+            "reviewBody": siteData.description,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": siteData.rating,
+              "reviewCount": siteData.totalReviews,
+              "bestRating": 5,
+              "worstRating": 1
+            }
+          })}
+        </script>
+      </Helmet>
       <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">

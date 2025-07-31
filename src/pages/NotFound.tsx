@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import { Trophy, Home, Search } from "lucide-react";
 
 const NotFound = () => {
@@ -15,6 +16,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-gradient-background flex items-center justify-center">
+      <Helmet>
+        <title>Page Not Found | CaseHunters</title>
+        <meta name="description" content="The page you are looking for could not be found. Return to CaseHunters to explore verified gaming case sites." />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div className="text-center max-w-md mx-auto px-6">
         {/* Gaming Logo */}
         <div className="mb-8">

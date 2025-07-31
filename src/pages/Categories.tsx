@@ -3,6 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import { Helmet } from "react-helmet-async";
 import { Trophy, Star, TrendingUp, Users, ExternalLink, Gamepad2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -91,6 +94,16 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>Gaming Categories | CS2 & Dota 2 Case Types | CaseHunters</title>
+        <meta name="description" content="Explore different categories of CS2 and Dota 2 cases. Learn about skin rarities, drop rates, and find the best case types for your gaming needs." />
+        <meta name="keywords" content="CS2 case types, Dota 2 case categories, skin rarities, case drop rates, gaming case types, CS2 rarities guide" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Gaming Categories | CS2 & Dota 2 Case Types" />
+        <meta property="og:description" content="Explore different categories of gaming cases and skin rarities." />
+        <meta property="og:url" content="https://casehunters.com/categories" />
+      </Helmet>
       <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">
