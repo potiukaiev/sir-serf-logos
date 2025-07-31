@@ -8,6 +8,10 @@ interface ParallaxBackgroundProps {
 export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) => {
   const [scrollY, setScrollY] = useState(0);
   const variant = useVariant();
+  
+  // Debug: Log the image URL being used
+  const imageUrl = variant === 'A' ? '/cs2-gaming-bg.jpg' : '/dota2-gaming-bg.jpg';
+  console.log('ParallaxBackground - Variant:', variant, 'Image URL:', imageUrl);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -24,11 +28,12 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
-          backgroundImage: `url(${variant === 'A' ? '/cs2-gaming-bg.jpg' : '/dota2-gaming-bg.jpg'})`,
-          opacity: variant === 'B' ? 0.8 : 0.5, // Much more visible for variant B
-          filter: variant === 'B' ? 'hue-rotate(0deg) saturate(1.3) brightness(1.1)' : 'none'
-        }}
-      />
+           backgroundImage: `url(${imageUrl})`,
+           opacity: variant === 'B' ? 0.9 : 0.5, // Even more visible for variant B
+           filter: variant === 'B' ? 'hue-rotate(0deg) saturate(1.5) brightness(1.3)' : 'none'
+         }}
+       />
+       
       
       {/* Base Background Overlay */}
       <div 
