@@ -10,9 +10,6 @@ interface ParallaxBackgroundProps {
 export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) => {
   const [scrollY, setScrollY] = useState(0);
   const variant = useVariant();
-  
-  // Debug log to check variant
-  console.log('ParallaxBackground variant:', variant);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -30,7 +27,8 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
         style={{
           transform: `translateY(${parallaxOffset}px)`,
           backgroundImage: `url(${variant === 'A' ? cs2BgImage : dota2BgImage})`,
-          opacity: variant === 'B' ? 0.4 : 0.3, // Make variant B more visible
+          opacity: variant === 'B' ? 0.8 : 0.5, // Much more visible for variant B
+          filter: variant === 'B' ? 'hue-rotate(0deg) saturate(1.3) brightness(1.1)' : 'none'
         }}
       />
       
@@ -40,9 +38,8 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
         style={{
           transform: `translateY(${parallaxOffset * 0.3}px)`,
           background: variant === 'A' 
-            ? 'linear-gradient(180deg, hsl(220 39% 11%), hsl(220 39% 8%))'
-            : 'radial-gradient(ellipse at top, hsl(240 15% 9%), hsl(240 12% 4%))',
-          opacity: 0.8
+            ? 'linear-gradient(180deg, hsl(220 39% 11% / 0.7), hsl(220 39% 8% / 0.9))'
+            : 'linear-gradient(180deg, hsl(240 15% 9% / 0.6), hsl(240 12% 4% / 0.8))',
         }}
       />
       

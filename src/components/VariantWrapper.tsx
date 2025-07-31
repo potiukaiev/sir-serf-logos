@@ -8,9 +8,6 @@ interface VariantWrapperProps {
 
 export const VariantWrapper = ({ children }: VariantWrapperProps) => {
   const variant = useVariant();
-  
-  // Debug log
-  console.log('VariantWrapper variant:', variant);
 
   return (
     <div className={variant === 'B' ? 'glass-variant' : ''}>
