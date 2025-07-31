@@ -19,6 +19,7 @@ const Sites = () => {
       name: "CSGOEmpire",
       rating: 4.8,
       bonus: "250%",
+      promocode: "HUNT250",
       rarity: "covert",
       status: "online",
       users: "12.5K",
@@ -31,6 +32,7 @@ const Sites = () => {
       name: "DotaSkins",
       rating: 4.6,
       bonus: "200%",
+      promocode: "DOTA200",
       rarity: "classified",
       status: "online", 
       users: "8.3K",
@@ -43,6 +45,7 @@ const Sites = () => {
       name: "SkinClub",
       rating: 4.4,
       bonus: "150%",
+      promocode: "CLUB150",
       rarity: "restricted",
       status: "online",
       users: "15.2K",
@@ -55,6 +58,7 @@ const Sites = () => {
       name: "RustLoot",
       rating: 4.2,
       bonus: "100%",
+      promocode: "RUST100",
       rarity: "milspec",
       status: "online",
       users: "6.8K",
@@ -67,6 +71,7 @@ const Sites = () => {
       name: "TF2Central",
       rating: 4.0,
       bonus: "75%",
+      promocode: "TF2DEAL",
       rarity: "industrial",
       status: "online",
       users: "4.2K",
@@ -229,12 +234,20 @@ const Sites = () => {
                   ))}
                 </div>
 
-                {/* Features */}
+                {/* Features & Promocode */}
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center justify-between p-2 bg-gaming-darker/50 rounded-lg">
                     <span className="text-sm">Welcome Bonus</span>
                     <span className="font-bold text-gaming-green">{site.bonus}</span>
                   </div>
+                  {site.promocode && (
+                    <div className="flex items-center justify-between p-2 bg-gaming-orange/10 border border-gaming-orange/20 rounded-lg">
+                      <span className="text-sm text-gaming-orange">Promo Code</span>
+                      <code className="font-bold text-gaming-orange bg-gaming-orange/10 px-2 py-1 rounded text-xs">
+                        {site.promocode}
+                      </code>
+                    </div>
+                  )}
                   <div className="text-xs text-muted-foreground">
                     {site.features.join(" • ")}
                   </div>
@@ -246,8 +259,14 @@ const Sites = () => {
                     Visit Site
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
-                  <Button variant="outline" className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10">
-                    Read Review
+                  <Button 
+                    asChild
+                    variant="outline" 
+                    className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
+                  >
+                    <Link to={`/review/${site.id}`}>
+                      Read Review
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
