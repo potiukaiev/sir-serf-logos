@@ -37,7 +37,7 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
           transform: `translateY(${parallaxOffset * 0.3}px)`,
           background: variant === 'A' 
             ? 'linear-gradient(180deg, hsl(220 39% 11% / 0.7), hsl(220 39% 8% / 0.9))'
-            : 'linear-gradient(180deg, hsl(240 15% 9% / 0.6), hsl(240 12% 4% / 0.8))',
+            : 'linear-gradient(180deg, hsl(220 39% 8% / 0.3), hsl(220 39% 6% / 0.7))', // Black gradient for variant B
         }}
       />
       

@@ -184,12 +184,12 @@ All colors MUST be HSL for proper theming.
 
   .glass-variant {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    /* Remove background override to allow parallax to show */
+    background: hsl(220 39% 8%); /* Dark black background for golden theme */
   }
 
-  /* Allow parallax background to show through */
+  /* Black background for golden theme body */
   .glass-variant body {
-    background: transparent;
+    background: hsl(220 39% 8%);
   }
 
   /* Logo fixes for glass variant - ONLY for logos, not text */
