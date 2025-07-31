@@ -206,9 +206,11 @@ const Sites = () => {
                     <div className="w-3 h-3 rounded-full bg-gaming-green animate-pulse"></div>
                     <span className="text-sm text-gaming-green font-medium">ONLINE</span>
                   </div>
-                  <Badge className={`bg-${rarityColors[site.rarity as keyof typeof rarityColors]} text-white`}>
-                    {site.rarity.toUpperCase()}
-                  </Badge>
+                  {/* Welcome Bonus moved to top right */}
+                  <div className="flex items-center space-x-2 p-2 bg-gaming-darker/50 rounded-lg">
+                    <span className="text-sm">Welcome Bonus</span>
+                    <span className="font-bold text-gaming-green">{site.bonus}</span>
+                  </div>
                 </div>
 
                 {/* Site Name & Rating */}
@@ -231,21 +233,22 @@ const Sites = () => {
                   <p className="text-muted-foreground text-sm">{site.description}</p>
                 </div>
 
-                {/* Games */}
-                <div className="flex flex-wrap gap-1 mb-4">
+                {/* Games & Rarity */}
+                <div className="flex flex-wrap items-center gap-2 mb-4">
                   {site.games.map((game) => (
                     <Badge key={game} variant="outline" className="text-xs border-gaming-purple text-gaming-purple">
                       {gameLabels[game as keyof typeof gameLabels]}
                     </Badge>
                   ))}
+                  {/* Rarity badge moved here */}
+                  <Badge className={`bg-${rarityColors[site.rarity as keyof typeof rarityColors]} text-white text-xs`}>
+                    {site.rarity.toUpperCase()}
+                  </Badge>
                 </div>
 
                 {/* Features & Promocode */}
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center justify-between p-2 bg-gaming-darker/50 rounded-lg">
-                    <span className="text-sm">Welcome Bonus</span>
-                    <span className="font-bold text-gaming-green">{site.bonus}</span>
-                  </div>
+                  {/* Welcome bonus section removed from here since it's now in top right */}
                   {site.promocode && (
                     <div className="flex items-center justify-between p-3 bg-gaming-orange/20 border-2 border-gaming-orange/40 rounded-lg shadow-lg">
                       <span className="text-sm font-semibold text-gaming-orange">Promo Code</span>
