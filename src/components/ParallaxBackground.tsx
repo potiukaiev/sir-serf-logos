@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useVariant } from '@/hooks/useVariant';
-import cs2BgImage from '@/assets/cs2-gaming-bg.jpg';
-import dota2BgImage from '@/assets/dota2-gaming-bg.jpg';
 
 interface ParallaxBackgroundProps {
   className?: string;
@@ -26,7 +24,7 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
-          backgroundImage: `url(${variant === 'A' ? cs2BgImage : dota2BgImage})`,
+          backgroundImage: `url(${variant === 'A' ? '/cs2-gaming-bg.jpg' : '/dota2-gaming-bg.jpg'})`,
           opacity: variant === 'B' ? 0.8 : 0.5, // Much more visible for variant B
           filter: variant === 'B' ? 'hue-rotate(0deg) saturate(1.3) brightness(1.1)' : 'none'
         }}
