@@ -8,10 +8,6 @@ interface ParallaxBackgroundProps {
 export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) => {
   const [scrollY, setScrollY] = useState(0);
   const variant = useVariant();
-  
-  // Debug: Log the image URL being used
-  const imageUrl = variant === 'A' ? '/cs2-gaming-bg.jpg' : '/dota2-gaming-bg.jpg';
-  console.log('ParallaxBackground - Variant:', variant, 'Image URL:', imageUrl);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -28,21 +24,22 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
-           backgroundImage: `url(${imageUrl})`,
-           opacity: variant === 'B' ? 0.9 : 0.5, // Even more visible for variant B
-           filter: variant === 'B' ? 'hue-rotate(0deg) saturate(1.5) brightness(1.3)' : 'none'
-         }}
-       />
-       
+          backgroundImage: variant === 'A' 
+            ? `url('/cs2-gaming-bg.jpg')` 
+            : `url('/dota2-gaming-bg.jpg')`,
+          opacity: variant === 'B' ? 1.0 : 0.6, // Full opacity for variant B
+          backgroundColor: variant === 'B' ? '#1a1a2e' : '#2a2a3e' // Fallback dark blue
+        }}
+      />
       
-      {/* Base Background Overlay */}
+      {/* Lighter overlay for variant B to show image */}
       <div 
         className="absolute inset-0"
         style={{
           transform: `translateY(${parallaxOffset * 0.3}px)`,
           background: variant === 'A' 
             ? 'linear-gradient(180deg, hsl(220 39% 11% / 0.7), hsl(220 39% 8% / 0.9))'
-            : 'linear-gradient(180deg, hsl(220 39% 8% / 0.3), hsl(220 39% 6% / 0.7))', // Black gradient for variant B
+            : 'linear-gradient(180deg, hsl(220 39% 8% / 0.1), hsl(220 39% 6% / 0.2))', // Very light overlay for B
         }}
       />
       
