@@ -80,19 +80,12 @@ All colors MUST be HSL for proper theming.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -137,121 +130,173 @@ All colors MUST be HSL for proper theming.
 
   /* Glassmorphism Premium Theme Overrides */
   .glass-variant {
-    --background: 240 10% 8%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 12%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 12%;
-    --popover-foreground: 0 0% 98%;
+    /* Complete color system overhaul for glass theme */
+    --background: 240 12% 6%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
     --primary: 47 96% 53%;
     --primary-foreground: 240 10% 8%;
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 5% 16%;
+    --secondary: 240 8% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 6% 14%;
     --muted-foreground: 240 5% 64%;
-    --accent: 240 4% 16%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 240 8% 12%;
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 20%;
-    --input: 240 6% 20%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 240 8% 18%;
+    --input: 240 8% 18%;
     --ring: 47 96% 53%;
     
-    /* Override gaming colors with glass theme */
+    /* Complete gaming color overrides */
     --gaming-cyan: 47 96% 53%;
-    --gaming-purple: 280 100% 70%;
-    --gaming-orange: 30 100% 60%;
-    --gaming-green: 120 100% 40%;
-    --gaming-pink: 320 100% 70%;
-    --gaming-blue: 220 100% 60%;
-    --gaming-darker: 240 10% 6%;
+    --gaming-purple: 280 90% 65%;
+    --gaming-orange: 30 95% 55%;
+    --gaming-green: 120 80% 45%;
+    --gaming-pink: 320 90% 65%;
+    --gaming-blue: 220 85% 60%;
+    --gaming-darker: 240 12% 4%;
+    --gaming-dark: 240 12% 6%;
     
-    /* Glass specific colors */
+    /* Glass-specific colors */
     --glass-gold: 47 96% 53%;
-    --glass-platinum: 0 0% 80%;
-    --glass-silver: 0 0% 70%;
-    --glass-bronze: 30 80% 60%;
-    --glass-surface: 240 10% 12%;
+    --glass-platinum: 0 0% 85%;
+    --glass-silver: 0 0% 75%;
+    --glass-bronze: 30 85% 55%;
+    --glass-surface: 240 10% 8%;
+    --glass-accent: 200 100% 80%;
+    
+    /* Glass gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(47 96% 53%), hsl(30 85% 55%));
+    --gradient-gaming: linear-gradient(135deg, hsl(47 96% 53% / 0.8), hsl(200 100% 80% / 0.6));
+    --gradient-background: radial-gradient(ellipse at top, hsl(240 15% 9%), hsl(240 12% 4%));
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 8% / 0.9), hsl(240 8% 12% / 0.7));
+    --gradient-cta: linear-gradient(135deg, hsl(47 96% 53%), hsl(200 100% 80%));
+    
+    /* Glass shadows */
+    --shadow-neon: 0 8px 32px hsl(47 96% 53% / 0.4), 0 0 0 1px hsl(47 96% 53% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3), 0 0 0 1px hsl(240 8% 18%);
+    --shadow-elevated: 0 20px 40px hsl(0 0% 0% / 0.4), 0 0 0 1px hsl(47 96% 53% / 0.1);
   }
 
   .glass-variant {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, hsl(240 10% 4%), hsl(240 15% 8%));
+    background: var(--gradient-background);
   }
 
+  /* Override body background for glass variant */
+  .glass-variant body {
+    background: var(--gradient-background);
+  }
+
+  /* Logo fixes for glass variant */
   .glass-variant .bg-gradient-gaming {
     background: linear-gradient(135deg, 
-      hsla(var(--glass-gold), 0.3), 
-      hsla(var(--glass-bronze), 0.2));
-    border: 1px solid hsla(var(--glass-gold), 0.3);
+      hsl(47 96% 53% / 0.9), 
+      hsl(200 100% 80% / 0.8)) !important;
+    border: 2px solid hsl(47 96% 53% / 0.6) !important;
     backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-neon);
   }
 
   .glass-variant .bg-gradient-primary {
-    background: linear-gradient(135deg, 
-      hsl(var(--glass-gold)), 
-      hsl(var(--glass-bronze)));
+    background: var(--gradient-primary) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
   }
 
-  .glass-variant .shadow-neon {
-    box-shadow: 0 8px 32px hsla(var(--glass-gold), 0.4),
-                0 0 0 1px hsla(var(--glass-gold), 0.2);
+  /* Card styles for glass variant */
+  .glass-variant .bg-card {
+    background: linear-gradient(135deg, 
+      hsl(240 10% 8% / 0.95), 
+      hsl(240 8% 12% / 0.85)) !important;
+    backdrop-filter: blur(25px) !important;
+    border: 1px solid hsl(47 96% 53% / 0.2) !important;
+    box-shadow: var(--shadow-glass) !important;
+  }
+
+  /* Button overrides for glass variant */
+  .glass-variant .bg-gradient-cta {
+    background: var(--gradient-cta) !important;
+    box-shadow: 0 4px 20px hsl(47 96% 53% / 0.3) !important;
+  }
+
+  .glass-variant .bg-primary {
+    background: linear-gradient(135deg, 
+      hsl(47 96% 53%), 
+      hsl(200 100% 80%)) !important;
+    box-shadow: 0 4px 15px hsl(47 96% 53% / 0.4) !important;
+  }
+
+  /* Text color overrides */
+  .glass-variant .text-gaming-cyan {
+    color: hsl(47 96% 53%) !important;
+  }
+
+  .glass-variant .text-gaming-orange {
+    color: hsl(30 85% 55%) !important;
+  }
+
+  .glass-variant .text-gaming-green {
+    color: hsl(120 80% 45%) !important;
+  }
+
+  .glass-variant .text-gaming-purple {
+    color: hsl(200 100% 80%) !important;
+  }
+
+  .glass-variant .bg-gaming-orange {
+    background-color: hsl(30 85% 55%) !important;
+  }
+
+  .glass-variant .bg-gaming-orange\/20 {
+    background-color: hsl(30 85% 55% / 0.2) !important;
+  }
+
+  .glass-variant .border-gaming-orange\/40 {
+    border-color: hsl(30 85% 55% / 0.4) !important;
+  }
+
+  .glass-variant .bg-gaming-darker\/50 {
+    background: linear-gradient(135deg, 
+      hsl(240 12% 4% / 0.9), 
+      hsl(240 10% 6% / 0.8)) !important;
+    backdrop-filter: blur(15px) !important;
+  }
+
+  .glass-variant .border-gaming-purple {
+    border-color: hsl(200 100% 80%) !important;
   }
 
   .glass-variant .animate-pulse-glow {
     animation: glass-glow 3s ease-in-out infinite alternate;
   }
 
-  .glass-variant .bg-card {
-    background: hsla(var(--glass-surface), 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsla(var(--glass-gold), 0.15);
+  /* Special glass effects */
+  .glass-variant .shadow-neon {
+    box-shadow: var(--shadow-neon) !important;
   }
 
-  .glass-variant .text-gaming-cyan {
-    color: hsl(var(--glass-gold));
+  .glass-variant .shadow-gaming {
+    box-shadow: var(--shadow-elevated) !important;
   }
 
-  .glass-variant .text-gaming-orange {
-    color: hsl(var(--glass-bronze));
-  }
-
-  .glass-variant .text-gaming-green {
-    color: hsl(120 60% 50%);
-  }
-
-  .glass-variant .text-gaming-purple {
-    color: hsl(var(--glass-platinum));
-  }
-
-  .glass-variant .bg-gaming-orange {
-    background-color: hsl(var(--glass-bronze));
-  }
-
-  .glass-variant .bg-gaming-orange\/20 {
-    background-color: hsla(var(--glass-bronze), 0.2);
-  }
-
-  .glass-variant .border-gaming-orange\/40 {
-    border-color: hsla(var(--glass-bronze), 0.4);
-  }
-
-  .glass-variant .bg-gaming-darker\/50 {
-    background-color: hsla(var(--glass-surface), 0.8);
-    backdrop-filter: blur(10px);
-  }
-
-  .glass-variant .border-gaming-purple {
-    border-color: hsl(var(--glass-platinum));
-  }
-
-  .glass-variant .text-gaming-purple {
-    color: hsl(var(--glass-platinum));
+  .glass-variant .bg-background {
+    background: var(--gradient-background) !important;
   }
 
   @keyframes glass-glow {
-    0% { box-shadow: 0 0 20px hsla(var(--glass-gold), 0.4); }
-    100% { box-shadow: 0 0 35px hsla(var(--glass-gold), 0.6); }
+    0% { 
+      box-shadow: 0 0 25px hsl(47 96% 53% / 0.4),
+                  0 0 0 1px hsl(47 96% 53% / 0.3);
+    }
+    100% { 
+      box-shadow: 0 0 40px hsl(47 96% 53% / 0.7),
+                  0 0 0 1px hsl(47 96% 53% / 0.5);
+    }
   }
 }
 
