@@ -53,12 +53,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				tech: {
-					blue: 'hsl(var(--tech-blue))',
-					purple: 'hsl(var(--tech-purple))',
-					cyan: 'hsl(var(--tech-cyan))',
-					dark: 'hsl(var(--tech-dark))',
-					gray: 'hsl(var(--tech-gray))'
+				// CS2 Gaming Colors
+				gaming: {
+					cyan: 'hsl(var(--gaming-cyan))',
+					purple: 'hsl(var(--gaming-purple))',
+					magenta: 'hsl(var(--gaming-magenta))',
+					orange: 'hsl(var(--gaming-orange))',
+					green: 'hsl(var(--gaming-green))',
+					dark: 'hsl(var(--gaming-dark))',
+					darker: 'hsl(var(--gaming-darker))'
+				},
+				// CS2 Skin Rarity Colors
+				rarity: {
+					consumer: 'hsl(var(--rarity-consumer))',
+					industrial: 'hsl(var(--rarity-industrial))',
+					milspec: 'hsl(var(--rarity-milspec))',
+					restricted: 'hsl(var(--rarity-restricted))',
+					classified: 'hsl(var(--rarity-classified))',
+					covert: 'hsl(var(--rarity-covert))',
+					knife: 'hsl(var(--rarity-knife))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -126,14 +139,18 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-tech': 'var(--gradient-tech)',
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-subtle': 'var(--gradient-subtle)'
+				'gradient-gaming': 'var(--gradient-gaming)',
+				'gradient-rarity': 'var(--gradient-rarity)',
+				'gradient-background': 'var(--gradient-background)',
+				'gradient-card': 'var(--gradient-card)'
 			},
 			boxShadow: {
-				'tech': 'var(--shadow-tech)',
-				'glow': 'var(--shadow-glow)',
-				'card': 'var(--shadow-card)'
+				'neon': 'var(--shadow-neon)',
+				'purple': 'var(--shadow-purple)',
+				'gaming': 'var(--shadow-gaming)',
+				'card': 'var(--shadow-card)',
+				'elevated': 'var(--shadow-elevated)'
 			}
 		}
 	},

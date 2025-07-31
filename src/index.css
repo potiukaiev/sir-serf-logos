@@ -2,61 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* CaseHunters Gaming Design System - CS2/Gaming Aesthetic
+All colors MUST be HSL for proper theming.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 220 15% 15%;
+    /* Gaming Dark Theme - Light mode fallback */
+    --background: 220 39% 11%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card: 220 28% 16%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover: 220 28% 16%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 217 91% 70%;
+    /* CS2 Inspired Colors */
+    --primary: 191 85% 56%; /* Neon cyan */
+    --primary-foreground: 220 39% 11%;
+    --primary-glow: 191 85% 70%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 15% 15%;
+    --secondary: 220 28% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 220 28% 20%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 264 83% 70%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 264 83% 70%; /* Purple accent */
+    --accent-foreground: 220 39% 11%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 220 28% 25%;
+    --input: 220 28% 20%;
+    --ring: 191 85% 56%;
 
-    /* Custom design tokens for IT company */
-    --tech-blue: 217 91% 60%;
-    --tech-purple: 264 83% 70%;
-    --tech-cyan: 191 85% 56%;
-    --tech-dark: 220 39% 11%;
-    --tech-gray: 220 10% 46%;
+    /* CS2 Skin Rarity Colors */
+    --rarity-consumer: 176 25% 88%; /* Consumer White */
+    --rarity-industrial: 191 85% 56%; /* Industrial Light Blue */
+    --rarity-milspec: 217 91% 60%; /* Mil-Spec Blue */
+    --rarity-restricted: 264 83% 70%; /* Restricted Purple */
+    --rarity-classified: 295 100% 70%; /* Classified Pink/Magenta */
+    --rarity-covert: 0 84% 60%; /* Covert Red */
+    --rarity-knife: 45 100% 60%; /* Knife/Glove Gold */
+
+    /* Gaming Color Palette */
+    --gaming-cyan: 191 85% 56%;
+    --gaming-purple: 264 83% 70%;
+    --gaming-magenta: 295 100% 70%;
+    --gaming-orange: 20 100% 60%;
+    --gaming-green: 120 100% 50%;
+    --gaming-dark: 220 39% 11%;
+    --gaming-darker: 220 39% 8%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-purple)));
-    --gradient-tech: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-cyan)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    /* Neon Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gaming-cyan)), hsl(var(--gaming-purple)));
+    --gradient-gaming: linear-gradient(135deg, hsl(var(--gaming-purple)), hsl(var(--gaming-magenta)));
+    --gradient-rarity: linear-gradient(135deg, hsl(var(--rarity-classified)), hsl(var(--rarity-covert)));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--gaming-darker)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
     
-    /* Shadows */
-    --shadow-tech: 0 25px 50px -12px hsl(var(--tech-blue) / 0.25);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-    --shadow-card: 0 4px 6px -1px hsl(220 15% 15% / 0.1);
+    /* Gaming Shadows & Glows */
+    --shadow-neon: 0 0 30px hsl(var(--gaming-cyan) / 0.5);
+    --shadow-purple: 0 0 30px hsl(var(--gaming-purple) / 0.3);
+    --shadow-gaming: 0 25px 50px -12px hsl(var(--gaming-cyan) / 0.25);
+    --shadow-card: 0 4px 20px hsl(220 39% 8% / 0.4);
+    --shadow-elevated: 0 10px 40px hsl(220 39% 8% / 0.6);
     
-    /* Animations */
+    /* Gaming Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glow: all 0.3s ease-in-out;
 
     --radius: 0.5rem;
 
