@@ -329,28 +329,34 @@ All colors MUST be HSL for proper theming.
     color: hsl(47 96% 53%) !important;
   }
 
+  .glass-variant .text-gaming-orange {
+    color: hsl(280 90% 65%) !important;
+  }
+
+  .glass-variant .text-gaming-green {
+    color: hsl(120 80% 45%) !important;
+  }
+
+  /* This rule is now handled above in the button section */
+
   .glass-variant .bg-gaming-orange {
-    background-color: hsl(47 96% 53%) !important;
+    background-color: hsl(280 90% 65%) !important;
   }
 
   .glass-variant .bg-gaming-orange\/20 {
-    background-color: hsl(47 96% 53% / 0.2) !important;
+    background-color: hsl(280 90% 65% / 0.2) !important;
   }
 
   .glass-variant .border-gaming-orange\/40 {
-    border-color: hsl(47 96% 53% / 0.4) !important;
+    border-color: hsl(280 90% 65% / 0.4) !important;
   }
 
-  .glass-variant .text-gaming-orange {
-    color: hsl(47 96% 53%) !important;
-  }
-
-  /* Enhanced promocode section styling for golden theme */
+  /* Enhanced promocode section styling for golden theme - purple accents */
   .glass-variant .bg-gaming-orange\/20 {
-    background: linear-gradient(135deg, hsl(47 96% 53% / 0.15), hsl(47 96% 53% / 0.25)) !important;
+    background: linear-gradient(135deg, hsl(280 90% 65% / 0.15), hsl(280 90% 65% / 0.25)) !important;
     backdrop-filter: blur(10px) !important;
-    border: 2px solid hsl(47 96% 53% / 0.5) !important;
-    box-shadow: 0 4px 15px hsl(47 96% 53% / 0.2), 0 0 0 1px hsl(47 96% 53% / 0.1) !important;
+    border: 2px solid hsl(280 90% 65% / 0.5) !important;
+    box-shadow: 0 4px 15px hsl(280 90% 65% / 0.2), 0 0 0 1px hsl(280 90% 65% / 0.1) !important;
   }
 
   .glass-variant .bg-gaming-darker\/50 {
