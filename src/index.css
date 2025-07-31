@@ -216,10 +216,36 @@ All colors MUST be HSL for proper theming.
   .glass-variant h2,
   .glass-variant h3,
   .glass-variant h4,
-  .glass-variant p {
+  .glass-variant h5,
+  .glass-variant h6,
+  .glass-variant p,
+  .glass-variant span,
+  .glass-variant div {
     position: relative;
     z-index: 10;
     background: transparent !important;
+  }
+
+  /* Fix any remaining golden elements - MORE SPECIFIC */
+  .glass-variant .shadow-neon,
+  .glass-variant .shadow-gaming,
+  .glass-variant .shadow-elevated {
+    box-shadow: var(--shadow-glass) !important;
+  }
+
+  /* Override any gaming-themed colors that might be causing golden lines */
+  .glass-variant .border-gaming-cyan,
+  .glass-variant .border-gaming-cyan\/20,
+  .glass-variant .border-gaming-cyan\/30,
+  .glass-variant .border-gaming-cyan\/40 {
+    border-color: hsl(240 8% 18%) !important;
+  }
+
+  /* Remove golden glows from all elements */
+  .glass-variant .animate-pulse-glow,
+  .glass-variant [class*="glow"] {
+    animation: none !important;
+    box-shadow: none !important;
   }
 
   .glass-variant .bg-gradient-primary {
@@ -304,6 +330,24 @@ All colors MUST be HSL for proper theming.
 
   .glass-variant .bg-background {
     background: var(--gradient-background) !important;
+  }
+
+  /* COMPREHENSIVE GOLDEN LINE FIX - Override ALL possible sources */
+  .glass-variant *::before,
+  .glass-variant *::after {
+    border-color: hsl(240 8% 18%) !important;
+    box-shadow: none !important;
+  }
+
+  .glass-variant .bg-gradient-gaming::before,
+  .glass-variant .bg-gradient-gaming::after {
+    content: none !important;
+  }
+
+  /* Force remove all golden/cyan borders */
+  .glass-variant [class*="border-gaming"],
+  .glass-variant [class*="border-cyan"] {
+    border-color: hsl(240 8% 18%) !important;
   }
 
   @keyframes glass-glow {

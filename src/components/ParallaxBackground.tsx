@@ -10,6 +10,9 @@ interface ParallaxBackgroundProps {
 export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) => {
   const [scrollY, setScrollY] = useState(0);
   const variant = useVariant();
+  
+  // Debug log to check variant
+  console.log('ParallaxBackground variant:', variant);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -23,18 +26,23 @@ export const ParallaxBackground = ({ className = '' }: ParallaxBackgroundProps) 
     <div className={`fixed inset-0 -z-10 overflow-hidden ${className}`}>
       {/* Gaming Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           transform: `translateY(${parallaxOffset}px)`,
           backgroundImage: `url(${variant === 'A' ? cs2BgImage : dota2BgImage})`,
+          opacity: variant === 'B' ? 0.4 : 0.3, // Make variant B more visible
         }}
       />
       
       {/* Base Background Overlay */}
       <div 
-        className="absolute inset-0 bg-gradient-background/80"
+        className="absolute inset-0"
         style={{
           transform: `translateY(${parallaxOffset * 0.3}px)`,
+          background: variant === 'A' 
+            ? 'linear-gradient(180deg, hsl(220 39% 11%), hsl(220 39% 8%))'
+            : 'radial-gradient(ellipse at top, hsl(240 15% 9%), hsl(240 12% 4%))',
+          opacity: 0.8
         }}
       />
       
