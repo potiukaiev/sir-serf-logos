@@ -184,12 +184,12 @@ All colors MUST be HSL for proper theming.
 
   .glass-variant {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--gradient-background);
+    /* Remove background override to allow parallax to show */
   }
 
-  /* Override body background for glass variant */
+  /* Allow parallax background to show through */
   .glass-variant body {
-    background: var(--gradient-background);
+    background: transparent;
   }
 
   /* Logo fixes for glass variant - ONLY for logos, not text */
@@ -342,8 +342,9 @@ All colors MUST be HSL for proper theming.
     box-shadow: var(--shadow-elevated) !important;
   }
 
+  /* Remove this override to allow parallax background */
   .glass-variant .bg-background {
-    background: var(--gradient-background) !important;
+    background: transparent !important;
   }
 
   /* COMPREHENSIVE GOLDEN LINE FIX - Override ALL possible sources */
