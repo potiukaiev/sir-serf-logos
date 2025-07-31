@@ -7,6 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { GamingAd } from "@/components/GamingAd";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { LanguageSelector } from "@/components/LanguageSelector";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -130,11 +132,17 @@ const Sites = () => {
             <Link to="/">
               <Logo variant="compact" />
             </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/sites" className="text-gaming-cyan hover:text-gaming-cyan/80 transition-colors font-medium">Sites</Link>
-              <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
-              <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link to="/sites" className="text-gaming-cyan hover:text-gaming-cyan/80 transition-colors font-medium">Sites</Link>
+                <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
+                <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
+              </nav>
+              <div className="flex items-center gap-2">
+                <ThemeSelector />
+                <LanguageSelector />
+              </div>
+            </div>
           </div>
         </div>
       </header>

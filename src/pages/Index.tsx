@@ -5,6 +5,8 @@ import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-reac
 import { Link } from "react-router-dom";
 import { GamingAd } from "@/components/GamingAd";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const Index = () => {
   const featuredSites = [
@@ -61,11 +63,17 @@ const Index = () => {
                 CaseHunters
               </h1>
             </div>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
-              <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
-              <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
+                <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
+                <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
+              </nav>
+              <div className="flex items-center gap-2">
+                <ThemeSelector />
+                <LanguageSelector />
+              </div>
+            </div>
           </div>
         </div>
       </header>

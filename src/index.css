@@ -414,6 +414,24 @@ All colors MUST be HSL for proper theming.
                   0 0 0 1px hsl(47 96% 53% / 0.5);
     }
   }
+
+  /* Theme and Language Selector Styling */
+  .glass-variant [data-radix-popper-content-wrapper] {
+    z-index: 1000 !important;
+  }
+
+  .glass-variant .bg-gaming-darker {
+    background: linear-gradient(135deg, hsl(240 10% 8% / 0.95), hsl(240 8% 12% / 0.9)) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid hsl(47 96% 53% / 0.2) !important;
+    box-shadow: var(--shadow-glass) !important;
+  }
+
+  .glass-variant .bg-gaming-dark {
+    background: linear-gradient(135deg, hsl(240 10% 8% / 0.9), hsl(240 8% 12% / 0.8)) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid hsl(47 96% 53% / 0.15) !important;
+  }
 }
 
 @layer base {
