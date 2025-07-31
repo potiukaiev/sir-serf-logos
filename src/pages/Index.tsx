@@ -86,7 +86,7 @@ const Index = () => {
           </p>
           
           <div className="flex gap-4 justify-center flex-wrap animate-slide-up">
-            <Button size="lg" className="px-8 bg-gaming-orange hover:bg-gaming-orange/90 text-white shadow-neon">
+            <Button size="lg" className="px-8 bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
               Browse Sites
             </Button>
             <Button variant="outline" size="lg" className="px-8 border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10">
@@ -178,7 +178,7 @@ const Index = () => {
 
                 {/* CTA Buttons */}
                 <div className="space-y-2">
-                  <Button className="w-full bg-gaming-orange hover:bg-gaming-orange/90 text-white shadow-neon">
+                  <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
                     Play Now
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>

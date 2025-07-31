@@ -143,7 +143,8 @@ export default {
 				'gradient-gaming': 'var(--gradient-gaming)',
 				'gradient-rarity': 'var(--gradient-rarity)',
 				'gradient-background': 'var(--gradient-background)',
-				'gradient-card': 'var(--gradient-card)'
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-cta': 'var(--gradient-cta)'
 			},
 			boxShadow: {
 				'neon': 'var(--shadow-neon)',
