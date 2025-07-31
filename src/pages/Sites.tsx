@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { GamingAd } from "@/components/GamingAd";
 import { Logo } from "@/components/Logo";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -180,7 +181,10 @@ const Sites = () => {
           </Select>
         </div>
 
-        {/* Results Count */}
+        {/* Gaming Ad Banner */}
+        <div className="mb-8">
+          <GamingAd variant="banner" />
+        </div>
         <div className="text-center mb-8">
           <p className="text-muted-foreground">
             Showing {sortedSites.length} of {allSites.length} verified sites

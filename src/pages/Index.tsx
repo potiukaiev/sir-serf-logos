@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { GamingAd } from "@/components/GamingAd";
 
 const Index = () => {
   const featuredSites = [
@@ -190,6 +191,11 @@ const Index = () => {
             </Card>
           ))}
         </div>
+      </section>
+
+      {/* Gaming Ad */}
+      <section className="container mx-auto px-6 py-8">
+        <GamingAd variant="inline" />
       </section>
 
       {/* Game Categories */}
