@@ -201,6 +201,13 @@ All colors MUST be HSL for proper theming.
     backdrop-filter: blur(20px);
     box-shadow: var(--shadow-neon);
   }
+  
+  /* Fix header overlap - remove golden borders/shadows on headers */
+  .glass-variant header,
+  .glass-variant .sticky {
+    box-shadow: none !important;
+    border-bottom: 1px solid hsl(240 8% 18%) !important;
+  }
 
   .glass-variant .bg-gradient-primary {
     background: var(--gradient-primary) !important;
@@ -220,14 +227,12 @@ All colors MUST be HSL for proper theming.
 
   /* Button overrides for glass variant */
   .glass-variant .bg-gradient-cta {
-    background: var(--gradient-cta) !important;
+    background: hsl(47 96% 53%) !important;
     box-shadow: 0 4px 20px hsl(47 96% 53% / 0.3) !important;
   }
 
   .glass-variant .bg-primary {
-    background: linear-gradient(135deg, 
-      hsl(47 96% 53%), 
-      hsl(200 100% 80%)) !important;
+    background: hsl(47 96% 53%) !important;
     box-shadow: 0 4px 15px hsl(47 96% 53% / 0.4) !important;
   }
 
