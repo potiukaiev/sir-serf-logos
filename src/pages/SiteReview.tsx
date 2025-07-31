@@ -9,6 +9,7 @@ import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { MobileMenu } from "@/components/MobileMenu";
 import { Helmet } from "react-helmet-async";
 import { 
   Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Users, Clock, 
@@ -162,10 +163,11 @@ const SiteReview = () => {
                 <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
                 <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
               </nav>
-              <div className="flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2">
                 <ThemeSelector />
                 <LanguageSelector />
               </div>
+              <MobileMenu />
             </div>
           </div>
         </div>

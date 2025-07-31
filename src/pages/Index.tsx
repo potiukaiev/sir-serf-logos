@@ -8,6 +8,7 @@ import { GamingAd } from "@/components/GamingAd";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { MobileMenu } from "@/components/MobileMenu";
 
 const Index = () => {
   const featuredSites = [
@@ -112,10 +113,11 @@ const Index = () => {
                 <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
                 <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
               </nav>
-              <div className="flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2">
                 <ThemeSelector />
                 <LanguageSelector />
               </div>
+              <MobileMenu />
             </div>
           </div>
         </div>

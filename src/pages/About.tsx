@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { MobileMenu } from "@/components/MobileMenu";
 import { Helmet } from "react-helmet-async";
 import { Shield, Star, Users, TrendingUp, CheckCircle, AlertTriangle, Mail, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -91,10 +92,11 @@ const About = () => {
                 <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
                 <Link to="/about" className="text-gaming-cyan hover:text-gaming-cyan/80 transition-colors font-medium">About</Link>
               </nav>
-              <div className="flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2">
                 <ThemeSelector />
                 <LanguageSelector />
               </div>
+              <MobileMenu />
             </div>
           </div>
         </div>
