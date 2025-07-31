@@ -7,6 +7,8 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { LanguageSelector } from "@/components/LanguageSelector";
 import { Helmet } from "react-helmet-async";
 import { 
   Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Users, Clock, 
@@ -154,11 +156,17 @@ const SiteReview = () => {
             <Link to="/">
               <Logo variant="compact" />
             </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
-              <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
-              <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
+                <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
+                <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
+              </nav>
+              <div className="flex items-center gap-2">
+                <ThemeSelector />
+                <LanguageSelector />
+              </div>
+            </div>
           </div>
         </div>
       </header>

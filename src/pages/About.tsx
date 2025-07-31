@@ -85,11 +85,17 @@ const About = () => {
             <Link to="/">
               <Logo variant="compact" />
             </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
-              <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
-              <Link to="/about" className="text-gaming-cyan hover:text-gaming-cyan/80 transition-colors font-medium">About</Link>
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
+                <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
+                <Link to="/about" className="text-gaming-cyan hover:text-gaming-cyan/80 transition-colors font-medium">About</Link>
+              </nav>
+              <div className="flex items-center gap-2">
+                <ThemeSelector />
+                <LanguageSelector />
+              </div>
+            </div>
           </div>
         </div>
       </header>
