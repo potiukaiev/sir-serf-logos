@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const featuredSites = [
@@ -58,10 +59,9 @@ const Index = () => {
               </h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</a>
-              <a href="#" className="text-foreground hover:text-gaming-cyan transition-colors">Reviews</a>
-              <a href="#" className="text-foreground hover:text-gaming-cyan transition-colors">Articles</a>
-              <a href="#" className="text-foreground hover:text-gaming-cyan transition-colors">Rankings</a>
+              <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">Sites</Link>
+              <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
+              <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
             </nav>
           </div>
         </div>
