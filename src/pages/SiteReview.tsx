@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Logo } from "@/components/Logo";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { 
   Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Users, Clock, 
   CreditCard, Globe, MessageCircle, CheckCircle, XCircle, AlertTriangle,
@@ -101,7 +102,8 @@ const SiteReview = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen relative">
+      <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">

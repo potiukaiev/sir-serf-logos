@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GamingAd } from "@/components/GamingAd";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 const Index = () => {
   const featuredSites = [
@@ -46,7 +47,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen relative">
+      <ParallaxBackground />
       {/* Gaming Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">

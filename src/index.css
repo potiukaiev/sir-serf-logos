@@ -207,6 +207,19 @@ All colors MUST be HSL for proper theming.
   .glass-variant .sticky {
     box-shadow: none !important;
     border-bottom: 1px solid hsl(240 8% 18%) !important;
+    background: hsl(240 10% 8% / 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  /* Ensure text content has proper z-index and background */
+  .glass-variant h1,
+  .glass-variant h2,
+  .glass-variant h3,
+  .glass-variant h4,
+  .glass-variant p {
+    position: relative;
+    z-index: 10;
+    background: transparent !important;
   }
 
   .glass-variant .bg-gradient-primary {

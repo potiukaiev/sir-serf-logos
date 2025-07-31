@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Trophy, Star, TrendingUp, Users, ExternalLink, Gamepad2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -89,7 +90,8 @@ const Categories = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen relative">
+      <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">

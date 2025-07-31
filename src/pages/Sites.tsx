@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { GamingAd } from "@/components/GamingAd";
 import { Logo } from "@/components/Logo";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -120,7 +121,8 @@ const Sites = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen relative">
+      <ParallaxBackground />
       {/* Header */}
       <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
