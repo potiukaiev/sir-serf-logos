@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Monitor, Sun, Moon, Palette } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Zap, Crown, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
   DropdownMenu, 
@@ -9,18 +9,42 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useVariant } from '@/hooks/useVariant';
 
+type Variant = 'A' | 'B';
+
 export const ThemeSelector = () => {
   const variant = useVariant();
-  const [theme, setTheme] = useState<'light' | 'dark' | 'auto'>('dark');
+  const [selectedVariant, setSelectedVariant] = useState<Variant>(variant);
+
+  useEffect(() => {
+    setSelectedVariant(variant);
+  }, [variant]);
 
   const themes = [
-    { value: 'light', label: 'Light', icon: Sun },
-    { value: 'dark', label: 'Dark', icon: Moon },
-    { value: 'auto', label: 'Auto', icon: Monitor }
+    { 
+      value: 'A' as Variant, 
+      label: 'Neon Gaming', 
+      icon: Zap,
+      description: 'CS2 cyberpunk with neon cyan & purple',
+      color: 'text-gaming-cyan'
+    },
+    { 
+      value: 'B' as Variant, 
+      label: 'Golden Glass', 
+      icon: Crown,
+      description: 'Dota 2 premium with gold & glassmorphism',
+      color: 'text-gaming-orange'
+    }
   ];
 
-  const currentTheme = themes.find(t => t.value === theme);
-  const CurrentIcon = currentTheme?.icon || Monitor;
+  const handleThemeChange = (newVariant: Variant) => {
+    localStorage.setItem('ab-variant', newVariant);
+    setSelectedVariant(newVariant);
+    // Trigger a page reload to apply the new variant
+    window.location.reload();
+  };
+
+  const currentTheme = themes.find(t => t.value === selectedVariant);
+  const CurrentIcon = currentTheme?.icon || Palette;
 
   return (
     <DropdownMenu>
@@ -36,13 +60,14 @@ export const ThemeSelector = () => {
             }
           `}
         >
-          <CurrentIcon className="w-4 h-4" />
+          <CurrentIcon className={`w-4 h-4 ${currentTheme?.color || 'text-gaming-cyan'}`} />
           <span className="hidden sm:inline">Theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
         className={`
+          w-64
           ${variant === 'B' ? 
             'bg-gaming-darker border-gaming-cyan/20 backdrop-blur-md' : 
             'bg-gaming-dark border-gaming-cyan/20'
@@ -51,17 +76,24 @@ export const ThemeSelector = () => {
       >
         {themes.map((themeOption) => {
           const Icon = themeOption.icon;
+          const isSelected = selectedVariant === themeOption.value;
           return (
             <DropdownMenuItem
               key={themeOption.value}
-              onClick={() => setTheme(themeOption.value as 'light' | 'dark' | 'auto')}
+              onClick={() => handleThemeChange(themeOption.value)}
               className={`
-                flex items-center gap-2 cursor-pointer
-                ${theme === themeOption.value ? 'bg-gaming-cyan/20 text-gaming-cyan' : 'text-foreground hover:bg-gaming-cyan/10'}
+                flex flex-col items-start gap-1 cursor-pointer p-3
+                ${isSelected ? 'bg-gaming-cyan/20 text-gaming-cyan' : 'text-foreground hover:bg-gaming-cyan/10'}
               `}
             >
-              <Icon className="w-4 h-4" />
-              {themeOption.label}
+              <div className="flex items-center gap-2 w-full">
+                <Icon className={`w-4 h-4 ${themeOption.color}`} />
+                <span className="font-medium">{themeOption.label}</span>
+                {isSelected && <span className="ml-auto text-xs text-gaming-cyan">ACTIVE</span>}
+              </div>
+              <span className="text-xs text-muted-foreground ml-6">
+                {themeOption.description}
+              </span>
             </DropdownMenuItem>
           );
         })}

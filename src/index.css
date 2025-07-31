@@ -432,6 +432,16 @@ All colors MUST be HSL for proper theming.
     backdrop-filter: blur(15px) !important;
     border: 1px solid hsl(47 96% 53% / 0.15) !important;
   }
+
+  /* Special styling for theme selector in golden variant */
+  .glass-variant .text-gaming-orange {
+    color: hsl(47 96% 53%) !important;
+  }
+
+  .glass-variant [data-radix-dropdown-menu-content] {
+    border: 1px solid hsl(47 96% 53% / 0.3) !important;
+    box-shadow: 0 8px 32px hsl(47 96% 53% / 0.2), 0 0 0 1px hsl(47 96% 53% / 0.1) !important;
+  }
 }
 
 @layer base {
