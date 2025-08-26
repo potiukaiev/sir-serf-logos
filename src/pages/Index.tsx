@@ -236,7 +236,7 @@ const Index = () => {
                 <div className="space-y-2">
                   <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
                     Play Now
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    <ExternalLink className="w-4 h-4 ml-2 text-gaming-green" />
                   </Button>
                   <Button variant="outline" className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10">
                     Read Review

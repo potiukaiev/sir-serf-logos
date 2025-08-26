@@ -311,7 +311,7 @@ const Sites = () => {
                 <div className="space-y-2">
                   <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
                     Visit Site
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    <ExternalLink className="w-4 h-4 ml-2 text-gaming-green" />
                   </Button>
                   <Button 
                     asChild

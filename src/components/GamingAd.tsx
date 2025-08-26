@@ -109,7 +109,7 @@ export const GamingAd = ({ variant = "sidebar", className = "" }: GamingAdProps)
                 <Badge className="bg-gaming-orange text-white mb-2">{randomAd.discount}</Badge>
                 <Button size="sm" className="bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
                   {randomAd.cta}
-                  <ExternalLink className="w-3 h-3 ml-1" />
+                  <ExternalLink className="w-3 h-3 ml-1 text-gaming-green" />
                 </Button>
               </div>
             </div>
@@ -163,7 +163,7 @@ export const GamingAd = ({ variant = "sidebar", className = "" }: GamingAdProps)
 
             <Button className="bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
               {randomAd.cta}
-              <ExternalLink className="w-4 h-4 ml-2" />
+              <ExternalLink className="w-4 h-4 ml-2 text-gaming-green" />
             </Button>
           </CardContent>
         </Card>
@@ -210,7 +210,7 @@ export const GamingAd = ({ variant = "sidebar", className = "" }: GamingAdProps)
 
             <Button size="sm" className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
               {randomAd.cta}
-              <ExternalLink className="w-3 h-3 ml-1" />
+              <ExternalLink className="w-3 h-3 ml-1 text-gaming-green" />
             </Button>
             
             <div className="text-xs text-muted-foreground mt-2">

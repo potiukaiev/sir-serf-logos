@@ -246,7 +246,7 @@ const SiteReview = () => {
                 <div className="flex gap-4">
                   <Button className="flex-1 bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
                     Visit Site
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    <ExternalLink className="w-4 h-4 ml-2 text-gaming-green" />
                   </Button>
                   <Button variant="outline" className="border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10">
                     <Star className="w-4 h-4 mr-2" />
