@@ -546,7 +546,7 @@ All colors MUST be HSL for proper theming.
 .flat-variant .bg-gradient-gaming { background: hsl(0 0% 35%) !important; }
 .flat-variant .bg-gradient-tech { background: hsl(0 0% 30%) !important; }
 .flat-variant .bg-gradient-card { background: hsl(0 0% 98%) !important; }
-.flat-variant .bg-gradient-cta { background: hsl(0 0% 25%) !important; }
+.flat-variant .bg-gradient-cta { background: hsl(120 80% 35%) !important; }
 
 /* Remove gradient text effects */
 .flat-variant .bg-gradient-primary.bg-clip-text { 
