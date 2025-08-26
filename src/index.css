@@ -506,7 +506,6 @@ All colors MUST be HSL for proper theming.
 .flat-variant [class*="hover:scale-"]:hover {
   transform: none !important;
 }
-}
 
 @layer base {
   * {
