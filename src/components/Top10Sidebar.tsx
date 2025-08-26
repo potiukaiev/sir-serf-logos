@@ -113,9 +113,10 @@ export const Top10Sidebar = () => {
           </CardHeader>
           <CardContent className="space-y-3">
             {top10Sites.map((site, index) => (
-              <div 
+              <Link
                 key={site.id}
-                className="flex items-center justify-between p-3 rounded-lg bg-gaming-darker/30 hover:bg-gaming-darker/50 transition-colors group"
+                to={`/review/${site.name.toLowerCase().replace(/\s+/g, '-')}`}
+                className="flex items-center justify-between p-3 rounded-lg bg-gaming-darker/30 hover:bg-gaming-darker/50 transition-colors group cursor-pointer"
               >
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gaming-cyan/20 text-gaming-cyan font-bold text-sm">
@@ -148,7 +149,7 @@ export const Top10Sidebar = () => {
                     {site.category}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </CardContent>
         </Card>
