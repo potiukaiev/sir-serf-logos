@@ -530,8 +530,16 @@ All colors MUST be HSL for proper theming.
 .flat-variant .border-gaming-purple\/50 { border-color: hsl(0 0% 88%) !important; }
 .flat-variant .border-gaming-orange\/40 { border-color: hsl(0 0% 85%) !important; }
 
-/* CTA button icons should be green in flat variant */
-.flat-variant .bg-gradient-cta .lucide { color: hsl(120 80% 35%) !important; }
+/* CTA button backgrounds should be green in flat variant */
+.flat-variant .bg-gradient-cta { 
+  background: hsl(120 80% 35%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+.flat-variant .bg-gradient-cta:hover { 
+  background: hsl(120 80% 30%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
 
 /* Remove all gradients */
 .flat-variant .bg-gradient-primary { background: hsl(0 0% 25%) !important; }
