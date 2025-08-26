@@ -506,12 +506,12 @@ All colors MUST be HSL for proper theming.
 .flat-variant .text-gaming-cyan { color: hsl(0 0% 25%) !important; }
 .flat-variant .text-gaming-purple { color: hsl(0 0% 35%) !important; }
 .flat-variant .text-gaming-orange { color: hsl(0 0% 45%) !important; }
-.flat-variant .text-gaming-green { color: hsl(0 0% 40%) !important; }
+.flat-variant .text-gaming-green { color: hsl(120 80% 35%) !important; } /* Keep green for flat theme */
 
 .flat-variant .bg-gaming-cyan { background-color: hsl(0 0% 25%) !important; }
 .flat-variant .bg-gaming-purple { background-color: hsl(0 0% 35%) !important; }
 .flat-variant .bg-gaming-orange { background-color: hsl(0 0% 45%) !important; }
-.flat-variant .bg-gaming-green { background-color: hsl(0 0% 40%) !important; }
+.flat-variant .bg-gaming-green { background-color: hsl(120 80% 35%) !important; } /* Keep green for flat theme */
 .flat-variant .bg-gaming-dark { background-color: hsl(0 0% 95%) !important; }
 .flat-variant .bg-gaming-darker { background-color: hsl(0 0% 92%) !important; }
 
@@ -529,6 +529,9 @@ All colors MUST be HSL for proper theming.
 .flat-variant .border-gaming-cyan\/20 { border-color: hsl(0 0% 90%) !important; }
 .flat-variant .border-gaming-purple\/50 { border-color: hsl(0 0% 88%) !important; }
 .flat-variant .border-gaming-orange\/40 { border-color: hsl(0 0% 85%) !important; }
+
+/* CTA button icons should be green in flat variant */
+.flat-variant .bg-gradient-cta .lucide { color: hsl(120 80% 35%) !important; }
 
 /* Remove all gradients */
 .flat-variant .bg-gradient-primary { background: hsl(0 0% 25%) !important; }

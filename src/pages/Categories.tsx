@@ -219,7 +219,7 @@ const Categories = () => {
                 {/* Action Button */}
                 <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
                   Browse {game.shortName} Sites
-                  <ExternalLink className="w-4 h-4 ml-2 text-gaming-green" />
+                  <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
