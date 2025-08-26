@@ -467,44 +467,123 @@ All colors MUST be HSL for proper theming.
   --ring: 0 0% 25%;
   --radius: 0.5rem;
 
-  /* Remove gaming colors */
+  /* Override all gaming colors with flat equivalents */
   --gaming-dark: 0 0% 95%;
   --gaming-darker: 0 0% 92%;
-  --gaming-cyan: 0 0% 45%;
-  --gaming-purple: 0 0% 35%;
-  --gaming-orange: 0 0% 40%;
+  --gaming-cyan: 0 0% 25%;        /* Dark gray instead of cyan */
+  --gaming-purple: 0 0% 35%;      /* Medium gray instead of purple */
+  --gaming-orange: 0 0% 45%;      /* Light gray instead of orange */
+  --gaming-green: 0 0% 40%;       /* Gray instead of green */
+  --gaming-magenta: 0 0% 30%;     /* Dark gray instead of magenta */
 
-  /* Flat design overrides */
+  /* Flat design overrides - minimal shadows */
   --shadow-tech: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --gradient-primary: linear-gradient(135deg, hsl(0 0% 25%), hsl(0 0% 35%));
-  --gradient-tech: linear-gradient(135deg, hsl(0 0% 30%), hsl(0 0% 40%));
+  --shadow-glow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-neon: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-gaming: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-elevated: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
-  /* Remove all gradients and effects */
+  /* Remove all gradients */
+  --gradient-primary: none;
+  --gradient-gaming: none;
+  --gradient-tech: none;
+  --gradient-card: none;
+  --gradient-cta: none;
+  --gradient-background: none;
+
+  /* Flat background */
   background: hsl(var(--background));
 }
 
+/* Override all element shadows */
 .flat-variant * {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
 }
 
-.flat-variant .bg-gradient-primary,
-.flat-variant .bg-gradient-tech {
-  background: hsl(var(--primary)) !important;
+/* Override gaming color classes */
+.flat-variant .text-gaming-cyan { color: hsl(0 0% 25%) !important; }
+.flat-variant .text-gaming-purple { color: hsl(0 0% 35%) !important; }
+.flat-variant .text-gaming-orange { color: hsl(0 0% 45%) !important; }
+.flat-variant .text-gaming-green { color: hsl(0 0% 40%) !important; }
+
+.flat-variant .bg-gaming-cyan { background-color: hsl(0 0% 25%) !important; }
+.flat-variant .bg-gaming-purple { background-color: hsl(0 0% 35%) !important; }
+.flat-variant .bg-gaming-orange { background-color: hsl(0 0% 45%) !important; }
+.flat-variant .bg-gaming-green { background-color: hsl(0 0% 40%) !important; }
+.flat-variant .bg-gaming-dark { background-color: hsl(0 0% 95%) !important; }
+.flat-variant .bg-gaming-darker { background-color: hsl(0 0% 92%) !important; }
+
+/* Override gaming color variants */
+.flat-variant .bg-gaming-cyan\/10 { background-color: hsl(0 0% 95%) !important; }
+.flat-variant .bg-gaming-cyan\/20 { background-color: hsl(0 0% 92%) !important; }
+.flat-variant .bg-gaming-purple\/50 { background-color: hsl(0 0% 88%) !important; }
+.flat-variant .bg-gaming-orange\/20 { background-color: hsl(0 0% 95%) !important; }
+.flat-variant .bg-gaming-darker\/50 { background-color: hsl(0 0% 96%) !important; }
+
+/* Override gaming borders */
+.flat-variant .border-gaming-cyan { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-purple { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-orange { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-cyan\/20 { border-color: hsl(0 0% 90%) !important; }
+.flat-variant .border-gaming-purple\/50 { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-orange\/40 { border-color: hsl(0 0% 85%) !important; }
+
+/* Remove all gradients */
+.flat-variant .bg-gradient-primary { background: hsl(0 0% 25%) !important; }
+.flat-variant .bg-gradient-gaming { background: hsl(0 0% 35%) !important; }
+.flat-variant .bg-gradient-tech { background: hsl(0 0% 30%) !important; }
+.flat-variant .bg-gradient-card { background: hsl(0 0% 98%) !important; }
+.flat-variant .bg-gradient-cta { background: hsl(0 0% 25%) !important; }
+
+/* Remove gradient text effects */
+.flat-variant .bg-gradient-primary.bg-clip-text { 
+  background: none !important;
+  color: hsl(0 0% 25%) !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
 }
 
+.flat-variant .bg-gradient-gaming.bg-clip-text { 
+  background: none !important;
+  color: hsl(0 0% 35%) !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+/* Override all shadow classes */
 .flat-variant [class*="shadow-glow"],
-.flat-variant [class*="shadow-tech"] {
-  box-shadow: var(--shadow-tech) !important;
+.flat-variant [class*="shadow-tech"],
+.flat-variant [class*="shadow-neon"],
+.flat-variant [class*="shadow-gaming"],
+.flat-variant [class*="shadow-elevated"],
+.flat-variant [class*="shadow-card"] {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
 }
 
-.flat-variant [class*="hover:scale-"] {
-  transform: none !important;
+/* Remove all animations and transforms */
+.flat-variant [class*="animate-pulse"],
+.flat-variant [class*="animate-glow"],
+.flat-variant .animate-pulse-glow {
+  animation: none !important;
 }
 
-.flat-variant [class*="hover:scale-"]:hover {
-  transform: none !important;
+.flat-variant [class*="hover:scale-"] { transform: none !important; }
+.flat-variant [class*="hover:scale-"]:hover { transform: none !important; }
+
+/* Override backdrop blur effects */
+.flat-variant [class*="backdrop-blur"] { backdrop-filter: none !important; }
+
+/* Ensure buttons have proper flat styling */
+.flat-variant .bg-primary { 
+  background: hsl(0 0% 25%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+.flat-variant .bg-primary:hover { 
+  background: hsl(0 0% 20%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
 }
 
 @layer base {
