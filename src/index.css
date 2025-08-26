@@ -444,6 +444,70 @@ All colors MUST be HSL for proper theming.
   }
 }
 
+/* Flat Variant - Minimal White & Gray Design */
+.flat-variant {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 15%;
+  --card: 0 0% 98%;
+  --card-foreground: 0 0% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 15%;
+  --primary: 0 0% 25%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 95%;
+  --secondary-foreground: 0 0% 25%;
+  --muted: 0 0% 95%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 0 0% 92%;
+  --accent-foreground: 0 0% 25%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --ring: 0 0% 25%;
+  --radius: 0.5rem;
+
+  /* Remove gaming colors */
+  --gaming-dark: 0 0% 95%;
+  --gaming-darker: 0 0% 92%;
+  --gaming-cyan: 0 0% 45%;
+  --gaming-purple: 0 0% 35%;
+  --gaming-orange: 0 0% 40%;
+
+  /* Flat design overrides */
+  --shadow-tech: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --gradient-primary: linear-gradient(135deg, hsl(0 0% 25%), hsl(0 0% 35%));
+  --gradient-tech: linear-gradient(135deg, hsl(0 0% 30%), hsl(0 0% 40%));
+
+  /* Remove all gradients and effects */
+  background: hsl(var(--background));
+}
+
+.flat-variant * {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+}
+
+.flat-variant .bg-gradient-primary,
+.flat-variant .bg-gradient-tech {
+  background: hsl(var(--primary)) !important;
+}
+
+.flat-variant [class*="shadow-glow"],
+.flat-variant [class*="shadow-tech"] {
+  box-shadow: var(--shadow-tech) !important;
+}
+
+.flat-variant [class*="hover:scale-"] {
+  transform: none !important;
+}
+
+.flat-variant [class*="hover:scale-"]:hover {
+  transform: none !important;
+}
+}
+
 @layer base {
   * {
     @apply border-border;

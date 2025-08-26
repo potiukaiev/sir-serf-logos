@@ -10,7 +10,7 @@ export const VariantWrapper = ({ children }: VariantWrapperProps) => {
   const variant = useVariant();
 
   return (
-    <div className={variant === 'B' ? 'glass-variant' : ''}>
+    <div className={variant === 'B' ? 'glass-variant' : variant === 'C' ? 'flat-variant' : ''}>
       {children}
       <ThemePicker />
     </div>

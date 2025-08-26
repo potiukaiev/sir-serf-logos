@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useVariant } from '@/hooks/useVariant';
 
-type Variant = 'A' | 'B';
+type Variant = 'A' | 'B' | 'C';
 
 export const ThemeSelector = () => {
   const variant = useVariant();
@@ -33,6 +33,13 @@ export const ThemeSelector = () => {
       icon: Crown,
       description: 'Dota 2 premium with gold & glassmorphism',
       color: 'text-gaming-orange'
+    },
+    { 
+      value: 'C' as Variant, 
+      label: 'Minimal Flat', 
+      icon: Palette,
+      description: 'Clean white & gray flat design',
+      color: 'text-gray-600'
     }
   ];
 
@@ -54,9 +61,11 @@ export const ThemeSelector = () => {
           size="sm" 
           className={`
             flex items-center gap-2 px-3 h-8
-            ${variant === 'B' ? 
-              'border-gaming-cyan/20 bg-gaming-darker/50 text-gaming-cyan hover:bg-gaming-cyan/10' : 
-              'border-gaming-cyan/20 bg-gaming-dark/50 text-gaming-cyan hover:bg-gaming-cyan/10'
+            ${variant === 'C' ? 
+              'border-gray-300 bg-white text-gray-700 hover:bg-gray-50' : 
+              variant === 'B' ? 
+                'border-gaming-cyan/20 bg-gaming-darker/50 text-gaming-cyan hover:bg-gaming-cyan/10' : 
+                'border-gaming-cyan/20 bg-gaming-dark/50 text-gaming-cyan hover:bg-gaming-cyan/10'
             }
           `}
         >
@@ -68,9 +77,11 @@ export const ThemeSelector = () => {
         align="end" 
         className={`
           w-64
-          ${variant === 'B' ? 
-            'bg-gaming-darker border-gaming-cyan/20 backdrop-blur-md' : 
-            'bg-gaming-dark border-gaming-cyan/20'
+          ${variant === 'C' ? 
+            'bg-white border-gray-200 shadow-lg' : 
+            variant === 'B' ? 
+              'bg-gaming-darker border-gaming-cyan/20 backdrop-blur-md' : 
+              'bg-gaming-dark border-gaming-cyan/20'
           }
         `}
       >

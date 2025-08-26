@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-type Variant = 'A' | 'B';
+type Variant = 'A' | 'B' | 'C';
 
 export const useVariant = (): Variant => {
   const [variant, setVariant] = useState<Variant>(() => {
@@ -17,7 +17,8 @@ export const useVariant = (): Variant => {
       setVariant(savedVariant);
     } else {
       // Randomly assign variant
-      const randomVariant: Variant = Math.random() < 0.5 ? 'A' : 'B';
+      const random = Math.random();
+      const randomVariant: Variant = random < 0.33 ? 'A' : random < 0.66 ? 'B' : 'C';
       localStorage.setItem('ab-variant', randomVariant);
       setVariant(randomVariant);
     }
