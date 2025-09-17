@@ -1,0 +1,612 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CaseHunters Gaming Design System - CS2/Gaming Aesthetic
+All colors MUST be HSL for proper theming.
+*/
+
+@layer base {
+  :root {
+    /* Gaming Dark Theme - Light mode fallback */
+    --background: 220 39% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 28% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 28% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    /* CS2 Inspired Colors */
+    --primary: 191 85% 56%; /* Neon cyan */
+    --primary-foreground: 220 39% 11%;
+    --primary-glow: 191 85% 70%;
+
+    --secondary: 220 28% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 28% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 264 83% 70%; /* Purple accent */
+    --accent-foreground: 220 39% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 28% 25%;
+    --input: 220 28% 20%;
+    --ring: 191 85% 56%;
+
+    /* CS2 Skin Rarity Colors */
+    --rarity-consumer: 176 25% 88%; /* Consumer White */
+    --rarity-industrial: 191 85% 56%; /* Industrial Light Blue */
+    --rarity-milspec: 217 91% 60%; /* Mil-Spec Blue */
+    --rarity-restricted: 264 83% 70%; /* Restricted Purple */
+    --rarity-classified: 295 100% 70%; /* Classified Pink/Magenta */
+    --rarity-covert: 0 84% 60%; /* Covert Red */
+    --rarity-knife: 45 100% 60%; /* Knife/Glove Gold */
+
+    /* Gaming Color Palette */
+    --gaming-cyan: 191 85% 56%;
+    --gaming-purple: 264 83% 70%;
+    --gaming-magenta: 295 100% 70%;
+    --gaming-orange: 20 100% 60%;
+    --gaming-green: 120 100% 50%;
+    --gaming-dark: 220 39% 11%;
+    --gaming-darker: 220 39% 8%;
+    
+    /* Neon Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gaming-cyan)), hsl(var(--gaming-purple)));
+    --gradient-gaming: linear-gradient(135deg, hsl(var(--gaming-purple)), hsl(var(--gaming-magenta)));
+    --gradient-rarity: linear-gradient(135deg, hsl(var(--rarity-classified)), hsl(var(--rarity-covert)));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--gaming-darker)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--gaming-cyan)), hsl(var(--gaming-orange)));
+    
+    /* Gaming Shadows & Glows */
+    --shadow-neon: 0 0 30px hsl(var(--gaming-cyan) / 0.5);
+    --shadow-purple: 0 0 30px hsl(var(--gaming-purple) / 0.3);
+    --shadow-gaming: 0 25px 50px -12px hsl(var(--gaming-cyan) / 0.25);
+    --shadow-card: 0 4px 20px hsl(220 39% 8% / 0.4);
+    --shadow-elevated: 0 10px 40px hsl(220 39% 8% / 0.6);
+    
+    /* Gaming Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glow: all 0.3s ease-in-out;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 39% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 28% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 28% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 39% 11%;
+    --primary-glow: 217 91% 70%;
+
+    --secondary: 220 28% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 28% 16%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 264 83% 70%;
+    --accent-foreground: 220 39% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Glassmorphism Premium Theme Overrides */
+  .glass-variant {
+    /* Complete color system overhaul for glass theme */
+    --background: 240 12% 6%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 47 96% 53%;
+    --primary-foreground: 240 10% 8%;
+    --secondary: 240 8% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 6% 14%;
+    --muted-foreground: 240 5% 64%;
+    --accent: 240 8% 12%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 240 8% 18%;
+    --input: 240 8% 18%;
+    --ring: 47 96% 53%;
+    
+    /* Complete gaming color overrides */
+    --gaming-cyan: 47 96% 53%;
+    --gaming-purple: 280 90% 65%;
+    --gaming-orange: 30 95% 55%;
+    --gaming-green: 120 80% 45%;
+    --gaming-pink: 320 90% 65%;
+    --gaming-blue: 220 85% 60%;
+    --gaming-darker: 240 12% 4%;
+    --gaming-dark: 240 12% 6%;
+    
+    /* Glass-specific colors */
+    --glass-gold: 47 96% 53%;
+    --glass-platinum: 0 0% 85%;
+    --glass-silver: 0 0% 75%;
+    --glass-bronze: 30 85% 55%;
+    --glass-surface: 240 10% 8%;
+    --glass-accent: 200 100% 80%;
+    
+    /* Glass gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(47 96% 53%), hsl(30 85% 55%));
+    --gradient-gaming: linear-gradient(135deg, hsl(47 96% 53% / 0.8), hsl(200 100% 80% / 0.6));
+    --gradient-background: radial-gradient(ellipse at top, hsl(240 15% 9%), hsl(240 12% 4%));
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 8% / 0.9), hsl(240 8% 12% / 0.7));
+    --gradient-cta: linear-gradient(135deg, hsl(47 96% 53%), hsl(200 100% 80%));
+    
+    /* Glass shadows */
+    --shadow-neon: 0 8px 32px hsl(47 96% 53% / 0.4), 0 0 0 1px hsl(47 96% 53% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3), 0 0 0 1px hsl(240 8% 18%);
+    --shadow-elevated: 0 20px 40px hsl(0 0% 0% / 0.4), 0 0 0 1px hsl(47 96% 53% / 0.1);
+  }
+
+  .glass-variant {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: hsl(220 39% 8%); /* Dark black background for golden theme */
+  }
+
+  /* Black background for golden theme body */
+  .glass-variant body {
+    background: hsl(220 39% 8%);
+  }
+
+  /* Logo fixes for glass variant - ONLY for logos, not text */
+  .glass-variant .bg-gradient-gaming:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    background: linear-gradient(135deg, 
+      hsl(47 96% 53% / 0.9), 
+      hsl(200 100% 80% / 0.8)) !important;
+    border: 2px solid hsl(47 96% 53% / 0.6) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-neon);
+  }
+  
+  /* Fix header overlap - remove golden borders/shadows on headers */
+  .glass-variant header,
+  .glass-variant .sticky {
+    box-shadow: none !important;
+    border-bottom: 1px solid hsl(240 8% 18%) !important;
+    background: hsl(240 10% 8% / 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  /* Ensure text content has proper z-index and background */
+  .glass-variant h1,
+  .glass-variant h2,
+  .glass-variant h3,
+  .glass-variant h4,
+  .glass-variant h5,
+  .glass-variant h6,
+  .glass-variant p,
+  .glass-variant span,
+  .glass-variant div {
+    position: relative;
+    z-index: 10;
+    background: transparent !important;
+  }
+
+  /* Fix any remaining golden elements - MORE SPECIFIC */
+  .glass-variant .shadow-neon,
+  .glass-variant .shadow-gaming,
+  .glass-variant .shadow-elevated {
+    box-shadow: var(--shadow-glass) !important;
+  }
+
+  /* Override any gaming-themed colors that might be causing golden lines */
+  .glass-variant .border-gaming-cyan,
+  .glass-variant .border-gaming-cyan\/20,
+  .glass-variant .border-gaming-cyan\/30,
+  .glass-variant .border-gaming-cyan\/40 {
+    border-color: hsl(240 8% 18%) !important;
+  }
+
+  /* Remove golden glows from all elements */
+  .glass-variant .animate-pulse-glow,
+  .glass-variant [class*="glow"] {
+    animation: none !important;
+    box-shadow: none !important;
+  }
+
+  .glass-variant .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(47 96% 53%), hsl(200 100% 80%)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+
+  /* Fix the golden line issue on headings with bg-gradient-gaming */
+  .glass-variant h1.bg-gradient-gaming,
+  .glass-variant h2.bg-gradient-gaming,
+  .glass-variant h3.bg-gradient-gaming,
+  .glass-variant h4.bg-gradient-gaming,
+  .glass-variant h5.bg-gradient-gaming,
+  .glass-variant h6.bg-gradient-gaming {
+    background: linear-gradient(135deg, hsl(47 96% 53%), hsl(200 100% 80%)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Card styles for glass variant */
+  .glass-variant .bg-card {
+    background: linear-gradient(135deg, 
+      hsl(240 10% 8% / 0.95), 
+      hsl(240 8% 12% / 0.85)) !important;
+    backdrop-filter: blur(25px) !important;
+    border: 1px solid hsl(47 96% 53% / 0.2) !important;
+    box-shadow: var(--shadow-glass) !important;
+  }
+
+  /* Button overrides for glass variant */
+  .glass-variant .bg-gradient-cta {
+    background: hsl(47 96% 53%) !important;
+    box-shadow: 0 4px 20px hsl(47 96% 53% / 0.3) !important;
+  }
+
+  .glass-variant .bg-primary {
+    background: hsl(47 96% 53%) !important;
+    box-shadow: 0 4px 15px hsl(47 96% 53% / 0.4) !important;
+  }
+
+  /* Enhanced button styling for golden theme (variant B) */
+  .glass-variant .bg-gradient-cta {
+    background: hsl(47 96% 53%) !important;
+    border: 2px solid hsl(47 96% 53% / 0.8) !important;
+    box-shadow: 0 4px 20px hsl(47 96% 53% / 0.3), 0 0 0 1px hsl(47 96% 53% / 0.2) !important;
+    color: hsl(240 10% 8%) !important;
+    font-weight: 600 !important;
+  }
+
+  .glass-variant .bg-gradient-cta:hover {
+    background: hsl(47 96% 58%) !important;
+    box-shadow: 0 6px 25px hsl(47 96% 53% / 0.4), 0 0 0 2px hsl(47 96% 53% / 0.3) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Read Review button styling for golden theme - golden text always */
+  .glass-variant .border-gaming-purple,
+  .glass-variant .text-gaming-purple {
+    background: linear-gradient(135deg, hsl(240 10% 8% / 0.8), hsl(240 8% 12% / 0.6)) !important;
+    border: 2px solid hsl(47 96% 53%) !important;
+    color: hsl(47 96% 53%) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 15px hsl(47 96% 53% / 0.2), 0 0 0 1px hsl(47 96% 53% / 0.1) !important;
+    font-weight: 500 !important;
+  }
+
+  .glass-variant .border-gaming-purple:hover,
+  .glass-variant .text-gaming-purple:hover {
+    background: linear-gradient(135deg, hsl(47 96% 53% / 0.15), hsl(240 8% 12% / 0.8)) !important;
+    border-color: hsl(47 96% 53%) !important;
+    color: hsl(47 96% 53%) !important;
+    box-shadow: 0 6px 20px hsl(47 96% 53% / 0.3), 0 0 0 2px hsl(47 96% 53% / 0.2) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Text color overrides */
+  .glass-variant .text-gaming-cyan {
+    color: hsl(47 96% 53%) !important;
+  }
+
+  .glass-variant .text-gaming-orange {
+    color: hsl(280 90% 65%) !important;
+  }
+
+  .glass-variant .text-gaming-green {
+    color: hsl(120 80% 45%) !important;
+  }
+
+  /* This rule is now handled above in the button section */
+
+  .glass-variant .bg-gaming-orange {
+    background-color: hsl(280 90% 65%) !important;
+  }
+
+  .glass-variant .bg-gaming-orange\/20 {
+    background-color: hsl(280 90% 65% / 0.2) !important;
+  }
+
+  .glass-variant .border-gaming-orange\/40 {
+    border-color: hsl(280 90% 65% / 0.4) !important;
+  }
+
+  /* Enhanced promocode section styling for golden theme - purple accents */
+  .glass-variant .bg-gaming-orange\/20 {
+    background: linear-gradient(135deg, hsl(280 90% 65% / 0.15), hsl(280 90% 65% / 0.25)) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid hsl(280 90% 65% / 0.5) !important;
+    box-shadow: 0 4px 15px hsl(280 90% 65% / 0.2), 0 0 0 1px hsl(280 90% 65% / 0.1) !important;
+  }
+
+  .glass-variant .bg-gaming-darker\/50 {
+    background: linear-gradient(135deg, 
+      hsl(240 12% 4% / 0.9), 
+      hsl(240 10% 6% / 0.8)) !important;
+    backdrop-filter: blur(15px) !important;
+  }
+
+  /* This border rule is now handled above in the button section */
+
+  .glass-variant .animate-pulse-glow {
+    animation: glass-glow 3s ease-in-out infinite alternate;
+  }
+
+  /* Special glass effects */
+  .glass-variant .shadow-neon {
+    box-shadow: var(--shadow-neon) !important;
+  }
+
+  .glass-variant .shadow-gaming {
+    box-shadow: var(--shadow-elevated) !important;
+  }
+
+  /* Remove this override to allow parallax background */
+  .glass-variant .bg-background {
+    background: transparent !important;
+  }
+
+  /* COMPREHENSIVE GOLDEN LINE FIX - Override ALL possible sources */
+  .glass-variant *::before,
+  .glass-variant *::after {
+    border-color: hsl(240 8% 18%) !important;
+    box-shadow: none !important;
+  }
+
+  .glass-variant .bg-gradient-gaming::before,
+  .glass-variant .bg-gradient-gaming::after {
+    content: none !important;
+  }
+
+  /* Force remove all golden/cyan borders */
+  .glass-variant [class*="border-gaming"],
+  .glass-variant [class*="border-cyan"] {
+    border-color: hsl(240 8% 18%) !important;
+  }
+
+  @keyframes glass-glow {
+    0% { 
+      box-shadow: 0 0 25px hsl(47 96% 53% / 0.4),
+                  0 0 0 1px hsl(47 96% 53% / 0.3);
+    }
+    100% { 
+      box-shadow: 0 0 40px hsl(47 96% 53% / 0.7),
+                  0 0 0 1px hsl(47 96% 53% / 0.5);
+    }
+  }
+
+  /* Theme and Language Selector Styling */
+  .glass-variant [data-radix-popper-content-wrapper] {
+    z-index: 1000 !important;
+  }
+
+  .glass-variant .bg-gaming-darker {
+    background: linear-gradient(135deg, hsl(240 10% 8% / 0.95), hsl(240 8% 12% / 0.9)) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid hsl(47 96% 53% / 0.2) !important;
+    box-shadow: var(--shadow-glass) !important;
+  }
+
+  .glass-variant .bg-gaming-dark {
+    background: linear-gradient(135deg, hsl(240 10% 8% / 0.9), hsl(240 8% 12% / 0.8)) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid hsl(47 96% 53% / 0.15) !important;
+  }
+
+  /* Special styling for theme selector in golden variant */
+  .glass-variant .text-gaming-orange {
+    color: hsl(47 96% 53%) !important;
+  }
+
+  .glass-variant [data-radix-dropdown-menu-content] {
+    border: 1px solid hsl(47 96% 53% / 0.3) !important;
+    box-shadow: 0 8px 32px hsl(47 96% 53% / 0.2), 0 0 0 1px hsl(47 96% 53% / 0.1) !important;
+  }
+}
+
+/* Flat Variant - Minimal White & Gray Design */
+.flat-variant {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 15%;
+  --card: 0 0% 98%;
+  --card-foreground: 0 0% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 15%;
+  --primary: 0 0% 25%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 95%;
+  --secondary-foreground: 0 0% 25%;
+  --muted: 0 0% 95%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 0 0% 92%;
+  --accent-foreground: 0 0% 25%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --ring: 0 0% 25%;
+  --radius: 0.5rem;
+
+  /* Override all gaming colors with flat equivalents */
+  --gaming-dark: 0 0% 95%;
+  --gaming-darker: 0 0% 92%;
+  --gaming-cyan: 0 0% 25%;        /* Dark gray instead of cyan */
+  --gaming-purple: 0 0% 35%;      /* Medium gray instead of purple */
+  --gaming-orange: 0 0% 45%;      /* Light gray instead of orange */
+  --gaming-green: 0 0% 40%;       /* Gray instead of green */
+  --gaming-magenta: 0 0% 30%;     /* Dark gray instead of magenta */
+
+  /* Flat design overrides - minimal shadows */
+  --shadow-tech: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-neon: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-gaming: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-elevated: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+  /* Remove all gradients */
+  --gradient-primary: none;
+  --gradient-gaming: none;
+  --gradient-tech: none;
+  --gradient-card: none;
+  --gradient-cta: none;
+  --gradient-background: none;
+
+  /* Flat background */
+  background: hsl(var(--background));
+}
+
+/* Override all element shadows */
+.flat-variant * {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+}
+
+/* Override gaming color classes */
+.flat-variant .text-gaming-cyan { color: hsl(0 0% 25%) !important; }
+.flat-variant .text-gaming-purple { color: hsl(0 0% 35%) !important; }
+.flat-variant .text-gaming-orange { color: hsl(0 0% 45%) !important; }
+.flat-variant .text-gaming-green { color: hsl(120 80% 35%) !important; } /* Keep green for flat theme */
+
+.flat-variant .bg-gaming-cyan { background-color: hsl(0 0% 25%) !important; }
+.flat-variant .bg-gaming-purple { background-color: hsl(0 0% 35%) !important; }
+.flat-variant .bg-gaming-orange { background-color: hsl(0 0% 45%) !important; }
+.flat-variant .bg-gaming-green { background-color: hsl(120 80% 35%) !important; } /* Keep green for flat theme */
+.flat-variant .bg-gaming-dark { background-color: hsl(0 0% 95%) !important; }
+.flat-variant .bg-gaming-darker { background-color: hsl(0 0% 92%) !important; }
+
+/* Override gaming color variants */
+.flat-variant .bg-gaming-cyan\/10 { background-color: hsl(0 0% 95%) !important; }
+.flat-variant .bg-gaming-cyan\/20 { background-color: hsl(0 0% 92%) !important; }
+.flat-variant .bg-gaming-purple\/50 { background-color: hsl(0 0% 88%) !important; }
+.flat-variant .bg-gaming-orange\/20 { background-color: hsl(0 0% 95%) !important; }
+.flat-variant .bg-gaming-darker\/50 { background-color: hsl(0 0% 96%) !important; }
+
+/* Override gaming borders */
+.flat-variant .border-gaming-cyan { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-purple { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-orange { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-cyan\/20 { border-color: hsl(0 0% 90%) !important; }
+.flat-variant .border-gaming-purple\/50 { border-color: hsl(0 0% 88%) !important; }
+.flat-variant .border-gaming-orange\/40 { border-color: hsl(0 0% 85%) !important; }
+
+/* CTA button backgrounds should be green in flat variant */
+.flat-variant .bg-gradient-cta { 
+  background: hsl(120 80% 35%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+.flat-variant .bg-gradient-cta:hover { 
+  background: hsl(120 80% 30%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Top 10 Sidebar styling for flat variant */
+.flat-variant .bg-gaming-darker\/30 { background: hsl(0 0% 96%) !important; }
+.flat-variant .bg-gaming-darker\/50 { background: hsl(0 0% 92%) !important; }
+
+/* Remove all gradients */
+.flat-variant .bg-gradient-primary { background: hsl(0 0% 25%) !important; }
+.flat-variant .bg-gradient-gaming { background: hsl(0 0% 35%) !important; }
+.flat-variant .bg-gradient-tech { background: hsl(0 0% 30%) !important; }
+.flat-variant .bg-gradient-card { background: hsl(0 0% 98%) !important; }
+.flat-variant .bg-gradient-cta { background: hsl(120 80% 35%) !important; }
+
+/* Remove gradient text effects */
+.flat-variant .bg-gradient-primary.bg-clip-text { 
+  background: none !important;
+  color: hsl(0 0% 25%) !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+.flat-variant .bg-gradient-gaming.bg-clip-text { 
+  background: none !important;
+  color: hsl(0 0% 35%) !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+/* Override all shadow classes */
+.flat-variant [class*="shadow-glow"],
+.flat-variant [class*="shadow-tech"],
+.flat-variant [class*="shadow-neon"],
+.flat-variant [class*="shadow-gaming"],
+.flat-variant [class*="shadow-elevated"],
+.flat-variant [class*="shadow-card"] {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Remove all animations and transforms */
+.flat-variant [class*="animate-pulse"],
+.flat-variant [class*="animate-glow"],
+.flat-variant .animate-pulse-glow {
+  animation: none !important;
+}
+
+.flat-variant [class*="hover:scale-"] { transform: none !important; }
+.flat-variant [class*="hover:scale-"]:hover { transform: none !important; }
+
+/* Override backdrop blur effects */
+.flat-variant [class*="backdrop-blur"] { backdrop-filter: none !important; }
+
+/* Ensure buttons have proper flat styling */
+.flat-variant .bg-primary { 
+  background: hsl(0 0% 25%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+.flat-variant .bg-primary:hover { 
+  background: hsl(0 0% 20%) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
