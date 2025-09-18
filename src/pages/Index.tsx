@@ -203,6 +203,9 @@ const Index = () => {
             <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">
               Categories
             </Link>
+            <Link to="/top-sites" className="text-foreground hover:text-gaming-cyan transition-colors">
+              Top 10 Sites
+            </Link>
             <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">
               About Us
             </Link>

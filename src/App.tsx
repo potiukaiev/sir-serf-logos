@@ -11,6 +11,7 @@ import Sites from "./pages/Sites";
 import Categories from "./pages/Categories";
 import About from "./pages/About";
 import SiteReview from "./pages/SiteReview";
+import TopSites from "./pages/TopSites";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const AppContent = () => {
       <Route path="/sites" element={<Sites />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/about" element={<About />} />
+      <Route path="/top-sites" element={<TopSites />} />
       <Route path="/review/:siteId" element={<SiteReview />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />

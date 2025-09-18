@@ -105,7 +105,9 @@ export const Top10Sidebar = () => {
           <CardHeader className="pb-4">
             <CardTitle className="flex items-center gap-2 text-lg">
               <TrendingUp className="w-5 h-5 text-gaming-cyan" />
-              Top 10 Gaming Sites
+              <Link to="/top-sites" className="hover:text-gaming-cyan transition-colors">
+                Top 10 Gaming Sites
+              </Link>
             </CardTitle>
             <p className="text-sm text-muted-foreground">
               Ranked by user ratings and popularity
