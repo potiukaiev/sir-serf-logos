@@ -104,5 +104,135 @@
     "settings": "Ustawienia",
     "theme": "Motyw",
     "language": "Język"
+  },
+  "faq": {
+    "pageTitle": "FAQ - Często Zadawane Pytania | CaseHunters",
+    "pageDescription": "Uzyskaj odpowiedzi na częste pytania o strony case CS2 i Dota 2, bonusy, wypłaty, bezpieczeństwo i więcej. Wszystko co musisz wiedzieć o platformach skin gaming.",
+    "pageKeywords": "FAQ strony case CS2, pytania strony gaming, pomoc skin gambling, przewodnik otwierania case, FAQ wypłat, pytania bonusy",
+    "title": "Często Zadawane Pytania",
+    "subtitle": "Znajdź odpowiedzi na najczęstsze pytania o strony case CS2 i Dota 2, bonusy, wypłaty i bezpieczeństwo platform gaming.",
+    "stillHaveQuestions": "Nadal Masz Pytania?",
+    "contactDescription": "Jeśli nie możesz znaleźć odpowiedzi, której szukasz, skontaktuj się z naszym zespołem. Jesteśmy tutaj, aby pomóc Ci bezpiecznie nawigować w świecie stron gaming case.",
+    "contactSupport": "Skontaktuj się z Wsparciem",
+    "whatAreCS2Sites": {
+      "question": "Czym są strony case CS2?",
+      "answer": "Strony case CS2 to platformy online, gdzie możesz otwierać wirtualne case'y, aby wygrać skiny i przedmioty CS2 (Counter-Strike 2). Te strony symulują doświadczenie otwierania case'ów z gry z różnymi nagrodami kosmetycznymi."
+    },
+    "areSitesSafe": {
+      "question": "Czy te strony są bezpieczne i legalne?",
+      "answer": "Prezentujemy tylko zweryfikowane i licencjonowane platformy, które spełniają rygorystyczne standardy bezpieczeństwa. Wszystkie wymienione strony przechodzą dokładne procesy przeglądu, w tym audyty bezpieczeństwa, weryfikację uczciwej gry i analizę opinii użytkowników."
+    },
+    "howBonusesWork": {
+      "question": "Jak działają bonusy?",
+      "answer": "Większość stron oferuje bonusy powitalne od 50% do 500% pierwszego depozytu, plus darmowe spiny lub case'y. Bonusy mają zazwyczaj wymagania obrotu i specyficzne warunki, które różnią się w zależności od platformy."
+    },
+    "canWithdraw": {
+      "question": "Czy mogę wypłacić moje wygrane?",
+      "answer": "Tak, wszystkie polecane strony obsługują wypłaty na konta Steam lub platformy marketplace stron trzecich. Metody wypłat, czasy przetwarzania i minimalne kwoty różnią się w zależności od platformy. Sprawdź konkretne zasady wypłat każdej strony."
+    },
+    "paymentMethods": {
+      "question": "Jakie metody płatności są akceptowane?",
+      "answer": "Większość stron akceptuje kryptowaluty (Bitcoin, Ethereum), przedmioty Steam, PayPal, karty kredytowe i różne e-portfele. Opcje płatności różnią się w zależności od platformy i regionu."
+    },
+    "howRateSites": {
+      "question": "Jak oceniacie i rankingujecie strony?",
+      "answer": "Nasze rankingi opierają się na wielu czynnikach, w tym ocenach użytkowników, środkach bezpieczeństwa, wartości bonusów, szybkości wypłat, jakości obsługi klienta, różnorodności gier i ogólnym doświadczeniu użytkownika."
+    },
+    "ageRestrictions": {
+      "question": "Czy są ograniczenia wiekowe?",
+      "answer": "Tak, musisz mieć 18 lat lub więcej (lub legalny wiek hazardowy w twojej jurysdykcji), aby korzystać z tych platform. Wszystkie renomowane strony wymagają weryfikacji wieku podczas rejestracji."
+    },
+    "provablyFair": {
+      "question": "Co to jest prowably fair gaming?",
+      "answer": "Provably fair to system kryptograficzny, który pozwala graczom zweryfikować, że wyniki gier są losowe i nie manipulowane. Zapewnia przejrzystość i gwarantuje uczciwą grę na platformach gaming."
+    },
+    "mobilePlay": {
+      "question": "Czy mogę grać na urządzeniach mobilnych?",
+      "answer": "Większość nowoczesnych stron case jest zoptymalizowana dla przeglądarek mobilnych lub oferuje dedykowane aplikacje mobilne dla urządzeń iOS i Android. Rozgrywka mobilna oferuje te same funkcje co wersje desktopowe."
+    },
+    "siteIssues": {
+      "question": "Co powinienem zrobić, jeśli mam problemy ze stroną?",
+      "answer": "Najpierw skontaktuj się bezpośrednio z obsługą klienta strony. Jeśli problemy utrzymują się, możesz zgłosić nam problemy przez nasz formularz kontaktowy, a my zbadamy i zaktualizujemy nasze recenzje odpowiednio."
+    }
+  },
+  "responsibleGambling": {
+    "pageTitle": "Odpowiedzialne Hazard | Bezpieczne Praktyki Gaming | CaseHunters",
+    "pageDescription": "Naucz się odpowiedzialnych praktyk hazardowych, sygnałów ostrzegawczych problematycznego hazardu i gdzie uzyskać pomoc. Bądź bezpieczny podczas korzystania ze stron case CS2 i Dota 2.",
+    "pageKeywords": "odpowiedzialny hazard, pomoc problematyczny hazard, bezpieczne praktyki gaming, wsparcie uzależnienie hazard, bezpieczeństwo stron gaming",
+    "title": "Odpowiedzialne Hazard",
+    "subtitle": "Gaming powinien być zabawą i rozrywką. Naucz się, jak pozostać bezpiecznym, ustalić granice i rozpoznać, kiedy gaming staje się problemem.",
+    "importantAlert": "Ważne: Otwieranie case'ów i skin gambling mogą być uzależniające. Uczestniczy tylko, jeśli masz 18+ lat i możesz pozwolić sobie na potencjalne straty.",
+    "safeGamingPractices": "Bezpieczne Praktyki Gaming",
+    "warningSignsTitle": "Sygnały Ostrzegawcze Problematycznego Hazardu",
+    "recognizeSigns": "Rozpoznaj Sygnały",
+    "warningSignsDescription": "Jeśli ty lub ktoś, kogo znasz, doświadcza któregoś z tych sygnałów, może to wskazywać na problem hazardowy:",
+    "selfAssessmentTitle": "Samoocena i Narzędzia",
+    "getHelpTitle": "Uzyskaj Pomoc i Wsparcie",
+    "needImmediateHelp": "Potrzebujesz Natychmiastowej Pomocy?",
+    "crisisDescription": "Jeśli doświadczasz kryzysu hazardowego lub masz myśli o samookaleczeniu, proszę szukaj natychmiastowego wsparcia.",
+    "crisisHelpline": "Linia Kryzysowa: 988",
+    "chatSupport": "Wsparcie Chat",
+    "visitSite": "Odwiedź Stronę",
+    "warningSigns": {
+      "spending": "Wydawanie więcej pieniędzy niż możesz sobie pozwolić",
+      "chasing": "Gonenie strat większymi zakładami",
+      "neglecting": "Zaniedbywanie pracy, rodziny lub działań społecznych",
+      "borrowing": "Pożyczanie pieniędzy na hazard",
+      "lying": "Kłamanie o działaniach hazardowych",
+      "anxious": "Czucie się niespokojnym, gdy nie grasz",
+      "unableControl": "Niezdolność kontrolowania impulsów hazardowych"
+    },
+    "safePractices": {
+      "setBudgetLimits": {
+        "title": "Ustaw Limity Budżetu",
+        "description": "Graj tylko z pieniędzmi, na których utratę możesz sobie pozwolić. Nigdy nie używaj pieniędzy przeznaczonych na rachunki, czynsz lub potrzeby."
+      },
+      "timeManagement": {
+        "title": "Zarządzanie Czasem",
+        "description": "Ustaw limity czasowe dla sesji gaming i trzymaj się ich. Rób regularne przerwy i nie pozwól, aby gaming zakłócało codzienne obowiązki."
+      },
+      "useSafetyTools": {
+        "title": "Używaj Narzędzi Bezpieczeństwa",
+        "description": "Skorzystaj z limitów depozytów, okresów chłodzenia i opcji samowykluczenia oferowanych przez platformy gaming."
+      },
+      "stayConnected": {
+        "title": "Pozostań Połączony",
+        "description": "Utrzymuj relacje z rodziną i przyjaciółmi. Nie izoluj się ani nie pozwól, aby gaming stał się twoją główną aktywnością społeczną."
+      }
+    },
+    "setLimits": {
+      "title": "Ustaw Swoje Granice",
+      "description": "Zanim zaczniesz grać, zdecyduj o swoich granicach i trzymaj się ich:",
+      "dailyWeekly": "Dzienny/tygodniowy limit wydatków",
+      "timeLimit": "Limit czasowy na sesję",
+      "lossLimit": "Limit strat (zatrzymaj się gdy osiągnięty)",
+      "neverChase": "Nigdy nie goń strat"
+    },
+    "platformSafety": {
+      "title": "Funkcje Bezpieczeństwa Platformy",
+      "description": "Używaj wbudowanych narzędzi bezpieczeństwa oferowanych przez platformy gaming:",
+      "depositLimits": "Limity depozytów",
+      "timeLimits": "Limity czasowe i przypomnienia sesji",
+      "coolingOff": "Okresy chłodzenia",
+      "selfExclusion": "Opcje samowykluczenia"
+    },
+    "supportResources": {
+      "ncpg": {
+        "name": "Narodowa Rada ds. Problematycznego Hazardu",
+        "description": "24/7 poufna linia pomocowa i wsparcie chat"
+      },
+      "ga": {
+        "name": "Hazardziści Anonimowi",
+        "description": "Grupy wsparcia i programy odzyskiwania"
+      },
+      "gamcare": {
+        "name": "GamCare",
+        "description": "Usługi wsparcia i poradnictwa z UK"
+      },
+      "begambleaware": {
+        "name": "BeGambleAware",
+        "description": "Informacje i wsparcie dla problematycznego hazardu"
+      }
+    }
   }
 }

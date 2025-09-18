@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Shield, Clock, DollarSign, Users, Phone, ExternalLink, AlertTriangle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function ResponsibleGambling() {
   const warningSignsData = [
@@ -67,9 +68,9 @@ export default function ResponsibleGambling() {
 
   return (
     <Layout
-      title="Responsible Gambling | Safe Gaming Practices | CaseHunters"
-      description="Learn about responsible gambling practices, warning signs of problem gambling, and where to get help. Stay safe while enjoying CS2 and Dota 2 case sites."
-      keywords="responsible gambling, problem gambling help, safe gaming practices, gambling addiction support, gaming site safety"
+      title={t('responsibleGambling.pageTitle')}
+      description={t('responsibleGambling.pageDescription')}
+      keywords={t('responsibleGambling.pageKeywords')}
     >
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Hero Section */}
@@ -77,12 +78,11 @@ export default function ResponsibleGambling() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Shield className="w-8 h-8 text-gaming-green" />
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-gaming bg-clip-text text-transparent">
-              Responsible Gambling
+              {t('responsibleGambling.title')}
             </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Gaming should be fun and entertaining. Learn how to stay safe, set limits, 
-            and recognize when gaming becomes a problem.
+            {t('responsibleGambling.subtitle')}
           </p>
         </div>
 
@@ -90,15 +90,14 @@ export default function ResponsibleGambling() {
         <Alert className="border-gaming-orange/40 bg-gaming-orange/10">
           <AlertTriangle className="h-4 w-4 text-gaming-orange" />
           <AlertDescription className="text-gaming-orange">
-            <strong>Important:</strong> Case opening and skin gambling can be addictive. 
-            Only participate if you are 18+ and can afford potential losses.
+            {t('responsibleGambling.importantAlert')}
           </AlertDescription>
         </Alert>
 
         {/* Safe Gaming Practices */}
         <section>
           <h2 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Safe Gaming Practices
+            {t('responsibleGambling.safeGamingPractices')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {safePracticesData.map((practice, index) => (
@@ -120,18 +119,18 @@ export default function ResponsibleGambling() {
         {/* Warning Signs */}
         <section>
           <h2 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Warning Signs of Problem Gambling
+            {t('responsibleGambling.warningSignsTitle')}
           </h2>
           <Card className="bg-card border-gaming-orange/20 shadow-elevated">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-gaming-orange">
                 <AlertTriangle className="w-6 h-6" />
-                Recognize the Signs
+                {t('responsibleGambling.recognizeSigns')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                If you or someone you know experiences any of these signs, it may indicate a gambling problem:
+                {t('responsibleGambling.warningSignsDescription')}
               </p>
               <ul className="space-y-3">
                 {warningSignsData.map((sign, index) => (
@@ -148,39 +147,39 @@ export default function ResponsibleGambling() {
         {/* Self-Assessment Tools */}
         <section>
           <h2 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Self-Assessment & Tools
+            {t('responsibleGambling.selfAssessmentTitle')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="bg-card border-border shadow-elevated">
               <CardHeader>
-                <CardTitle>Set Your Limits</CardTitle>
+                <CardTitle>{t('responsibleGambling.setLimits.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Before you start gaming, decide on your limits and stick to them:
+                  {t('responsibleGambling.setLimits.description')}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• Daily/weekly spending limit</li>
-                  <li>• Time limit per session</li>
-                  <li>• Loss limit (stop when reached)</li>
-                  <li>• Never chase losses</li>
+                  <li>• {t('responsibleGambling.setLimits.dailyWeekly')}</li>
+                  <li>• {t('responsibleGambling.setLimits.timeLimit')}</li>
+                  <li>• {t('responsibleGambling.setLimits.lossLimit')}</li>
+                  <li>• {t('responsibleGambling.setLimits.neverChase')}</li>
                 </ul>
               </CardContent>
             </Card>
             
             <Card className="bg-card border-border shadow-elevated">
               <CardHeader>
-                <CardTitle>Platform Safety Features</CardTitle>
+                <CardTitle>{t('responsibleGambling.platformSafety.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Use built-in safety tools offered by gaming platforms:
+                  {t('responsibleGambling.platformSafety.description')}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• Deposit limits</li>
-                  <li>• Time limits and session reminders</li>
-                  <li>• Cooling-off periods</li>
-                  <li>• Self-exclusion options</li>
+                  <li>• {t('responsibleGambling.platformSafety.depositLimits')}</li>
+                  <li>• {t('responsibleGambling.platformSafety.timeLimits')}</li>
+                  <li>• {t('responsibleGambling.platformSafety.coolingOff')}</li>
+                  <li>• {t('responsibleGambling.platformSafety.selfExclusion')}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -190,7 +189,7 @@ export default function ResponsibleGambling() {
         {/* Support Resources */}
         <section>
           <h2 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Get Help & Support
+            {t('responsibleGambling.getHelpTitle')}
           </h2>
           <div className="space-y-4">
             {supportResources.map((resource, index) => (
@@ -216,7 +215,7 @@ export default function ResponsibleGambling() {
                       size="sm"
                       className="border-gaming-green/50 text-gaming-green hover:bg-gaming-green/10 ml-4"
                     >
-                      Visit Site
+                      {t('responsibleGambling.visitSite')}
                       <ExternalLink className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
@@ -230,11 +229,10 @@ export default function ResponsibleGambling() {
         <Card className="bg-gradient-card border-gaming-orange/20 shadow-gaming text-center">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold text-gaming-orange mb-4">
-              Need Immediate Help?
+              {t('responsibleGambling.needImmediateHelp')}
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              If you're experiencing a gambling crisis or having thoughts of self-harm, 
-              please reach out for immediate support.
+              {t('responsibleGambling.crisisDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -242,7 +240,7 @@ export default function ResponsibleGambling() {
                 className="bg-gaming-orange text-white hover:bg-gaming-orange/90"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Crisis Helpline: 988
+                {t('responsibleGambling.crisisHelpline')}
               </Button>
               <Button 
                 variant="outline"
@@ -250,7 +248,7 @@ export default function ResponsibleGambling() {
                 className="border-gaming-cyan text-gaming-cyan hover:bg-gaming-cyan/10"
               >
                 <ExternalLink className="w-5 h-5 mr-2" />
-                Chat Support
+                {t('responsibleGambling.chatSupport')}
               </Button>
             </div>
           </CardContent>

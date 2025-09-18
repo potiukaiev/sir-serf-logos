@@ -104,5 +104,135 @@
     "settings": "Settings",
     "theme": "Theme",
     "language": "Language"
+  },
+  "faq": {
+    "pageTitle": "FAQ - Frequently Asked Questions | CaseHunters",
+    "pageDescription": "Get answers to common questions about CS2 and Dota 2 case sites, bonuses, withdrawals, safety, and more. Everything you need to know about skin gaming platforms.",
+    "pageKeywords": "CS2 case sites FAQ, gaming site questions, skin gambling help, case opening guide, withdrawal FAQ, bonus questions",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to the most common questions about CS2 and Dota 2 case sites, bonuses, withdrawals, and gaming platform safety.",
+    "stillHaveQuestions": "Still Have Questions?",
+    "contactDescription": "If you can't find the answer you're looking for, feel free to reach out to our team. We're here to help you navigate the world of gaming case sites safely.",
+    "contactSupport": "Contact Support",
+    "whatAreCS2Sites": {
+      "question": "What are CS2 case sites?",
+      "answer": "CS2 case sites are online platforms where you can open virtual cases to win CS2 (Counter-Strike 2) skins and items. These sites simulate the case opening experience from the game with various cosmetic rewards."
+    },
+    "areSitesSafe": {
+      "question": "Are these sites safe and legitimate?",
+      "answer": "We only feature verified and licensed platforms that meet strict security standards. All listed sites undergo thorough review processes including security audits, fair play verification, and user feedback analysis."
+    },
+    "howBonusesWork": {
+      "question": "How do bonuses work?",
+      "answer": "Most sites offer welcome bonuses ranging from 50% to 500% of your first deposit, plus free spins or cases. Bonuses typically have wagering requirements and specific terms and conditions that vary by platform."
+    },
+    "canWithdraw": {
+      "question": "Can I withdraw my winnings?",
+      "answer": "Yes, all featured sites support withdrawals to Steam accounts or third-party marketplaces. Withdrawal methods, processing times, and minimum amounts vary by platform. Check each site's specific withdrawal policies."
+    },
+    "paymentMethods": {
+      "question": "What payment methods are accepted?",
+      "answer": "Most sites accept cryptocurrency (Bitcoin, Ethereum), Steam items, PayPal, credit cards, and various e-wallets. Payment options vary by platform and region."
+    },
+    "howRateSites": {
+      "question": "How do you rate and rank sites?",
+      "answer": "Our rankings are based on multiple factors including user ratings, security measures, bonus value, withdrawal speed, customer support quality, game variety, and overall user experience."
+    },
+    "ageRestrictions": {
+      "question": "Are there age restrictions?",
+      "answer": "Yes, you must be 18 years or older (or the legal gambling age in your jurisdiction) to use these platforms. All reputable sites require age verification during registration."
+    },
+    "provablyFair": {
+      "question": "What is provably fair gaming?",
+      "answer": "Provably fair is a cryptographic system that allows players to verify that game outcomes are random and not manipulated. It provides transparency and ensures fair play on gaming platforms."
+    },
+    "mobilePlay": {
+      "question": "Can I play on mobile devices?",
+      "answer": "Most modern case sites are optimized for mobile browsers or offer dedicated mobile apps for iOS and Android devices. Mobile gameplay offers the same features as desktop versions."
+    },
+    "siteIssues": {
+      "question": "What should I do if I have issues with a site?",
+      "answer": "First, contact the site's customer support directly. If issues persist, you can report problems to us through our contact form, and we'll investigate and update our reviews accordingly."
+    }
+  },
+  "responsibleGambling": {
+    "pageTitle": "Responsible Gambling | Safe Gaming Practices | CaseHunters",
+    "pageDescription": "Learn about responsible gambling practices, warning signs of problem gambling, and where to get help. Stay safe while enjoying CS2 and Dota 2 case sites.",
+    "pageKeywords": "responsible gambling, problem gambling help, safe gaming practices, gambling addiction support, gaming site safety",
+    "title": "Responsible Gambling",
+    "subtitle": "Gaming should be fun and entertaining. Learn how to stay safe, set limits, and recognize when gaming becomes a problem.",
+    "importantAlert": "Important: Case opening and skin gambling can be addictive. Only participate if you are 18+ and can afford potential losses.",
+    "safeGamingPractices": "Safe Gaming Practices",
+    "warningSignsTitle": "Warning Signs of Problem Gambling",
+    "recognizeSigns": "Recognize the Signs",
+    "warningSignsDescription": "If you or someone you know experiences any of these signs, it may indicate a gambling problem:",
+    "selfAssessmentTitle": "Self-Assessment & Tools",
+    "getHelpTitle": "Get Help & Support",
+    "needImmediateHelp": "Need Immediate Help?",
+    "crisisDescription": "If you're experiencing a gambling crisis or having thoughts of self-harm, please reach out for immediate support.",
+    "crisisHelpline": "Crisis Helpline: 988",
+    "chatSupport": "Chat Support",
+    "visitSite": "Visit Site",
+    "warningSigns": {
+      "spending": "Spending more money than you can afford",
+      "chasing": "Chasing losses with bigger bets",
+      "neglecting": "Neglecting work, family, or social activities",
+      "borrowing": "Borrowing money to gamble",
+      "lying": "Lying about gambling activities",
+      "anxious": "Feeling anxious when not gambling",
+      "unableControl": "Unable to control gambling impulses"
+    },
+    "safePractices": {
+      "setBudgetLimits": {
+        "title": "Set Budget Limits",
+        "description": "Only gamble with money you can afford to lose. Never use money intended for bills, rent, or necessities."
+      },
+      "timeManagement": {
+        "title": "Time Management",
+        "description": "Set time limits for gaming sessions and stick to them. Take regular breaks and don't let gaming interfere with daily responsibilities."
+      },
+      "useSafetyTools": {
+        "title": "Use Safety Tools",
+        "description": "Take advantage of deposit limits, cooling-off periods, and self-exclusion options offered by gaming platforms."
+      },
+      "stayConnected": {
+        "title": "Stay Connected",
+        "description": "Maintain relationships with family and friends. Don't isolate yourself or let gaming become your primary social activity."
+      }
+    },
+    "setLimits": {
+      "title": "Set Your Limits",
+      "description": "Before you start gaming, decide on your limits and stick to them:",
+      "dailyWeekly": "Daily/weekly spending limit",
+      "timeLimit": "Time limit per session",
+      "lossLimit": "Loss limit (stop when reached)",
+      "neverChase": "Never chase losses"
+    },
+    "platformSafety": {
+      "title": "Platform Safety Features",
+      "description": "Use built-in safety tools offered by gaming platforms:",
+      "depositLimits": "Deposit limits",
+      "timeLimits": "Time limits and session reminders",
+      "coolingOff": "Cooling-off periods",
+      "selfExclusion": "Self-exclusion options"
+    },
+    "supportResources": {
+      "ncpg": {
+        "name": "National Council on Problem Gambling",
+        "description": "24/7 confidential helpline and chat support"
+      },
+      "ga": {
+        "name": "Gamblers Anonymous",
+        "description": "Support groups and recovery programs"
+      },
+      "gamcare": {
+        "name": "GamCare",
+        "description": "UK-based support and counseling services"
+      },
+      "begambleaware": {
+        "name": "BeGambleAware",
+        "description": "Information and support for problem gambling"
+      }
+    }
   }
 }

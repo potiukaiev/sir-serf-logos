@@ -104,5 +104,135 @@
     "settings": "Ayarlar",
     "theme": "Tema",
     "language": "Dil"
+  },
+  "faq": {
+    "pageTitle": "SSS - Sık Sorulan Sorular | CaseHunters",
+    "pageDescription": "CS2 ve Dota 2 kasa siteleri, bonuslar, çekimler, güvenlik ve daha fazlası hakkında yaygın sorulara cevap alın. Skin gaming platformları hakkında bilmeniz gereken her şey.",
+    "pageKeywords": "CS2 kasa siteleri SSS, gaming site soruları, skin gambling yardım, kasa açma rehberi, çekim SSS, bonus soruları",
+    "title": "Sık Sorulan Sorular",
+    "subtitle": "CS2 ve Dota 2 kasa siteleri, bonuslar, çekimler ve gaming platform güvenliği hakkında en yaygın sorulara cevaplar bulun.",
+    "stillHaveQuestions": "Hâlâ Sorularınız Var mı?",
+    "contactDescription": "Aradığınız cevabı bulamıyorsanız, ekibimizle iletişime geçmekten çekinmeyin. Gaming kasa siteleri dünyasında güvenle gezinmenize yardımcı olmak için buradayız.",
+    "contactSupport": "Destek ile İletişime Geç",
+    "whatAreCS2Sites": {
+      "question": "CS2 kasa siteleri nedir?",
+      "answer": "CS2 kasa siteleri, CS2 (Counter-Strike 2) skin'leri ve öğeleri kazanmak için sanal kasalar açabileceğiniz çevrimiçi platformlardır. Bu siteler oyundan kasa açma deneyimini çeşitli kozmetik ödüllerle simüle eder."
+    },
+    "areSitesSafe": {
+      "question": "Bu siteler güvenli ve meşru mu?",
+      "answer": "Yalnızca sıkı güvenlik standartlarını karşılayan doğrulanmış ve lisanslı platformları sunuyoruz. Listelenen tüm siteler güvenlik denetimleri, adil oyun doğrulama ve kullanıcı geri bildirim analizi dahil olmak üzere kapsamlı inceleme süreçlerinden geçer."
+    },
+    "howBonusesWork": {
+      "question": "Bonuslar nasıl çalışır?",
+      "answer": "Çoğu site ilk depozitonuzun %50'sinden %500'üne kadar hoş geldin bonusları artı ücretsiz spin'ler veya kasalar sunar. Bonuslar genellikle bahis gereksinimleri ve platforma göre değişen özel şartlar ve koşullara sahiptir."
+    },
+    "canWithdraw": {
+      "question": "Kazançlarımı çekebilir miyim?",
+      "answer": "Evet, öne çıkan tüm siteler Steam hesaplarına veya üçüncü taraf pazaryerlerine çekimleri destekler. Çekim yöntemleri, işlem süreleri ve minimum tutarlar platforma göre değişir. Her sitenin özel çekim politikalarını kontrol edin."
+    },
+    "paymentMethods": {
+      "question": "Hangi ödeme yöntemleri kabul edilir?",
+      "answer": "Çoğu site kripto para birimlerini (Bitcoin, Ethereum), Steam öğelerini, PayPal'ı, kredi kartlarını ve çeşitli e-cüzdanları kabul eder. Ödeme seçenekleri platforma ve bölgeye göre değişir."
+    },
+    "howRateSites": {
+      "question": "Siteleri nasıl değerlendirip sıralıyorsunuz?",
+      "answer": "Sıralamalarımız kullanıcı değerlendirmeleri, güvenlik önlemleri, bonus değeri, çekim hızı, müşteri destek kalitesi, oyun çeşitliliği ve genel kullanıcı deneyimi dahil olmak üzere birden fazla faktöre dayanır."
+    },
+    "ageRestrictions": {
+      "question": "Yaş kısıtlamaları var mı?",
+      "answer": "Evet, bu platformları kullanmak için 18 yaş veya üzeri (veya yargı yetkinizdeki yasal kumar yaşı) olmalısınız. Tüm saygın siteler kayıt sırasında yaş doğrulaması gerektirir."
+    },
+    "provablyFair": {
+      "question": "Kanıtlanabilir adil gaming nedir?",
+      "answer": "Kanıtlanabilir adil, oyuncuların oyun sonuçlarının rastgele olduğunu ve manipüle edilmediğini doğrulamalarına olanak tanıyan kriptografik bir sistemdir. Gaming platformlarında şeffaflık sağlar ve adil oyun garanti eder."
+    },
+    "mobilePlay": {
+      "question": "Mobil cihazlarda oynayabilir miyim?",
+      "answer": "Modern kasa sitelerinin çoğu mobil tarayıcılar için optimize edilmiş veya iOS ve Android cihazlar için özel mobil uygulamalar sunar. Mobil gameplay masaüstü sürümleriyle aynı özellikleri sunar."
+    },
+    "siteIssues": {
+      "question": "Bir siteyle ilgili sorunlarım olursa ne yapmalıyım?",
+      "answer": "Önce sitenin müşteri desteğiyle doğrudan iletişime geçin. Sorunlar devam ederse, iletişim formumuzu kullanarak bize sorunları bildirebilirsiniz, araştırıp incelemelerimizi buna göre güncelleyeceğiz."
+    }
+  },
+  "responsibleGambling": {
+    "pageTitle": "Sorumlu Oyun | Güvenli Gaming Uygulamaları | CaseHunters",
+    "pageDescription": "Sorumlu oyun uygulamaları, sorunlu kumar uyarı işaretleri ve nereden yardım alınacağı hakkında bilgi edinin. CS2 ve Dota 2 kasa sitelerinin keyfini çıkarırken güvenlikte kalın.",
+    "pageKeywords": "sorumlu oyun, sorunlu kumar yardım, güvenli gaming uygulamaları, kumar bağımlılığı destek, gaming site güvenliği",
+    "title": "Sorumlu Oyun",
+    "subtitle": "Gaming eğlenceli ve eğlendirici olmalıdır. Güvenlikte nasıl kalacağınızı, sınırlar koyacağınızı ve gaming'in ne zaman problem haline geldiğini nasıl fark edeceğinizi öğrenin.",
+    "importantAlert": "Önemli: Kasa açma ve skin gambling bağımlılık yapabilir. Yalnızca 18+ yaşındaysanız ve potansiyel kayıpları karşılayabiliyorsanız katılın.",
+    "safeGamingPractices": "Güvenli Gaming Uygulamaları",
+    "warningSignsTitle": "Sorunlu Kumar Uyarı İşaretleri",
+    "recognizeSigns": "İşaretleri Tanı",
+    "warningSignsDescription": "Siz veya tanıdığınız biri bu işaretlerden herhangi birini yaşıyorsa, kumar problemi gösterebilir:",
+    "selfAssessmentTitle": "Öz Değerlendirme ve Araçlar",
+    "getHelpTitle": "Yardım ve Destek Al",
+    "needImmediateHelp": "Acil Yardıma İhtiyacınız Var mı?",
+    "crisisDescription": "Kumar krizi yaşıyorsanız veya kendine zarar verme düşünceleri varsa, lütfen acil destek arayın.",
+    "crisisHelpline": "Kriz Hattı: 988",
+    "chatSupport": "Sohbet Desteği",
+    "visitSite": "Siteyi Ziyaret Et",
+    "warningSigns": {
+      "spending": "Karşılayabileceğinizden fazla para harcamak",
+      "chasing": "Daha büyük bahislerle kayıpları kovalamak",
+      "neglecting": "İş, aile veya sosyal aktiviteleri ihmal etmek",
+      "borrowing": "Kumar için para borç almak",
+      "lying": "Kumar aktiviteleri hakkında yalan söylemek",
+      "anxious": "Kumar oynamadığında endişeli hissetmek",
+      "unableControl": "Kumar dürtülerini kontrol edememek"
+    },
+    "safePractices": {
+      "setBudgetLimits": {
+        "title": "Bütçe Limitleri Koy",
+        "description": "Yalnızca kaybetmeyi göze alabileceğiniz parayla kumar oynayın. Faturalar, kira veya gereksinimler için ayrılmış parayı asla kullanmayın."
+      },
+      "timeManagement": {
+        "title": "Zaman Yönetimi",
+        "description": "Gaming seansları için zaman limitleri koyun ve bunlara bağlı kalın. Düzenli molalar verin ve gaming'in günlük sorumlulukları engellemesine izin vermeyin."
+      },
+      "useSafetyTools": {
+        "title": "Güvenlik Araçlarını Kullan",
+        "description": "Gaming platformları tarafından sunulan depozito limitleri, soğuma dönemleri ve kendini dışlama seçeneklerinden yararlanın."
+      },
+      "stayConnected": {
+        "title": "Bağlantıda Kal",
+        "description": "Aile ve arkadaşlarla ilişkileri sürdürün. Kendinizi izole etmeyin veya gaming'in birincil sosyal aktiviteniz olmasına izin vermeyin."
+      }
+    },
+    "setLimits": {
+      "title": "Limitlerini Belirle",
+      "description": "Oynamaya başlamadan önce limitlerini belirle ve bunlara bağlı kal:",
+      "dailyWeekly": "Günlük/haftalık harcama limiti",
+      "timeLimit": "Seans başına zaman limiti",
+      "lossLimit": "Kayıp limiti (ulaşıldığında dur)",
+      "neverChase": "Kayıpları asla kovalama"
+    },
+    "platformSafety": {
+      "title": "Platform Güvenlik Özellikleri",
+      "description": "Gaming platformları tarafından sunulan yerleşik güvenlik araçlarını kullan:",
+      "depositLimits": "Depozito limitleri",
+      "timeLimits": "Zaman limitleri ve seans hatırlatıcıları",
+      "coolingOff": "Soğuma dönemleri",
+      "selfExclusion": "Kendini dışlama seçenekleri"
+    },
+    "supportResources": {
+      "ncpg": {
+        "name": "Sorunlu Kumar Ulusal Konseyi",
+        "description": "7/24 gizli yardım hattı ve sohbet desteği"
+      },
+      "ga": {
+        "name": "Kumarbazlar Anonim",
+        "description": "Destek grupları ve iyileşme programları"
+      },
+      "gamcare": {
+        "name": "GamCare",
+        "description": "İngiltere merkezli destek ve danışmanlık hizmetleri"
+      },
+      "begambleaware": {
+        "name": "BeGambleAware",
+        "description": "Sorunlu kumar için bilgi ve destek"
+      }
+    }
   }
 }

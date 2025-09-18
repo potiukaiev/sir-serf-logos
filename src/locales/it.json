@@ -104,5 +104,135 @@
     "settings": "Impostazioni",
     "theme": "Tema",
     "language": "Lingua"
+  },
+  "faq": {
+    "pageTitle": "FAQ - Domande Frequenti | CaseHunters",
+    "pageDescription": "Ottieni risposte a domande comuni su siti case CS2 e Dota 2, bonus, prelievi, sicurezza e altro. Tutto quello che devi sapere sulle piattaforme di skin gaming.",
+    "pageKeywords": "FAQ siti case CS2, domande siti gaming, aiuto skin gambling, guida apertura case, FAQ prelievi, domande bonus",
+    "title": "Domande Frequenti",
+    "subtitle": "Trova risposte alle domande più comuni sui siti case CS2 e Dota 2, bonus, prelievi e sicurezza delle piattaforme gaming.",
+    "stillHaveQuestions": "Hai Ancora Domande?",
+    "contactDescription": "Se non riesci a trovare la risposta che stai cercando, sentiti libero di contattare il nostro team. Siamo qui per aiutarti a navigare nel mondo dei siti case gaming in sicurezza.",
+    "contactSupport": "Contatta il Supporto",
+    "whatAreCS2Sites": {
+      "question": "Cosa sono i siti case CS2?",
+      "answer": "I siti case CS2 sono piattaforme online dove puoi aprire case virtuali per vincere skin e oggetti di CS2 (Counter-Strike 2). Questi siti simulano l'esperienza di apertura case del gioco con vari premi cosmetici."
+    },
+    "areSitesSafe": {
+      "question": "Questi siti sono sicuri e legittimi?",
+      "answer": "Includiamo solo piattaforme verificate e autorizzate che soddisfano rigorosi standard di sicurezza. Tutti i siti elencati subiscono processi di revisione approfonditi inclusi audit di sicurezza, verifica del gioco equo e analisi del feedback degli utenti."
+    },
+    "howBonusesWork": {
+      "question": "Come funzionano i bonus?",
+      "answer": "La maggior parte dei siti offre bonus di benvenuto che vanno dal 50% al 500% del tuo primo deposito, più giri gratis o case. I bonus hanno tipicamente requisiti di scommessa e termini e condizioni specifici che variano per piattaforma."
+    },
+    "canWithdraw": {
+      "question": "Posso prelevare le mie vincite?",
+      "answer": "Sì, tutti i siti in evidenza supportano prelievi su account Steam o marketplace di terze parti. Metodi di prelievo, tempi di elaborazione e importi minimi variano per piattaforma. Controlla le specifiche politiche di prelievo di ogni sito."
+    },
+    "paymentMethods": {
+      "question": "Quali metodi di pagamento sono accettati?",
+      "answer": "La maggior parte dei siti accetta criptovalute (Bitcoin, Ethereum), oggetti Steam, PayPal, carte di credito e vari e-wallet. Le opzioni di pagamento variano per piattaforma e regione."
+    },
+    "howRateSites": {
+      "question": "Come valutate e classificate i siti?",
+      "answer": "Le nostre classifiche sono basate su molteplici fattori inclusi valutazioni utenti, misure di sicurezza, valore bonus, velocità prelievi, qualità supporto clienti, varietà giochi ed esperienza utente complessiva."
+    },
+    "ageRestrictions": {
+      "question": "Ci sono restrizioni di età?",
+      "answer": "Sì, devi avere 18 anni o più (o l'età legale per il gioco d'azzardo nella tua giurisdizione) per usare queste piattaforme. Tutti i siti rispettabili richiedono verifica dell'età durante la registrazione."
+    },
+    "provablyFair": {
+      "question": "Cos'è il gaming dimostrabilmente equo?",
+      "answer": "Dimostrabilmente equo è un sistema crittografico che permette ai giocatori di verificare che i risultati del gioco siano casuali e non manipolati. Fornisce trasparenza e assicura gioco equo sulle piattaforme gaming."
+    },
+    "mobilePlay": {
+      "question": "Posso giocare su dispositivi mobili?",
+      "answer": "La maggior parte dei siti case moderni sono ottimizzati per browser mobili o offrono app mobili dedicate per dispositivi iOS e Android. Il gameplay mobile offre le stesse caratteristiche delle versioni desktop."
+    },
+    "siteIssues": {
+      "question": "Cosa devo fare se ho problemi con un sito?",
+      "answer": "Prima, contatta direttamente il supporto clienti del sito. Se i problemi persistono, puoi segnalarci i problemi attraverso il nostro modulo di contatto, e indagheremo e aggiorneremo le nostre recensioni di conseguenza."
+    }
+  },
+  "responsibleGambling": {
+    "pageTitle": "Gioco Responsabile | Pratiche Gaming Sicure | CaseHunters",
+    "pageDescription": "Impara le pratiche di gioco responsabile, segnali di avvertimento del gioco problematico e dove ottenere aiuto. Resta sicuro mentre ti diverti con i siti case CS2 e Dota 2.",
+    "pageKeywords": "gioco responsabile, aiuto gioco problematico, pratiche gaming sicure, supporto dipendenza gioco, sicurezza siti gaming",
+    "title": "Gioco Responsabile",
+    "subtitle": "Il gaming dovrebbe essere divertente e intrattenimento. Impara come restare sicuro, impostare limiti e riconoscere quando il gaming diventa un problema.",
+    "importantAlert": "Importante: L'apertura case e il skin gambling possono creare dipendenza. Partecipa solo se hai 18+ anni e puoi permetterti potenziali perdite.",
+    "safeGamingPractices": "Pratiche Gaming Sicure",
+    "warningSignsTitle": "Segnali di Avvertimento del Gioco Problematico",
+    "recognizeSigns": "Riconosci i Segnali",
+    "warningSignsDescription": "Se tu o qualcuno che conosci prova uno di questi segnali, potrebbe indicare un problema di gioco:",
+    "selfAssessmentTitle": "Auto-valutazione e Strumenti",
+    "getHelpTitle": "Ottieni Aiuto e Supporto",
+    "needImmediateHelp": "Hai Bisogno di Aiuto Immediato?",
+    "crisisDescription": "Se stai vivendo una crisi di gioco o hai pensieri di autolesionismo, per favore cerca supporto immediato.",
+    "crisisHelpline": "Linea Crisi: 988",
+    "chatSupport": "Supporto Chat",
+    "visitSite": "Visita Sito",
+    "warningSigns": {
+      "spending": "Spendere più soldi di quanto puoi permetterti",
+      "chasing": "Inseguire le perdite con scommesse più grandi",
+      "neglecting": "Trascurare lavoro, famiglia o attività sociali",
+      "borrowing": "Prendere in prestito soldi per giocare",
+      "lying": "Mentire sulle attività di gioco",
+      "anxious": "Sentirsi ansiosi quando non si gioca",
+      "unableControl": "Incapace di controllare gli impulsi di gioco"
+    },
+    "safePractices": {
+      "setBudgetLimits": {
+        "title": "Imposta Limiti di Budget",
+        "description": "Gioca solo con soldi che puoi permetterti di perdere. Non usare mai soldi destinati a bollette, affitto o necessità."
+      },
+      "timeManagement": {
+        "title": "Gestione del Tempo",
+        "description": "Imposta limiti di tempo per le sessioni di gioco e rispettali. Fai pause regolari e non lasciare che il gaming interferisca con le responsabilità quotidiane."
+      },
+      "useSafetyTools": {
+        "title": "Usa Strumenti di Sicurezza",
+        "description": "Approfitta dei limiti di deposito, periodi di raffreddamento e opzioni di auto-esclusione offerte dalle piattaforme gaming."
+      },
+      "stayConnected": {
+        "title": "Resta Connesso",
+        "description": "Mantieni relazioni con famiglia e amici. Non isolarti o lasciare che il gaming diventi la tua attività sociale primaria."
+      }
+    },
+    "setLimits": {
+      "title": "Imposta i Tuoi Limiti",
+      "description": "Prima di iniziare a giocare, decidi i tuoi limiti e rispettali:",
+      "dailyWeekly": "Limite di spesa giornaliero/settimanale",
+      "timeLimit": "Limite di tempo per sessione",
+      "lossLimit": "Limite di perdita (fermati quando raggiunto)",
+      "neverChase": "Non inseguire mai le perdite"
+    },
+    "platformSafety": {
+      "title": "Caratteristiche di Sicurezza della Piattaforma",
+      "description": "Usa strumenti di sicurezza integrati offerti dalle piattaforme gaming:",
+      "depositLimits": "Limiti di deposito",
+      "timeLimits": "Limiti di tempo e promemoria sessione",
+      "coolingOff": "Periodi di raffreddamento",
+      "selfExclusion": "Opzioni di auto-esclusione"
+    },
+    "supportResources": {
+      "ncpg": {
+        "name": "Consiglio Nazionale sul Gioco Problematico",
+        "description": "Linea di aiuto confidenziale 24/7 e supporto chat"
+      },
+      "ga": {
+        "name": "Giocatori Anonimi",
+        "description": "Gruppi di supporto e programmi di recupero"
+      },
+      "gamcare": {
+        "name": "GamCare",
+        "description": "Servizi di supporto e consulenza basati nel Regno Unito"
+      },
+      "begambleaware": {
+        "name": "BeGambleAware",
+        "description": "Informazioni e supporto per il gioco problematico"
+      }
+    }
   }
 }
