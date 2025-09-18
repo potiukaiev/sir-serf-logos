@@ -5,12 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { GamingAd } from "@/components/GamingAd";
-import { Logo } from "@/components/Logo";
-import { ParallaxBackground } from "@/components/ParallaxBackground";
-import { ThemeSelector } from "@/components/ThemeSelector";
-import { LanguageSelector } from "@/components/LanguageSelector";
-import { MobileMenu } from "@/components/MobileMenu";
-import { Helmet } from "react-helmet-async";
+import { Layout } from "@/components/Layout";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -125,66 +120,11 @@ const Sites = () => {
   });
 
   return (
-    <div className="min-h-screen relative">
-      <Helmet>
-        <title>All Case Sites | CaseHunters - CS2, Dota 2 & Gaming Platforms</title>
-        <meta name="description" content="Browse our complete directory of verified CS2, Dota 2, and gaming case sites. Find platforms with best bonuses, instant withdrawals, and trusted reviews." />
-        <meta name="keywords" content="case sites directory, CS2 case sites list, Dota 2 case platforms, gaming case sites, verified case sites, skin gambling sites" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="All Case Sites | CaseHunters Directory" />
-        <meta property="og:description" content="Complete directory of verified gaming case sites with reviews and bonuses." />
-        <meta property="og:url" content="https://casehunters.com/sites" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Gaming Case Sites Directory",
-            "description": "Verified CS2 and Dota 2 case sites with reviews and ratings",
-            "numberOfItems": sortedSites.length,
-            "itemListElement": sortedSites.map((site, index) => ({
-              "@type": "ListItem",
-              "position": index + 1,
-              "item": {
-                "@type": "WebSite",
-                "name": site.name,
-                "description": site.description,
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": site.rating,
-                  "bestRating": 5,
-                  "worstRating": 1
-                }
-              }
-            }))
-          })}
-        </script>
-      </Helmet>
-      <ParallaxBackground />
-      {/* Header */}
-      <header className="border-b border-gaming-cyan/20 bg-gaming-dark/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/">
-              <Logo variant="compact" />
-            </Link>
-            <div className="flex items-center gap-4">
-              <nav className="hidden md:flex items-center space-x-6">
-                <Link to="/sites" className="text-gaming-cyan hover:text-gaming-cyan/80 transition-colors font-medium">Sites</Link>
-                <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">Categories</Link>
-                <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">About</Link>
-              </nav>
-              <div className="hidden md:flex items-center gap-2">
-                <ThemeSelector />
-                <LanguageSelector />
-              </div>
-              <MobileMenu />
-            </div>
-          </div>
-        </div>
-      </header>
+    <Layout
+      title="All Case Sites | CaseHunters - CS2, Dota 2 & Gaming Platforms"
+      description="Browse our complete directory of verified CS2, Dota 2, and gaming case sites. Find platforms with best bonuses, instant withdrawals, and trusted reviews."
+      keywords="case sites directory, CS2 case sites list, Dota 2 case platforms, gaming case sites, verified case sites, skin gambling sites"
+    >
 
       {/* Page Header */}
       <section className="container mx-auto px-6 py-12">
@@ -349,7 +289,7 @@ const Sites = () => {
           </div>
         )}
       </section>
-    </div>
+    </Layout>
   );
 };
 
