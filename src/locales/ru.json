@@ -71,7 +71,12 @@
     "cons": "Минусы",
     "ratingBreakdown": "Детализация Рейтинга",
     "verified": "Проверено",
-    "helpful": "Полезно"
+    "helpful": "Полезно",
+    "paymentWithdrawals": "Платежи и Выводы",
+    "supportedCurrencies": "Поддерживаемые Валюты",
+    "localization": "Локализация",
+    "supportedLanguages": "Поддерживаемые Языки",
+    "customerSupport": "Служба Поддержки"
   },
   "theme": {
     "theme": "Тема",

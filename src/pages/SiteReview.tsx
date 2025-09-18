@@ -11,6 +11,7 @@ import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MobileMenu } from "@/components/MobileMenu";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from 'react-i18next';
 import { 
   Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Users, Clock, 
   CreditCard, Globe, MessageCircle, CheckCircle, XCircle, AlertTriangle,
@@ -19,6 +20,7 @@ import {
 
 const SiteReview = () => {
   const { siteId } = useParams();
+  const { t } = useTranslation();
   
   // Mock data - in real app this would come from API
   const siteData = {
@@ -177,7 +179,7 @@ const SiteReview = () => {
         {/* Back Button */}
         <Link to="/sites" className="inline-flex items-center text-gaming-cyan hover:text-gaming-cyan/80 transition-colors mb-6">
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Sites
+          {t('review.backToSites')}
         </Link>
 
         {/* Site Header */}
@@ -191,7 +193,7 @@ const SiteReview = () => {
                       <h1 className="text-4xl font-bold text-gaming-cyan">{siteData.name}</h1>
                       <div className="flex items-center space-x-2">
                         <div className="w-3 h-3 rounded-full bg-gaming-green animate-pulse"></div>
-                        <span className="text-sm text-gaming-green font-medium">ONLINE</span>
+                        <span className="text-sm text-gaming-green font-medium">{t('featuredSites.online')}</span>
                       </div>
                     </div>
                     <p className="text-muted-foreground text-lg mb-4">{siteData.description}</p>
@@ -223,34 +225,34 @@ const SiteReview = () => {
                   <div className="text-center p-3 bg-gaming-darker/50 rounded-lg">
                     <Users className="w-6 h-6 text-gaming-cyan mx-auto mb-2" />
                     <div className="font-bold text-gaming-cyan">{siteData.users}</div>
-                    <div className="text-xs text-muted-foreground">Active Users</div>
+                    <div className="text-xs text-muted-foreground">{t('review.activeUsers')}</div>
                   </div>
                   <div className="text-center p-3 bg-gaming-darker/50 rounded-lg">
                     <Trophy className="w-6 h-6 text-gaming-green mx-auto mb-2" />
                     <div className="font-bold text-gaming-green">{siteData.bonus}</div>
-                    <div className="text-xs text-muted-foreground">Welcome Bonus</div>
+                    <div className="text-xs text-muted-foreground">{t('review.welcomeBonus')}</div>
                   </div>
                   <div className="text-center p-3 bg-gaming-darker/50 rounded-lg">
                     <Clock className="w-6 h-6 text-gaming-purple mx-auto mb-2" />
                     <div className="font-bold text-gaming-purple">{siteData.withdrawalTime}</div>
-                    <div className="text-xs text-muted-foreground">Withdrawal Time</div>
+                    <div className="text-xs text-muted-foreground">{t('review.withdrawalTime')}</div>
                   </div>
                   <div className="text-center p-3 bg-gaming-darker/50 rounded-lg">
                     <MessageCircle className="w-6 h-6 text-gaming-orange mx-auto mb-2" />
                     <div className="font-bold text-gaming-orange">{siteData.supportAvailable}</div>
-                    <div className="text-xs text-muted-foreground">Support</div>
+                    <div className="text-xs text-muted-foreground">{t('review.support')}</div>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex gap-4">
                   <Button className="flex-1 bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-                    Visit Site
+                    {t('review.visitSite')}
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
                   <Button variant="outline" className="border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10">
                     <Star className="w-4 h-4 mr-2" />
-                    Add Review
+                    {t('review.addReview')}
                   </Button>
                 </div>
               </CardContent>
@@ -261,28 +263,28 @@ const SiteReview = () => {
           <div>
             <Card className="bg-gradient-card border-gaming-cyan/20 shadow-gaming">
               <CardHeader>
-                <CardTitle className="text-gaming-cyan">Quick Info</CardTitle>
+                <CardTitle className="text-gaming-cyan">{t('review.quickInfo')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Founded</span>
+                  <span className="text-muted-foreground">{t('review.founded')}</span>
                   <span className="font-medium">{siteData.founded}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">License</span>
+                  <span className="text-muted-foreground">{t('review.license')}</span>
                   <span className="font-medium text-xs">{siteData.license}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Min Deposit</span>
+                  <span className="text-muted-foreground">{t('review.minDeposit')}</span>
                   <span className="font-medium">{siteData.minDeposit}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Max Withdrawal</span>
+                  <span className="text-muted-foreground">{t('review.maxWithdrawal')}</span>
                   <span className="font-medium">{siteData.maxWithdrawal}</span>
                 </div>
                 
                 <div className="pt-4 border-t border-gaming-cyan/20">
-                  <h4 className="font-semibold mb-2 text-gaming-cyan">Supported Games</h4>
+                  <h4 className="font-semibold mb-2 text-gaming-cyan">{t('review.supportedGames')}</h4>
                   <div className="flex flex-wrap gap-1">
                     {siteData.games.map((game, i) => (
                       <Badge key={i} variant="outline" className="text-xs">
@@ -293,7 +295,7 @@ const SiteReview = () => {
                 </div>
                 
                 <div className="pt-4 border-t border-gaming-cyan/20">
-                  <h4 className="font-semibold mb-2 text-gaming-cyan">Features</h4>
+                  <h4 className="font-semibold mb-2 text-gaming-cyan">{t('review.features')}</h4>
                   <div className="space-y-2">
                     {siteData.features.map((feature, i) => (
                       <div key={i} className="flex items-center space-x-2">
@@ -311,10 +313,10 @@ const SiteReview = () => {
         {/* Detailed Review Tabs */}
         <Tabs defaultValue="overview" className="space-y-6">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-gaming-dark/50">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="ratings">Ratings</TabsTrigger>
-            <TabsTrigger value="reviews">Reviews</TabsTrigger>
-            <TabsTrigger value="details">Details</TabsTrigger>
+            <TabsTrigger value="overview">{t('review.overview')}</TabsTrigger>
+            <TabsTrigger value="ratings">{t('review.ratings')}</TabsTrigger>
+            <TabsTrigger value="reviews">{t('review.userReviews')}</TabsTrigger>
+            <TabsTrigger value="details">{t('review.details')}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -324,7 +326,7 @@ const SiteReview = () => {
                 <CardHeader>
                   <CardTitle className="text-gaming-green flex items-center">
                     <ThumbsUp className="w-5 h-5 mr-2" />
-                    Pros
+                    {t('review.pros')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -344,7 +346,7 @@ const SiteReview = () => {
                 <CardHeader>
                   <CardTitle className="text-gaming-orange flex items-center">
                     <ThumbsDown className="w-5 h-5 mr-2" />
-                    Cons
+                    {t('review.cons')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -364,7 +366,7 @@ const SiteReview = () => {
           <TabsContent value="ratings" className="space-y-6">
             <Card className="bg-gradient-card border-gaming-cyan/20">
               <CardHeader>
-                <CardTitle>Rating Breakdown</CardTitle>
+                <CardTitle>{t('review.ratingBreakdown')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {Object.entries(siteData.ratingBreakdown).map(([category, rating]) => (
@@ -397,7 +399,7 @@ const SiteReview = () => {
                             <span className="font-medium">{review.user}</span>
                             {review.verified && (
                               <Badge variant="outline" className="text-xs border-gaming-green text-gaming-green">
-                                Verified
+                                {t('review.verified')}
                               </Badge>
                             )}
                           </div>
@@ -428,7 +430,7 @@ const SiteReview = () => {
                           <ThumbsDown className="w-4 h-4" />
                         </button>
                       </div>
-                      <span className="text-xs text-muted-foreground">Helpful ({review.helpful})</span>
+                      <span className="text-xs text-muted-foreground">{t('review.helpful')} ({review.helpful})</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -440,23 +442,23 @@ const SiteReview = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-gradient-card border-gaming-cyan/20">
                 <CardHeader>
-                  <CardTitle>Payment & Withdrawals</CardTitle>
+                  <CardTitle>{t('review.paymentWithdrawals')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Minimum Deposit</span>
+                    <span className="text-muted-foreground">{t('review.minDeposit')}</span>
                     <span className="font-medium">{siteData.minDeposit}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Maximum Withdrawal</span>
+                    <span className="text-muted-foreground">{t('review.maxWithdrawal')}</span>
                     <span className="font-medium">{siteData.maxWithdrawal}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Withdrawal Time</span>
+                    <span className="text-muted-foreground">{t('review.withdrawalTime')}</span>
                     <span className="font-medium">{siteData.withdrawalTime}</span>
                   </div>
                   <div>
-                    <span className="text-muted-foreground block mb-2">Supported Currencies</span>
+                    <span className="text-muted-foreground block mb-2">{t('review.supportedCurrencies')}</span>
                     <div className="flex flex-wrap gap-1">
                       {siteData.currencies.map((currency, i) => (
                         <Badge key={i} variant="outline" className="text-xs">
@@ -470,11 +472,11 @@ const SiteReview = () => {
 
               <Card className="bg-gradient-card border-gaming-cyan/20">
                 <CardHeader>
-                  <CardTitle>Localization</CardTitle>
+                  <CardTitle>{t('review.localization')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <span className="text-muted-foreground block mb-2">Supported Languages</span>
+                    <span className="text-muted-foreground block mb-2">{t('review.supportedLanguages')}</span>
                     <div className="flex flex-wrap gap-1">
                       {siteData.languages.map((language, i) => (
                         <Badge key={i} variant="outline" className="text-xs">
@@ -484,11 +486,11 @@ const SiteReview = () => {
                     </div>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Customer Support</span>
+                    <span className="text-muted-foreground">{t('review.customerSupport')}</span>
                     <span className="font-medium">{siteData.supportAvailable}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">License</span>
+                    <span className="text-muted-foreground">{t('review.license')}</span>
                     <span className="font-medium text-sm">{siteData.license}</span>
                   </div>
                 </CardContent>

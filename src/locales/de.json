@@ -71,7 +71,12 @@
     "cons": "Nachteile",
     "ratingBreakdown": "Bewertungsaufschlüsselung",
     "verified": "Verifiziert",
-    "helpful": "Hilfreich"
+    "helpful": "Hilfreich",
+    "paymentWithdrawals": "Zahlungen & Auszahlungen",
+    "supportedCurrencies": "Unterstützte Währungen",
+    "localization": "Lokalisierung",
+    "supportedLanguages": "Unterstützte Sprachen",
+    "customerSupport": "Kundensupport"
   },
   "theme": {
     "theme": "Thema",

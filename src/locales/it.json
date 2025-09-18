@@ -71,7 +71,12 @@
     "cons": "Contro",
     "ratingBreakdown": "Dettaglio Valutazioni",
     "verified": "Verificato",
-    "helpful": "Utile"
+    "helpful": "Utile",
+    "paymentWithdrawals": "Pagamenti e Prelievi",
+    "supportedCurrencies": "Valute Supportate",
+    "localization": "Localizzazione",
+    "supportedLanguages": "Lingue Supportate",
+    "customerSupport": "Supporto Clienti"
   },
   "theme": {
     "theme": "Tema",

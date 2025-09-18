@@ -71,7 +71,12 @@
     "cons": "Contras",
     "ratingBreakdown": "Desglose de Calificaciones",
     "verified": "Verificado",
-    "helpful": "Útil"
+    "helpful": "Útil",
+    "paymentWithdrawals": "Pagos y Retiros",
+    "supportedCurrencies": "Monedas Soportadas",
+    "localization": "Localización",
+    "supportedLanguages": "Idiomas Soportados",
+    "customerSupport": "Atención al Cliente"
   },
   "theme": {
     "theme": "Tema",

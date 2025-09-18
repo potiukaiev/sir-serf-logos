@@ -71,7 +71,12 @@
     "cons": "Inconvénients",
     "ratingBreakdown": "Détail des Évaluations",
     "verified": "Vérifié",
-    "helpful": "Utile"
+    "helpful": "Utile",
+    "paymentWithdrawals": "Paiements et Retraits",
+    "supportedCurrencies": "Devises Supportées",
+    "localization": "Localisation",
+    "supportedLanguages": "Langues Supportées",
+    "customerSupport": "Support Client"
   },
   "theme": {
     "theme": "Thème",

@@ -71,7 +71,12 @@
     "cons": "Cons",
     "ratingBreakdown": "Rating Breakdown",
     "verified": "Verified",
-    "helpful": "Helpful"
+    "helpful": "Helpful",
+    "paymentWithdrawals": "Payment & Withdrawals",
+    "supportedCurrencies": "Supported Currencies",
+    "localization": "Localization",
+    "supportedLanguages": "Supported Languages",
+    "customerSupport": "Customer Support"
   },
   "theme": {
     "theme": "Theme",

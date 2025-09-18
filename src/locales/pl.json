@@ -71,7 +71,12 @@
     "cons": "Wady",
     "ratingBreakdown": "Podział Ocen",
     "verified": "Zweryfikowane",
-    "helpful": "Pomocne"
+    "helpful": "Pomocne",
+    "paymentWithdrawals": "Płatności i Wypłaty",
+    "supportedCurrencies": "Obsługiwane Waluty",
+    "localization": "Lokalizacja",
+    "supportedLanguages": "Obsługiwane Języki",
+    "customerSupport": "Obsługa Klienta"
   },
   "theme": {
     "theme": "Motyw",

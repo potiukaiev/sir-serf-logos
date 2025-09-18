@@ -71,7 +71,12 @@
     "cons": "Eksileri",
     "ratingBreakdown": "Değerlendirme Dağılımı",
     "verified": "Doğrulandı",
-    "helpful": "Faydalı"
+    "helpful": "Faydalı",
+    "paymentWithdrawals": "Ödemeler ve Çekimler",
+    "supportedCurrencies": "Desteklenen Para Birimleri",
+    "localization": "Yerelleştirme",
+    "supportedLanguages": "Desteklenen Diller",
+    "customerSupport": "Müşteri Desteği"
   },
   "theme": {
     "theme": "Tema",
