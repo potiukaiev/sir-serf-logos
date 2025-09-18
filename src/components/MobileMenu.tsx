@@ -11,9 +11,11 @@ export const MobileMenu = () => {
   const location = useLocation();
   
   const navigation = [
-    { name: "Sites", href: "/sites" },
-    { name: "Categories", href: "/categories" },
-    { name: "About", href: "/about" },
+    { name: "Home", href: "/" },
+    { name: "Rating", href: "/sites" },
+    { name: "Tops", href: "/top-sites" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Responsible Gambling", href: "/responsible-gambling" },
   ];
 
   const isActiveRoute = (href: string) => location.pathname === href;

@@ -71,7 +71,7 @@ export const Layout = ({
       </header>
 
       {/* Subheader Navigation */}
-      <nav className="relative z-10 border-b border-gaming-cyan/10 bg-gaming-dark/80 backdrop-blur-sm">
+      <nav className="relative z-10 border-b border-gaming-cyan/10 bg-gaming-dark/80 backdrop-blur-sm hidden md:block">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-center space-x-8">
             <Link 
