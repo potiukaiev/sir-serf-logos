@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "rating": "Değerlendirme",
+    "tops": "Enler",
+    "faq": "SSS",
+    "responsibleGambling": "Sorumlu Oyun",
+    "sites": "Siteler",
+    "categories": "Kategoriler",
+    "about": "Hakkında"
+  },
+  "hero": {
+    "title": "En İyi CS2 ve Dota 2 Kasa Siteleri",
+    "subtitle": "Doğrulanmış CS2, Dota 2 ve oyun kasa sitelerini keşfedin. Bonusları karşılaştırın, yorumları okuyun ve skin avcılığı maceralarınız için mükemmel platformu bulun.",
+    "browseSites": "Sitelere Gözat",
+    "readReviews": "Yorumları Oku"
+  },
+  "featuredSites": {
+    "title": "Öne Çıkan Oyun Siteleri",
+    "subtitle": "En iyi bonuslar ve doğrulanmış güvenlik ile elle seçilmiş premium platformlar.",
+    "online": "ONLINE",
+    "premium": "Premium",
+    "welcomeBonus": "Hoş Geldin Bonusu",
+    "verified": "Doğrulandı",
+    "instant": "Anında",
+    "trending": "Trend",
+    "playNow": "Şimdi Oyna",
+    "readReview": "Yorumu Oku"
+  },
+  "cta": {
+    "title": "Avınıza Başlamaya Hazır mısınız?",
+    "subtitle": "En iyi kasa sitelerini ve özel bonusları bulan binlerce avcıya katılın.",
+    "exploreAllSites": "Tüm Siteleri Keşfet",
+    "browseCategories": "Kategorilere Gözat"
+  },
+  "footer": {
+    "copyright": "© 2024 CaseHunters. En iyi oyun kasa sitelerini bulun ve efsanevi skinleri avlayın."
+  },
+  "top10": {
+    "title": "Top 10 Oyun Siteleri",
+    "subtitle": "Kullanıcı değerlendirmeleri ve popülerliğe göre sıralandı",
+    "platformStats": "Platform İstatistikleri",
+    "totalSites": "Toplam Siteler",
+    "activeUsers": "Aktif Kullanıcılar",
+    "reviews": "Yorumlar",
+    "thisMonth": "Bu Ay",
+    "submitSite": "Sitenizi Gönderin",
+    "submitSiteDesc": "Oyun sitenizin top sıralamalarımızda yer almasını sağlayın",
+    "submitButton": "Site Gönder"
+  },
+  "review": {
+    "backToSites": "Sitelere Dön",
+    "visitSite": "Siteyi Ziyaret Et",
+    "addReview": "Yorum Ekle",
+    "quickInfo": "Hızlı Bilgi",
+    "founded": "Kuruluş",
+    "license": "Lisans",
+    "minDeposit": "Min Yatırım",
+    "maxWithdrawal": "Max Çekim",
+    "supportedGames": "Desteklenen Oyunlar",
+    "features": "Özellikler",
+    "activeUsers": "Aktif Kullanıcılar",
+    "welcomeBonus": "Hoş Geldin Bonusu",
+    "withdrawalTime": "Çekim Süresi",
+    "support": "Destek",
+    "overview": "Genel Bakış",
+    "ratings": "Değerlendirmeler",
+    "userReviews": "Yorumlar",
+    "details": "Detaylar",
+    "pros": "Artıları",
+    "cons": "Eksileri",
+    "ratingBreakdown": "Değerlendirme Dağılımı",
+    "verified": "Doğrulandı",
+    "helpful": "Faydalı"
+  },
+  "theme": {
+    "theme": "Tema",
+    "neonGaming": "Neon Gaming",
+    "neonGamingDesc": "Neon siyah ve mor ile CS2 cyberpunk",
+    "goldenGlass": "Golden Glass",
+    "goldenGlassDesc": "Altın ve glassmorphism ile Dota 2 premium",
+    "minimalFlat": "Minimal Flat",
+    "minimalFlatDesc": "Temiz beyaz ve gri düz tasarım",
+    "active": "AKTİF"
+  },
+  "language": {
+    "english": "English",
+    "italiano": "Italiano",
+    "francais": "Français",
+    "deutsch": "Deutsch",
+    "polski": "Polski",
+    "ukrainian": "Українська",
+    "russian": "Русский",
+    "espanol": "Español",
+    "portugues": "Português",
+    "turkce": "Türkçe"
+  },
+  "mobile": {
+    "settings": "Ayarlar",
+    "theme": "Tema",
+    "language": "Dil"
+  }
+}

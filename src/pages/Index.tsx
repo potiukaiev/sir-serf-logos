@@ -5,8 +5,10 @@ import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-reac
 import { Link } from "react-router-dom";
 import { GamingAd } from "@/components/GamingAd";
 import { Layout } from "@/components/Layout";
+import { useTranslation } from 'react-i18next';
 
 const Index = () => {
+  const { t } = useTranslation();
   const featuredSites = [
     {
       name: "CSGOEmpire",
@@ -55,19 +57,18 @@ const Index = () => {
       {/* Hero Section */}
       <section className="text-center py-16 px-4 animate-fade-up">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-gaming bg-clip-text text-transparent drop-shadow-lg">
-          Best CS2 & Dota 2 Case Sites
+          {t('hero.title')}
         </h1>
         <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-          Discover verified CS2, Dota 2, and gaming case sites. Compare bonuses, read reviews, 
-          and find the perfect platform for your skin hunting adventures.
+          {t('hero.subtitle')}
         </p>
         
         <div className="flex gap-4 justify-center flex-wrap animate-slide-up">
           <Button size="lg" className="px-8 bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-            Browse Sites
+            {t('hero.browseSites')}
           </Button>
           <Button variant="outline" size="lg" className="px-8 border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10">
-            Read Reviews
+            {t('hero.readReviews')}
           </Button>
         </div>
       </section>
@@ -81,10 +82,10 @@ const Index = () => {
       <section className="mb-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Featured Gaming Sites
+            {t('featuredSites.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Hand-picked premium platforms with the best bonuses and verified security.
+            {t('featuredSites.subtitle')}
           </p>
         </div>
 
@@ -96,10 +97,10 @@ const Index = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 rounded-full bg-gaming-green animate-pulse"></div>
-                    <span className="text-sm text-gaming-green font-medium">ONLINE</span>
+                    <span className="text-sm text-gaming-green font-medium">{t('featuredSites.online')}</span>
                   </div>
                   <Badge className={`bg-${rarityColors[site.rarity as keyof typeof rarityColors]}`}>
-                    Premium
+                    {t('featuredSites.premium')}
                   </Badge>
                 </div>
 
@@ -129,21 +130,21 @@ const Index = () => {
                 {/* Bonus & Features */}
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-between p-2 md:p-3 bg-gaming-darker/50 rounded-lg">
-                    <span className="text-xs md:text-sm">Welcome Bonus</span>
+                    <span className="text-xs md:text-sm">{t('featuredSites.welcomeBonus')}</span>
                     <span className="font-bold text-gaming-green text-sm md:text-base">{site.bonus}</span>
                   </div>
                   <div className="flex items-center space-x-2 md:space-x-4 text-xs md:text-sm overflow-x-auto pb-1">
                     <div className="flex items-center space-x-1 whitespace-nowrap">
                       <Shield className="w-3 h-3 md:w-4 md:h-4 text-gaming-cyan flex-shrink-0" />
-                      <span>Verified</span>
+                      <span>{t('featuredSites.verified')}</span>
                     </div>
                     <div className="flex items-center space-x-1 whitespace-nowrap">
                       <Zap className="w-3 h-3 md:w-4 md:h-4 text-gaming-orange flex-shrink-0" />
-                      <span>Instant</span>
+                      <span>{t('featuredSites.instant')}</span>
                     </div>
                     <div className="flex items-center space-x-1 whitespace-nowrap">
                       <TrendingUp className="w-3 h-3 md:w-4 md:h-4 text-gaming-green flex-shrink-0" />
-                      <span>Trending</span>
+                      <span>{t('featuredSites.trending')}</span>
                     </div>
                   </div>
                 </div>
@@ -151,7 +152,7 @@ const Index = () => {
                 {/* CTA Buttons */}
                 <div className="space-y-2">
                   <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated text-sm md:text-base">
-                    Play Now
+                    {t('featuredSites.playNow')}
                     <ExternalLink className="w-3 h-3 md:w-4 md:h-4 ml-2" />
                   </Button>
                   <Button 
@@ -160,7 +161,7 @@ const Index = () => {
                     className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10 text-sm md:text-base"
                   >
                     <Link to={`/review/${site.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                      Read Review
+                      {t('featuredSites.readReview')}
                     </Link>
                   </Button>
                 </div>
@@ -178,17 +179,17 @@ const Index = () => {
       {/* CTA Section */}
       <section className="text-center py-16 bg-gaming-darker/30 rounded-2xl border border-gaming-cyan/10">
         <h2 className="text-3xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          Ready to Start Your Hunt?
+          {t('cta.title')}
         </h2>
         <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Join thousands of hunters finding the best case sites and exclusive bonuses.
+          {t('cta.subtitle')}
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Button asChild size="lg" className="px-8 bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-            <Link to="/sites">Explore All Sites</Link>
+            <Link to="/sites">{t('cta.exploreAllSites')}</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="px-8 border-gaming-cyan text-gaming-cyan hover:bg-gaming-cyan/10">
-            <Link to="/categories">Browse Categories</Link>
+            <Link to="/categories">{t('cta.browseCategories')}</Link>
           </Button>
         </div>
       </section>
@@ -198,21 +199,21 @@ const Index = () => {
         <div className="text-center">
           <nav className="flex justify-center space-x-8 mb-8">
             <Link to="/sites" className="text-foreground hover:text-gaming-cyan transition-colors">
-              Browse Sites
+              {t('nav.sites')}
             </Link>
             <Link to="/categories" className="text-foreground hover:text-gaming-cyan transition-colors">
-              Categories
+              {t('nav.categories')}
             </Link>
             <Link to="/top-sites" className="text-foreground hover:text-gaming-cyan transition-colors">
-              Top 10 Sites
+              {t('nav.tops')}
             </Link>
             <Link to="/about" className="text-foreground hover:text-gaming-cyan transition-colors">
-              About Us
+              {t('nav.about')}
             </Link>
           </nav>
           <div className="border-t border-gaming-cyan/20 mt-8 pt-8 text-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 CaseHunters. Find the best gaming case sites and hunt for legendary skins.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>

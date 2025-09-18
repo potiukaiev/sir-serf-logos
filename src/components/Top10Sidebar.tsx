@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, TrendingUp, Users, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const top10Sites = [
   {
@@ -98,6 +99,7 @@ const top10Sites = [
 ];
 
 export const Top10Sidebar = () => {
+  const { t } = useTranslation();
   return (
     <div className="w-80 hidden lg:block">
       <div className="sticky top-24 space-y-6">
@@ -106,11 +108,11 @@ export const Top10Sidebar = () => {
             <CardTitle className="flex items-center gap-2 text-lg">
               <TrendingUp className="w-5 h-5 text-gaming-cyan" />
               <Link to="/top-sites" className="hover:text-gaming-cyan transition-colors">
-                Top 10 Gaming Sites
+                {t('top10.title')}
               </Link>
             </CardTitle>
             <p className="text-sm text-muted-foreground">
-              Ranked by user ratings and popularity
+              {t('top10.subtitle')}
             </p>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -159,23 +161,23 @@ export const Top10Sidebar = () => {
         {/* Quick Stats Card */}
         <Card className="bg-card border-border shadow-elevated">
           <CardHeader className="pb-4">
-            <CardTitle className="text-lg">Platform Stats</CardTitle>
+            <CardTitle className="text-lg">{t('top10.platformStats')}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">Total Sites</span>
+              <span className="text-sm text-muted-foreground">{t('top10.totalSites')}</span>
               <span className="font-bold text-gaming-cyan">847</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">Active Users</span>
+              <span className="text-sm text-muted-foreground">{t('top10.activeUsers')}</span>
               <span className="font-bold text-gaming-green">2.1M</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">Reviews</span>
+              <span className="text-sm text-muted-foreground">{t('top10.reviews')}</span>
               <span className="font-bold text-gaming-purple">156k</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">This Month</span>
+              <span className="text-sm text-muted-foreground">{t('top10.thisMonth')}</span>
               <span className="font-bold text-gaming-orange">+12%</span>
             </div>
           </CardContent>
@@ -184,15 +186,15 @@ export const Top10Sidebar = () => {
         {/* CTA Card */}
         <Card className="bg-gradient-card border-gaming-cyan/20 shadow-gaming">
           <CardContent className="p-6 text-center">
-            <h3 className="font-bold text-gaming-cyan mb-2">Submit Your Site</h3>
+            <h3 className="font-bold text-gaming-cyan mb-2">{t('top10.submitSite')}</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Get your gaming site featured in our top rankings
+              {t('top10.submitSiteDesc')}
             </p>
             <Button 
               size="sm" 
               className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated"
             >
-              Submit Site
+              {t('top10.submitButton')}
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
           </CardContent>

@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "rating": "Évaluation",
+    "tops": "Tops",
+    "faq": "FAQ",
+    "responsibleGambling": "Jeu Responsable",
+    "sites": "Sites",
+    "categories": "Catégories",
+    "about": "À propos"
+  },
+  "hero": {
+    "title": "Meilleurs Sites Case CS2 & Dota 2",
+    "subtitle": "Découvrez des sites case CS2, Dota 2 et gaming vérifiés. Comparez les bonus, lisez les avis et trouvez la plateforme parfaite pour vos aventures de chasse aux skins.",
+    "browseSites": "Parcourir les Sites",
+    "readReviews": "Lire les Avis"
+  },
+  "featuredSites": {
+    "title": "Sites Gaming en Vedette",
+    "subtitle": "Plateformes premium sélectionnées avec les meilleurs bonus et sécurité vérifiée.",
+    "online": "EN LIGNE",
+    "premium": "Premium",
+    "welcomeBonus": "Bonus de Bienvenue",
+    "verified": "Vérifié",
+    "instant": "Instantané",
+    "trending": "Tendance",
+    "playNow": "Jouer Maintenant",
+    "readReview": "Lire l'Avis"
+  },
+  "cta": {
+    "title": "Prêt à Commencer Votre Chasse?",
+    "subtitle": "Rejoignez des milliers de chasseurs trouvant les meilleurs sites case et bonus exclusifs.",
+    "exploreAllSites": "Explorer Tous les Sites",
+    "browseCategories": "Parcourir les Catégories"
+  },
+  "footer": {
+    "copyright": "© 2024 CaseHunters. Trouvez les meilleurs sites gaming case et chassez les skins légendaires."
+  },
+  "top10": {
+    "title": "Top 10 Sites Gaming",
+    "subtitle": "Classés par évaluations des utilisateurs et popularité",
+    "platformStats": "Statistiques de la Plateforme",
+    "totalSites": "Sites Totaux",
+    "activeUsers": "Utilisateurs Actifs",
+    "reviews": "Avis",
+    "thisMonth": "Ce Mois-ci",
+    "submitSite": "Soumettre Votre Site",
+    "submitSiteDesc": "Faites figurer votre site gaming dans nos classements top",
+    "submitButton": "Soumettre le Site"
+  },
+  "review": {
+    "backToSites": "Retour aux Sites",
+    "visitSite": "Visiter le Site",
+    "addReview": "Ajouter un Avis",
+    "quickInfo": "Infos Rapides",
+    "founded": "Fondé",
+    "license": "Licence",
+    "minDeposit": "Dépôt Min",
+    "maxWithdrawal": "Retrait Max",
+    "supportedGames": "Jeux Supportés",
+    "features": "Fonctionnalités",
+    "activeUsers": "Utilisateurs Actifs",
+    "welcomeBonus": "Bonus de Bienvenue",
+    "withdrawalTime": "Temps de Retrait",
+    "support": "Support",
+    "overview": "Aperçu",
+    "ratings": "Évaluations",
+    "userReviews": "Avis",
+    "details": "Détails",
+    "pros": "Avantages",
+    "cons": "Inconvénients",
+    "ratingBreakdown": "Détail des Évaluations",
+    "verified": "Vérifié",
+    "helpful": "Utile"
+  },
+  "theme": {
+    "theme": "Thème",
+    "neonGaming": "Neon Gaming",
+    "neonGamingDesc": "CS2 cyberpunk avec néon cyan et violet",
+    "goldenGlass": "Golden Glass",
+    "goldenGlassDesc": "Dota 2 premium avec or et glassmorphism",
+    "minimalFlat": "Minimal Flat",
+    "minimalFlatDesc": "Design plat propre blanc et gris",
+    "active": "ACTIF"
+  },
+  "language": {
+    "english": "English",
+    "italiano": "Italiano",
+    "francais": "Français",
+    "deutsch": "Deutsch",
+    "polski": "Polski",
+    "ukrainian": "Українська",
+    "russian": "Русский",
+    "espanol": "Español",
+    "portugues": "Português",
+    "turkce": "Türkçe"
+  },
+  "mobile": {
+    "settings": "Paramètres",
+    "theme": "Thème",
+    "language": "Langue"
+  }
+}

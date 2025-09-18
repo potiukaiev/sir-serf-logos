@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Главная",
+    "rating": "Рейтинг",
+    "tops": "Топы",
+    "faq": "FAQ",
+    "responsibleGambling": "Ответственная Игра",
+    "sites": "Сайты",
+    "categories": "Категории",
+    "about": "О нас"
+  },
+  "hero": {
+    "title": "Лучшие Сайты Кейсов CS2 и Dota 2",
+    "subtitle": "Откройте проверенные сайты кейсов CS2, Dota 2 и игр. Сравнивайте бонусы, читайте отзывы и найдите идеальную платформу для ваших приключений охоты за скинами.",
+    "browseSites": "Просмотреть Сайты",
+    "readReviews": "Читать Отзывы"
+  },
+  "featuredSites": {
+    "title": "Рекомендуемые Игровые Сайты",
+    "subtitle": "Отобранные премиум-платформы с лучшими бонусами и проверенной безопасностью.",
+    "online": "ОНЛАЙН",
+    "premium": "Премиум",
+    "welcomeBonus": "Приветственный Бонус",
+    "verified": "Проверено",
+    "instant": "Мгновенно",
+    "trending": "Тренд",
+    "playNow": "Играть Сейчас",
+    "readReview": "Читать Отзыв"
+  },
+  "cta": {
+    "title": "Готовы Начать Охоту?",
+    "subtitle": "Присоединяйтесь к тысячам охотников, находящих лучшие сайты кейсов и эксклюзивные бонусы.",
+    "exploreAllSites": "Исследовать Все Сайты",
+    "browseCategories": "Просмотреть Категории"
+  },
+  "footer": {
+    "copyright": "© 2024 CaseHunters. Находите лучшие игровые сайты кейсов и охотьтесь за легендарными скинами."
+  },
+  "top10": {
+    "title": "Топ 10 Игровых Сайтов",
+    "subtitle": "Ранжированы по пользовательским рейтингам и популярности",
+    "platformStats": "Статистика Платформы",
+    "totalSites": "Общие Сайты",
+    "activeUsers": "Активные Пользователи",
+    "reviews": "Отзывы",
+    "thisMonth": "В Этом Месяце",
+    "submitSite": "Подать Ваш Сайт",
+    "submitSiteDesc": "Сделайте ваш игровой сайт популярным в наших топовых рейтингах",
+    "submitButton": "Подать Сайт"
+  },
+  "review": {
+    "backToSites": "Назад к Сайтам",
+    "visitSite": "Посетить Сайт",
+    "addReview": "Добавить Отзыв",
+    "quickInfo": "Быстрая Информация",
+    "founded": "Основан",
+    "license": "Лицензия",
+    "minDeposit": "Мин Депозит",
+    "maxWithdrawal": "Макс Вывод",
+    "supportedGames": "Поддерживаемые Игры",
+    "features": "Функции",
+    "activeUsers": "Активные Пользователи",
+    "welcomeBonus": "Приветственный Бонус",
+    "withdrawalTime": "Время Вывода",
+    "support": "Поддержка",
+    "overview": "Обзор",
+    "ratings": "Рейтинги",
+    "userReviews": "Отзывы",
+    "details": "Детали",
+    "pros": "Плюсы",
+    "cons": "Минусы",
+    "ratingBreakdown": "Детализация Рейтинга",
+    "verified": "Проверено",
+    "helpful": "Полезно"
+  },
+  "theme": {
+    "theme": "Тема",
+    "neonGaming": "Neon Gaming",
+    "neonGamingDesc": "CS2 киберпанк с неоновым циан и фиолетовым",
+    "goldenGlass": "Golden Glass",
+    "goldenGlassDesc": "Dota 2 премиум с золотом и glassmorphism",
+    "minimalFlat": "Minimal Flat",
+    "minimalFlatDesc": "Чистый белый и серый плоский дизайн",
+    "active": "АКТИВНЫЙ"
+  },
+  "language": {
+    "english": "English",
+    "italiano": "Italiano",
+    "francais": "Français",
+    "deutsch": "Deutsch",
+    "polski": "Polski",
+    "ukrainian": "Українська",
+    "russian": "Русский",
+    "espanol": "Español",
+    "portugues": "Português",
+    "turkce": "Türkçe"
+  },
+  "mobile": {
+    "settings": "Настройки",
+    "theme": "Тема",
+    "language": "Язык"
+  }
+}

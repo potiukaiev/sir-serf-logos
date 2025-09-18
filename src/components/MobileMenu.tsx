@@ -5,17 +5,19 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { useTranslation } from 'react-i18next';
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
   
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Rating", href: "/sites" },
-    { name: "Tops", href: "/top-sites" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Responsible Gambling", href: "/responsible-gambling" },
+    { name: t('nav.home'), href: "/" },
+    { name: t('nav.rating'), href: "/sites" },
+    { name: t('nav.tops'), href: "/top-sites" },
+    { name: t('nav.faq'), href: "/faq" },
+    { name: t('nav.responsibleGambling'), href: "/responsible-gambling" },
   ];
 
   const isActiveRoute = (href: string) => location.pathname === href;
@@ -65,15 +67,15 @@ export const MobileMenu = () => {
           {/* Theme and Language Controls */}
           <div className="border-t border-gaming-cyan/20 pt-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium text-muted-foreground">Settings</span>
+              <span className="text-sm font-medium text-muted-foreground">{t('mobile.settings')}</span>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex-1">
-                <span className="text-sm text-muted-foreground mb-2 block">Theme</span>
+                <span className="text-sm text-muted-foreground mb-2 block">{t('mobile.theme')}</span>
                 <ThemeSelector />
               </div>
               <div className="flex-1">
-                <span className="text-sm text-muted-foreground mb-2 block">Language</span>
+                <span className="text-sm text-muted-foreground mb-2 block">{t('mobile.language')}</span>
                 <LanguageSelector />
               </div>
             </div>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Globe, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
@@ -8,23 +7,26 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { useVariant } from '@/hooks/useVariant';
+import { useTranslation } from 'react-i18next';
 
 export const LanguageSelector = () => {
   const variant = useVariant();
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const { i18n, t } = useTranslation();
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵' },
-    { code: 'ko', name: '한국어', flag: '🇰🇷' }
+    { code: 'en', name: t('language.english'), flag: '🇺🇸' },
+    { code: 'it', name: t('language.italiano'), flag: '🇮🇹' },
+    { code: 'fr', name: t('language.francais'), flag: '🇫🇷' },
+    { code: 'de', name: t('language.deutsch'), flag: '🇩🇪' },
+    { code: 'pl', name: t('language.polski'), flag: '🇵🇱' },
+    { code: 'ua', name: t('language.ukrainian'), flag: '🇺🇦' },
+    { code: 'ru', name: t('language.russian'), flag: '🇷🇺' },
+    { code: 'es', name: t('language.espanol'), flag: '🇪🇸' },
+    { code: 'pt', name: t('language.portugues'), flag: '🇵🇹' },
+    { code: 'tr', name: t('language.turkce'), flag: '🇹🇷' }
   ];
 
-  const currentLanguage = languages.find(lang => lang.code === selectedLanguage);
+  const currentLanguage = languages.find(lang => lang.code === i18n.language);
 
   return (
     <DropdownMenu>
@@ -58,17 +60,17 @@ export const LanguageSelector = () => {
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
-            onClick={() => setSelectedLanguage(language.code)}
+            onClick={() => i18n.changeLanguage(language.code)}
             className={`
               flex items-center justify-between gap-3 cursor-pointer
-              ${selectedLanguage === language.code ? 'bg-gaming-cyan/20 text-gaming-cyan' : 'text-foreground hover:bg-gaming-cyan/10'}
+              ${i18n.language === language.code ? 'bg-gaming-cyan/20 text-gaming-cyan' : 'text-foreground hover:bg-gaming-cyan/10'}
             `}
           >
             <div className="flex items-center gap-3">
               <span className="text-base">{language.flag}</span>
               <span className="text-sm">{language.name}</span>
             </div>
-            {selectedLanguage === language.code && (
+            {i18n.language === language.code && (
               <Check className="w-4 h-4 text-gaming-cyan" />
             )}
           </DropdownMenuItem>

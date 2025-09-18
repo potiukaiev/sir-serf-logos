@@ -8,11 +8,13 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { useVariant } from '@/hooks/useVariant';
+import { useTranslation } from 'react-i18next';
 
 type Variant = 'A' | 'B' | 'C';
 
 export const ThemeSelector = () => {
   const variant = useVariant();
+  const { t } = useTranslation();
   const [selectedVariant, setSelectedVariant] = useState<Variant>(variant);
 
   useEffect(() => {
@@ -22,23 +24,23 @@ export const ThemeSelector = () => {
   const themes = [
     { 
       value: 'A' as Variant, 
-      label: 'Neon Gaming', 
+      label: t('theme.neonGaming'), 
       icon: Zap,
-      description: 'CS2 cyberpunk with neon cyan & purple',
+      description: t('theme.neonGamingDesc'),
       color: 'text-gaming-cyan'
     },
     { 
       value: 'B' as Variant, 
-      label: 'Golden Glass', 
+      label: t('theme.goldenGlass'), 
       icon: Crown,
-      description: 'Dota 2 premium with gold & glassmorphism',
+      description: t('theme.goldenGlassDesc'),
       color: 'text-gaming-orange'
     },
     { 
       value: 'C' as Variant, 
-      label: 'Minimal Flat', 
+      label: t('theme.minimalFlat'), 
       icon: Palette,
-      description: 'Clean white & gray flat design',
+      description: t('theme.minimalFlatDesc'),
       color: 'text-gray-600'
     }
   ];
@@ -70,7 +72,7 @@ export const ThemeSelector = () => {
           `}
         >
           <CurrentIcon className={`w-4 h-4 ${currentTheme?.color || 'text-gaming-cyan'}`} />
-          <span className="hidden sm:inline">Theme</span>
+          <span className="hidden sm:inline">{t('theme.theme')}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
@@ -100,7 +102,7 @@ export const ThemeSelector = () => {
               <div className="flex items-center gap-2 w-full">
                 <Icon className={`w-4 h-4 ${themeOption.color}`} />
                 <span className="font-medium">{themeOption.label}</span>
-                {isSelected && <span className="ml-auto text-xs text-gaming-cyan">ACTIVE</span>}
+                {isSelected && <span className="ml-auto text-xs text-gaming-cyan">{t('theme.active')}</span>}
               </div>
               <span className="text-xs text-muted-foreground ml-6">
                 {themeOption.description}
