@@ -239,6 +239,7 @@
   "articles": {
     "title": "Gaming Articles & Guides",
     "subtitle": "Explore comprehensive guides, strategies, and tips for CS2 and Dota 2 case opening, skin trading, and gaming.",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "backToArticles": "Back to Articles"
   }
 }

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 interface ArticleCardProps {
   id: string;
@@ -22,10 +23,10 @@ export const ArticleCard = ({
   category
 }: ArticleCardProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const handleReadMore = () => {
-    // For now, just scroll to top - later this will navigate to the article page
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(`/article/${id}`);
   };
 
   return (

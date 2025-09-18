@@ -9,7 +9,8 @@ const articlesData = [
     description: "Learn everything you need to know about CS2 case opening, from the basics to advanced strategies. Discover which cases offer the best value and how to maximize your chances of getting rare skins.",
     publishDate: "2024-01-15",
     readTime: "8 min read",
-    category: "Guide"
+    category: "Guide",
+    author: "Alex Gaming"
   },
   {
     id: "dota2-betting-strategies", 
@@ -17,7 +18,8 @@ const articlesData = [
     description: "Explore proven betting strategies for Dota 2 matches. From analyzing team performance to understanding meta changes, this comprehensive guide will help you make more informed betting decisions.",
     publishDate: "2024-01-12",
     readTime: "6 min read",
-    category: "Strategy"
+    category: "Strategy",
+    author: "Mike Esports"
   },
   {
     id: "skin-trading-tips",
@@ -25,7 +27,8 @@ const articlesData = [
     description: "New to skin trading? This article covers the fundamentals of trading CS2 and Dota 2 skins safely and profitably. Learn about market trends, pricing, and avoiding common scams.",
     publishDate: "2024-01-10",
     readTime: "5 min read",
-    category: "Trading"
+    category: "Trading",
+    author: "Sarah Trader"
   },
   {
     id: "case-site-security",
@@ -33,7 +36,8 @@ const articlesData = [
     description: "Security should be your top priority when choosing a case opening site. Learn the key indicators of legitimate platforms and red flags to avoid when selecting where to play.",
     publishDate: "2024-01-08",
     readTime: "7 min read",
-    category: "Security"
+    category: "Security",
+    author: "David Security"
   }
 ];
 

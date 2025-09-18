@@ -239,6 +239,7 @@
   "articles": {
     "title": "Artykuły i Przewodniki Gaming",
     "subtitle": "Poznaj kompleksowe przewodniki, strategie i wskazówki dotyczące otwierania skrzynek CS2 i Dota 2, handlu skinami i gamingu.",
-    "readMore": "Czytaj Więcej"
+    "readMore": "Czytaj Więcej",
+    "backToArticles": "Powrót do Artykułów"
   }
 }
