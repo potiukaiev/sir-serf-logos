@@ -173,7 +173,7 @@ const SiteReview = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 md:px-6 py-8 overflow-x-hidden">
         {/* Back Button */}
         <Link to="/sites" className="inline-flex items-center text-gaming-cyan hover:text-gaming-cyan/80 transition-colors mb-6">
           <ChevronLeft className="w-4 h-4 mr-1" />
@@ -181,10 +181,10 @@ const SiteReview = () => {
         </Link>
 
         {/* Site Header */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8">
           <div className="lg:col-span-2">
             <Card className="bg-gradient-card border-gaming-cyan/20 shadow-gaming">
-              <CardContent className="p-8">
+              <CardContent className="p-4 md:p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <div className="flex items-center space-x-3 mb-4">
@@ -219,7 +219,7 @@ const SiteReview = () => {
                 </div>
 
                 {/* Quick Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-2 md:gap-4 mb-6">
                   <div className="text-center p-3 bg-gaming-darker/50 rounded-lg">
                     <Users className="w-6 h-6 text-gaming-cyan mx-auto mb-2" />
                     <div className="font-bold text-gaming-cyan">{siteData.users}</div>
@@ -310,7 +310,7 @@ const SiteReview = () => {
 
         {/* Detailed Review Tabs */}
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 bg-gaming-dark/50">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-gaming-dark/50">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="ratings">Ratings</TabsTrigger>
             <TabsTrigger value="reviews">Reviews</TabsTrigger>

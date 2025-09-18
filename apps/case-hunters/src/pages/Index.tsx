@@ -88,10 +88,10 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 px-2 md:px-0">
           {featuredSites.map((site, index) => (
-            <Card key={index} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group">
-              <CardContent className="p-6">
+            <Card key={index} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-4 md:p-6">
                 {/* Site Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">

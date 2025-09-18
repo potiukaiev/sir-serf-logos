@@ -88,10 +88,10 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 px-2 md:px-0">
           {featuredSites.map((site, index) => (
-            <Card key={index} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group">
-              <CardContent className="p-6">
+            <Card key={index} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-4 md:p-6">
                 {/* Site Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
@@ -128,21 +128,21 @@ const Index = () => {
 
                 {/* Bonus & Features */}
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-between p-3 bg-gaming-darker/50 rounded-lg">
-                    <span className="text-sm">Welcome Bonus</span>
-                    <span className="font-bold text-gaming-green">{site.bonus}</span>
+                  <div className="flex items-center justify-between p-2 md:p-3 bg-gaming-darker/50 rounded-lg">
+                    <span className="text-xs md:text-sm">Welcome Bonus</span>
+                    <span className="font-bold text-gaming-green text-sm md:text-base">{site.bonus}</span>
                   </div>
-                  <div className="flex items-center space-x-4 text-sm">
-                    <div className="flex items-center space-x-1">
-                      <Shield className="w-4 h-4 text-gaming-cyan" />
+                  <div className="flex items-center space-x-2 md:space-x-4 text-xs md:text-sm overflow-x-auto pb-1">
+                    <div className="flex items-center space-x-1 whitespace-nowrap">
+                      <Shield className="w-3 h-3 md:w-4 md:h-4 text-gaming-cyan flex-shrink-0" />
                       <span>Verified</span>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <Zap className="w-4 h-4 text-gaming-orange" />
+                    <div className="flex items-center space-x-1 whitespace-nowrap">
+                      <Zap className="w-3 h-3 md:w-4 md:h-4 text-gaming-orange flex-shrink-0" />
                       <span>Instant</span>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <TrendingUp className="w-4 h-4 text-gaming-green" />
+                    <div className="flex items-center space-x-1 whitespace-nowrap">
+                      <TrendingUp className="w-3 h-3 md:w-4 md:h-4 text-gaming-green flex-shrink-0" />
                       <span>Trending</span>
                     </div>
                   </div>
@@ -150,14 +150,14 @@ const Index = () => {
 
                 {/* CTA Buttons */}
                 <div className="space-y-2">
-                  <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
+                  <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated text-sm md:text-base">
                     Play Now
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    <ExternalLink className="w-3 h-3 md:w-4 md:h-4 ml-2" />
                   </Button>
                   <Button 
                     asChild
                     variant="outline" 
-                    className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
+                    className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10 text-sm md:text-base"
                   >
                     <Link to={`/review/${site.name.toLowerCase().replace(/\s+/g, '-')}`}>
                       Read Review
