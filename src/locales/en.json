@@ -3,6 +3,7 @@
     "home": "Home",
     "rating": "Rating",
     "tops": "Tops",
+    "articles": "Articles",
     "faq": "FAQ",
     "responsibleGambling": "Responsible Gambling",
     "sites": "Sites",
@@ -234,5 +235,10 @@
         "description": "Information and support for problem gambling"
       }
     }
+  },
+  "articles": {
+    "title": "Gaming Articles & Guides",
+    "subtitle": "Explore comprehensive guides, strategies, and tips for CS2 and Dota 2 case opening, skin trading, and gaming.",
+    "readMore": "Read More"
   }
 }

@@ -14,6 +14,7 @@ import SiteReview from "./pages/SiteReview";
 import TopSites from "./pages/TopSites";
 import FAQ from "./pages/FAQ";
 import ResponsibleGambling from "./pages/ResponsibleGambling";
+import Articles from "./pages/Articles";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const AppContent = () => {
       <Route path="/top-sites" element={<TopSites />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/responsible-gambling" element={<ResponsibleGambling />} />
+      <Route path="/articles" element={<Articles />} />
       <Route path="/review/:siteId" element={<SiteReview />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />

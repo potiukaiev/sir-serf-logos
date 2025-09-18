@@ -3,6 +3,7 @@
     "home": "Strona główna",
     "rating": "Ocena",
     "tops": "Topy",
+    "articles": "Artykuły",
     "faq": "FAQ",
     "responsibleGambling": "Odpowiedzialne hazard",
     "sites": "Strony",
@@ -234,5 +235,10 @@
         "description": "Informacje i wsparcie dla problematycznego hazardu"
       }
     }
+  },
+  "articles": {
+    "title": "Artykuły i Przewodniki Gaming",
+    "subtitle": "Poznaj kompleksowe przewodniki, strategie i wskazówki dotyczące otwierania skrzynek CS2 i Dota 2, handlu skinami i gamingu.",
+    "readMore": "Czytaj Więcej"
   }
 }

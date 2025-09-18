@@ -29,6 +29,7 @@ export const Layout = ({
     { name: t('nav.home'), href: "/" },
     { name: t('nav.rating'), href: "/sites" },
     { name: t('nav.tops'), href: "/top-sites" },
+    { name: t('nav.articles'), href: "/articles" },
     { name: t('nav.faq'), href: "/faq" },
     { name: t('nav.responsibleGambling'), href: "/responsible-gambling" }
   ];

@@ -3,6 +3,7 @@
     "home": "Home",
     "rating": "Valutazione",
     "tops": "Top",
+    "articles": "Articoli",
     "faq": "FAQ",
     "responsibleGambling": "Gioco Responsabile",
     "sites": "Siti",
@@ -234,5 +235,10 @@
         "description": "Informazioni e supporto per il gioco problematico"
       }
     }
+  },
+  "articles": {
+    "title": "Articoli e Guide di Gaming",
+    "subtitle": "Esplora guide complete, strategie e consigli per l'apertura di casse CS2 e Dota 2, il trading di skin e il gaming.",
+    "readMore": "Leggi di Più"
   }
 }

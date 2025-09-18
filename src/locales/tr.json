@@ -3,6 +3,7 @@
     "home": "Ana Sayfa",
     "rating": "Değerlendirme",
     "tops": "Enler",
+    "articles": "Makaleler",
     "faq": "SSS",
     "responsibleGambling": "Sorumlu Oyun",
     "sites": "Siteler",
@@ -234,5 +235,10 @@
         "description": "Sorunlu kumar için bilgi ve destek"
       }
     }
+  },
+  "articles": {
+    "title": "Gaming Makaleleri ve Rehberleri",
+    "subtitle": "CS2 ve Dota 2 kasa açma, skin ticareti ve gaming için kapsamlı rehberler, stratejiler ve ipuçlarını keşfedin.",
+    "readMore": "Devamını Oku"
   }
 }
