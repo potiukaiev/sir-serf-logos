@@ -1,14 +1,16 @@
+import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
-import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { Link, useLocation } from "react-router-dom";
 import { Logo } from "@/components/Logo";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MobileMenu } from "@/components/MobileMenu";
 import { Top10Sidebar } from "@/components/Top10Sidebar";
+import { useTranslation } from 'react-i18next';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   title?: string;
   description?: string;
   keywords?: string;
@@ -20,6 +22,18 @@ export const Layout = ({
   description = "Discover the best CS2 and Dota 2 case opening sites. Compare bonuses, read reviews, and find verified platforms for skin trading and case battles.",
   keywords = "CS2 case sites, Dota 2 case opening, skin trading, case battles, gaming bonuses, verified platforms"
 }: LayoutProps) => {
+  const location = useLocation();
+  const { t } = useTranslation();
+
+  const navigation = [
+    { name: t('nav.home'), href: "/" },
+    { name: t('nav.rating'), href: "/sites" },
+    { name: t('nav.tops'), href: "/top-sites" },
+    { name: t('nav.faq'), href: "/faq" },
+    { name: t('nav.responsibleGambling'), href: "/responsible-gambling" }
+  ];
+
+  const isActiveRoute = (href: string) => location.pathname === href;
   return (
     <div className="min-h-screen bg-background text-foreground relative">
       <Helmet>
@@ -74,41 +88,22 @@ export const Layout = ({
       <nav className="relative z-10 border-b border-gaming-cyan/10 bg-gaming-dark/80 backdrop-blur-sm hidden md:block">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-center space-x-8">
-            <Link 
-              to="/" 
-              className="text-sm font-medium text-muted-foreground hover:text-gaming-cyan transition-colors duration-200 relative group"
-            >
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gaming-cyan transition-all duration-200 group-hover:w-full"></span>
-            </Link>
-            <Link 
-              to="/sites" 
-              className="text-sm font-medium text-muted-foreground hover:text-gaming-cyan transition-colors duration-200 relative group"
-            >
-              Rating
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gaming-cyan transition-all duration-200 group-hover:w-full"></span>
-            </Link>
-            <Link 
-              to="/top-sites" 
-              className="text-sm font-medium text-muted-foreground hover:text-gaming-cyan transition-colors duration-200 relative group"
-            >
-              Tops
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gaming-cyan transition-all duration-200 group-hover:w-full"></span>
-            </Link>
-            <Link 
-              to="/faq" 
-              className="text-sm font-medium text-muted-foreground hover:text-gaming-cyan transition-colors duration-200 relative group"
-            >
-              FAQ
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gaming-cyan transition-all duration-200 group-hover:w-full"></span>
-            </Link>
-            <Link 
-              to="/responsible-gambling" 
-              className="text-sm font-medium text-muted-foreground hover:text-gaming-cyan transition-colors duration-200 relative group"
-            >
-              Responsible Gambling
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gaming-cyan transition-all duration-200 group-hover:w-full"></span>
-            </Link>
+            {navigation.map((item) => (
+              <Link 
+                key={item.href}
+                to={item.href} 
+                className={`text-sm font-medium transition-colors duration-200 relative group ${
+                  isActiveRoute(item.href) 
+                    ? 'text-gaming-cyan' 
+                    : 'text-muted-foreground hover:text-gaming-cyan'
+                }`}
+              >
+                {item.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gaming-cyan transition-all duration-200 ${
+                  isActiveRoute(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+            ))}
           </div>
         </div>
       </nav>
