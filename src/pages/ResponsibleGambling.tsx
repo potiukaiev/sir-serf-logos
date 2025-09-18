@@ -6,6 +6,8 @@ import { Shield, Clock, DollarSign, Users, Phone, ExternalLink, AlertTriangle } 
 import { useTranslation } from "react-i18next";
 
 export default function ResponsibleGambling() {
+  const { t } = useTranslation();
+  
   const warningSignsData = [
     "Spending more money than you can afford",
     "Chasing losses with bigger bets",
