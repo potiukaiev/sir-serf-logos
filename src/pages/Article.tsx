@@ -448,9 +448,9 @@ export default function Article() {
         <Card className="bg-gaming-dark/20 border-gaming-cyan/20">
           <CardContent className="p-8">
             <div 
-              className="prose prose-invert prose-gaming max-w-none"
+              className="prose prose-sm prose-invert max-w-none text-muted-foreground [&>h2]:text-lg [&>h2]:font-semibold [&>h2]:text-gaming-cyan [&>h2]:mt-6 [&>h2]:mb-3 [&>h3]:text-base [&>h3]:font-medium [&>h3]:text-gaming-cyan [&>h3]:mt-4 [&>h3]:mb-2 [&>strong]:text-gaming-cyan [&>ul]:text-muted-foreground [&>ol]:text-muted-foreground [&>p]:text-muted-foreground [&>p]:text-sm [&>p]:leading-relaxed"
               dangerouslySetInnerHTML={{ 
-                __html: article.content.replace(/\n/g, '<br>').replace(/#{1,6}\s/g, '<h2 class="text-2xl font-bold text-gaming-cyan mt-8 mb-4">').replace(/\*\*(.*?)\*\*/g, '<strong class="text-gaming-cyan">$1</strong>') 
+                __html: article.content.replace(/\n/g, '<br>').replace(/#{1,6}\s/g, '<h2>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
               }}
             />
           </CardContent>
