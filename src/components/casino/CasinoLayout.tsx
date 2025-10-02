@@ -28,8 +28,11 @@ export const CasinoLayout = ({
   const navigation = [
     { name: "Home", href: "/healthy-casinos" },
     { name: "Casinos", href: "/healthy-casinos/casinos" },
+    { name: "Rankings", href: "/healthy-casinos/ratings" },
+    { name: "Top Sites", href: "/healthy-casinos/top-sites" },
     { name: "Articles", href: "/healthy-casinos/articles" },
-    { name: "About", href: "/healthy-casinos/about" }
+    { name: "FAQ", href: "/healthy-casinos/faq" },
+    { name: "Responsible Gambling", href: "/healthy-casinos/responsible-gambling" }
   ];
 
   const isActiveRoute = (href: string) => location.pathname === href;

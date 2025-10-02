@@ -25,6 +25,11 @@ import CasinoReview from "./pages/casino/CasinoReview";
 import CasinoAbout from "./pages/casino/CasinoAbout";
 import CasinoArticles from "./pages/casino/CasinoArticles";
 import CasinoArticle from "./pages/casino/CasinoArticle";
+import CasinoTopSites from "./pages/casino/CasinoTopSites";
+import CasinoRatings from "./pages/casino/CasinoRatings";
+import CasinoFAQ from "./pages/casino/CasinoFAQ";
+import CasinoResponsibleGambling from "./pages/casino/CasinoResponsibleGambling";
+import CasinoRatingDetail from "./pages/casino/CasinoRatingDetail";
 
 const queryClient = new QueryClient();
 
@@ -49,8 +54,13 @@ const AppContent = () => {
       <Route path="/healthy-casinos" element={<CasinoIndex />} />
       <Route path="/healthy-casinos/casinos" element={<Casinos />} />
       <Route path="/healthy-casinos/casino/:casinoId" element={<CasinoReview />} />
+      <Route path="/healthy-casinos/top-sites" element={<CasinoTopSites />} />
+      <Route path="/healthy-casinos/ratings" element={<CasinoRatings />} />
+      <Route path="/healthy-casinos/ratings/:categoryId" element={<CasinoRatingDetail />} />
       <Route path="/healthy-casinos/articles" element={<CasinoArticles />} />
       <Route path="/healthy-casinos/article/:articleId" element={<CasinoArticle />} />
+      <Route path="/healthy-casinos/faq" element={<CasinoFAQ />} />
+      <Route path="/healthy-casinos/responsible-gambling" element={<CasinoResponsibleGambling />} />
       <Route path="/healthy-casinos/about" element={<CasinoAbout />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
