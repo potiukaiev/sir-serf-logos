@@ -7,6 +7,14 @@ All colors MUST be HSL for proper theming.
 */
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
   :root {
     /* Gaming Dark Theme - Light mode fallback */
     --background: 220 39% 11%;
