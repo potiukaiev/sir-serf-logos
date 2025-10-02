@@ -7,6 +7,7 @@ import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface ArticleData {
   id: string;
@@ -394,6 +395,32 @@ export default function Article() {
       description={article.description}
       keywords={`${article.category.toLowerCase()}, gaming guide, ${article.title.toLowerCase()}`}
     >
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article.title,
+            "description": article.description,
+            "datePublished": article.publishDate,
+            "author": {
+              "@type": "Person",
+              "name": article.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "CaseHunters",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://casehunters.com/logo.png"
+              }
+            },
+            "articleSection": article.category,
+            "wordCount": article.content.split(' ').length
+          })}
+        </script>
+      </Helmet>
+      
       <article className="max-w-4xl mx-auto space-y-8">
         {/* Back Button */}
         <Button 

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, TrendingUp, Users, CheckCircle, XCircle, ExternalLink, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const topSites = [
   {
@@ -245,6 +246,39 @@ export default function TopSites() {
       description="Discover the top-ranked CS2 and Dota 2 gaming sites with detailed reviews, pros and cons, user ratings, and exclusive bonuses. Find your perfect platform today."
       keywords="top gaming sites, best CS2 sites, Dota 2 platforms, skin trading rankings, case opening reviews, gaming site comparison"
     >
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Top 10 Gaming Sites 2024",
+            "description": "Comprehensive rankings of the best CS2 and Dota 2 gaming platforms",
+            "itemListElement": topSites.map((site, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": site.name,
+                "description": site.description,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": site.rating,
+                  "bestRating": 5,
+                  "worstRating": 1,
+                  "ratingCount": parseInt(site.users.replace('k', '000'))
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": site.bonus
+                },
+                "category": site.category
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       <div className="space-y-8">
         {/* Hero Section */}
         <div className="text-center space-y-4">

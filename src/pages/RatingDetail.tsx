@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { GamingAd } from "@/components/GamingAd";
 import { Layout } from "@/components/Layout";
 import { Star, ExternalLink, ArrowLeft, Crown, Calendar, Smartphone, Gamepad2, Trophy } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const RatingDetail = () => {
   const { categoryId } = useParams();
@@ -227,6 +228,37 @@ const RatingDetail = () => {
       description={category.description}
       keywords={`${categoryId}, gaming case sites, CS2, Dota 2, case opening`}
     >
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": category.title,
+            "description": category.description,
+            "itemListElement": filteredSites.map((site, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": site.name,
+                "description": site.description,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": site.rating,
+                  "bestRating": 5,
+                  "worstRating": 1
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": `${site.bonus} welcome bonus`
+                }
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       {/* Header */}
       <section className="container mx-auto px-6 py-12">
         <Button 

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { GamingAd } from "@/components/GamingAd";
 import { Layout } from "@/components/Layout";
 import { useTranslation } from 'react-i18next';
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -155,6 +156,43 @@ const Index = () => {
       description="Discover the best verified CS2, Dota 2, and gaming case sites. Compare bonuses, read reviews, and find trusted platforms for skin hunting. 150+ verified sites with detailed reviews."
       keywords="CS2 case sites, Dota 2 case sites, gaming case sites, skin gambling, CS2 skins, Dota 2 items, verified gaming platforms, case opening sites"
     >
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "CaseHunters",
+            "url": "https://casehunters.com",
+            "description": "Discover and compare the best CS2 and Dota 2 case opening sites",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://casehunters.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": currentSites.map((site, index) => ({
+              "@type": "ListItem",
+              "position": (currentPage - 1) * ITEMS_PER_PAGE + index + 1,
+              "item": {
+                "@type": "Product",
+                "name": site.name,
+                "description": site.description,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": site.rating,
+                  "bestRating": 5,
+                  "worstRating": 1
+                }
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <section className="text-center py-16 px-4 animate-fade-up">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-gaming bg-clip-text text-transparent drop-shadow-lg">

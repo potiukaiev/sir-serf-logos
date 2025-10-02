@@ -66,15 +66,25 @@ const About = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "CaseHunters",
-            "url": "https://casehunters.com",
-            "description": "Gaming case site reviews and verification platform",
-            "foundingDate": "2024",
-            "sameAs": [
-              "https://twitter.com/casehunters",
-              "https://discord.gg/casehunters"
-            ]
+            "@type": "AboutPage",
+            "name": "About CaseHunters",
+            "description": "Learn about CaseHunters and our mission to provide trusted gaming site reviews",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "CaseHunters",
+              "url": "https://casehunters.com",
+              "description": "Trusted directory for CS2 and Dota 2 gaming sites",
+              "foundingDate": "2024",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Support",
+                "email": "support@casehunters.com"
+              },
+              "sameAs": [
+                "https://twitter.com/casehunters",
+                "https://discord.gg/casehunters"
+              ]
+            }
           })}
         </script>
       </Helmet>

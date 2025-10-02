@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { ArticleCard } from "@/components/ArticleCard";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import {
   Pagination,
   PaginationContent,
@@ -249,6 +250,34 @@ export default function Articles() {
       description="Explore comprehensive guides, strategies, and tips for CS2 and Dota 2 case opening, skin trading, and gaming. Stay updated with the latest trends and insights."
       keywords="CS2 guides, Dota 2 strategies, case opening tips, skin trading, gaming articles, betting guides"
     >
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Gaming Articles & Guides",
+            "description": "Expert articles about CS2, Dota 2, and gaming sites",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": currentArticles.map((article, index) => ({
+                "@type": "ListItem",
+                "position": (currentPage - 1) * articlesPerPage + index + 1,
+                "item": {
+                  "@type": "Article",
+                  "headline": article.title,
+                  "description": article.description,
+                  "datePublished": article.publishDate,
+                  "author": {
+                    "@type": "Person",
+                    "name": article.author
+                  },
+                  "articleSection": article.category
+                }
+              }))
+            }
+          })}
+        </script>
+      </Helmet>
       <div className="space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-gaming-cyan">{t('articles.title')}</h1>
