@@ -569,7 +569,7 @@ const SiteReview = () => {
         {/* Users Also Like Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gaming-cyan mb-6">Users Also Like</h2>
-          <div className="grid gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { id: 2, name: "SkinBattle Elite", rating: 4.8, bonus: "300%", users: "95k" },
               { id: 3, name: "DragonLoot", rating: 4.7, bonus: "200%", users: "88k" },
@@ -578,22 +578,51 @@ const SiteReview = () => {
               { id: 6, name: "SkinArena", rating: 4.5, bonus: "100%", users: "65k" }
             ].map((site) => (
               <Link key={site.id} to={`/review/${site.id}`}>
-                <Card className="bg-gradient-card border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                          <Star className="w-4 h-4 text-gaming-orange fill-current" />
-                          <span className="font-bold text-gaming-orange">{site.rating}</span>
+                <Card className="bg-gradient-card border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <div className="space-y-4">
+                      {/* Logo/Image Placeholder */}
+                      <div className="w-full h-32 bg-gaming-darker/50 rounded-lg flex items-center justify-center border border-gaming-cyan/20">
+                        <div className="text-4xl font-bold text-gaming-cyan/30">
+                          {site.name.charAt(0)}
                         </div>
-                        <h3 className="font-semibold text-foreground">{site.name}</h3>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span>{site.users} users</span>
-                        <Badge className="bg-gaming-green/20 text-gaming-green border-gaming-green/40">
-                          {site.bonus} Bonus
-                        </Badge>
+                      
+                      {/* Site Info */}
+                      <div className="space-y-2">
+                        <h3 className="font-semibold text-foreground text-lg hover:text-gaming-cyan transition-colors">
+                          {site.name}
+                        </h3>
+                        
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`w-3 h-3 ${
+                                  i < Math.floor(site.rating)
+                                    ? "text-gaming-orange fill-current"
+                                    : "text-muted-foreground"
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          <span className="text-sm font-bold text-gaming-orange">{site.rating}</span>
+                        </div>
+
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-muted-foreground">{site.users} users</span>
+                          <Badge className="bg-gaming-green/20 text-gaming-green border-gaming-green/40">
+                            {site.bonus}
+                          </Badge>
+                        </div>
                       </div>
+
+                      {/* CTA Button */}
+                      <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
+                        View Site
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
