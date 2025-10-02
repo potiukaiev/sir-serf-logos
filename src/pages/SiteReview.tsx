@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
@@ -498,6 +499,24 @@ const SiteReview = () => {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Author Section */}
+        <Card className="bg-gradient-card border-gaming-cyan/20 shadow-gaming mt-8">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-16 h-16 border-2 border-gaming-cyan/30">
+                <AvatarImage src="" />
+                <AvatarFallback className="bg-gradient-gaming text-white text-xl font-bold">
+                  KD
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Kate Drane</h3>
+                <p className="text-muted-foreground">Chief Editor</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

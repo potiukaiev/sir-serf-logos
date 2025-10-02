@@ -2,6 +2,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
@@ -453,6 +454,24 @@ export default function Article() {
                 __html: article.content.replace(/\n/g, '<br>').replace(/#{1,6}\s/g, '<h2>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
               }}
             />
+          </CardContent>
+        </Card>
+
+        {/* Author Section */}
+        <Card className="bg-gaming-dark/30 border-gaming-cyan/20">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-16 h-16 border-2 border-gaming-cyan/30">
+                <AvatarImage src="" />
+                <AvatarFallback className="bg-gradient-gaming text-white text-xl font-bold">
+                  KD
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Kate Drane</h3>
+                <p className="text-muted-foreground">Chief Editor</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
