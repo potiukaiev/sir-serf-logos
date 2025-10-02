@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { GamingAd } from "@/components/GamingAd";
 import { Layout } from "@/components/Layout";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
@@ -13,6 +14,8 @@ const Sites = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGame, setSelectedGame] = useState("all");
   const [selectedSort, setSelectedSort] = useState("rating");
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 10;
 
   const allSites = [
     {
@@ -119,6 +122,17 @@ const Sites = () => {
     }
   });
 
+  // Pagination
+  const totalPages = Math.ceil(sortedSites.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentSites = sortedSites.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  const handleFilterChange = () => {
+    setCurrentPage(1);
+  };
+
   return (
     <Layout
       title="All Case Sites | CaseHunters - CS2, Dota 2 & Gaming Platforms"
@@ -144,11 +158,17 @@ const Sites = () => {
             <Input
               placeholder="Search sites..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                handleFilterChange();
+              }}
               className="pl-10 bg-gaming-dark/50 border-gaming-cyan/20"
             />
           </div>
-          <Select value={selectedGame} onValueChange={setSelectedGame}>
+          <Select value={selectedGame} onValueChange={(value) => {
+            setSelectedGame(value);
+            handleFilterChange();
+          }}>
             <SelectTrigger className="w-full md:w-48 bg-gaming-dark/50 border-gaming-cyan/20">
               <SelectValue placeholder="Select game" />
             </SelectTrigger>
@@ -158,7 +178,10 @@ const Sites = () => {
               ))}
             </SelectContent>
           </Select>
-          <Select value={selectedSort} onValueChange={setSelectedSort}>
+          <Select value={selectedSort} onValueChange={(value) => {
+            setSelectedSort(value);
+            handleFilterChange();
+          }}>
             <SelectTrigger className="w-full md:w-48 bg-gaming-dark/50 border-gaming-cyan/20">
               <SelectValue placeholder="Sort by" />
             </SelectTrigger>
@@ -176,7 +199,7 @@ const Sites = () => {
         </div>
         <div className="text-center mb-8">
           <p className="text-muted-foreground">
-            Showing {sortedSites.length} of {allSites.length} verified sites
+            Showing {startIndex + 1}-{Math.min(endIndex, sortedSites.length)} of {sortedSites.length} verified sites
           </p>
         </div>
       </section>
@@ -184,7 +207,7 @@ const Sites = () => {
       {/* Sites List */}
       <section className="container mx-auto px-6 pb-16">
         <div className="flex flex-col gap-6 max-w-6xl mx-auto">
-          {sortedSites.map((site) => (
+          {currentSites.map((site) => (
             <Card key={site.id} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group">
               <CardContent className="p-6">
                 <div className="flex flex-col lg:flex-row gap-6">
@@ -274,6 +297,39 @@ const Sites = () => {
             </Card>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-8">
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious 
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+                {[...Array(totalPages)].map((_, i) => (
+                  <PaginationItem key={i}>
+                    <PaginationLink
+                      onClick={() => setCurrentPage(i + 1)}
+                      isActive={currentPage === i + 1}
+                      className="cursor-pointer"
+                    >
+                      {i + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                ))}
+                <PaginationItem>
+                  <PaginationNext 
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
+        )}
 
         {filteredSites.length === 0 && (
           <div className="text-center py-12">

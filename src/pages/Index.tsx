@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GamingAd } from "@/components/GamingAd";
@@ -9,6 +11,9 @@ import { useTranslation } from 'react-i18next';
 
 const Index = () => {
   const { t } = useTranslation();
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 12;
+
   const featuredSites = [
     {
       name: "CSGOEmpire",
@@ -36,8 +41,104 @@ const Index = () => {
       status: "online",
       users: "15.2K",
       description: "Multi-game skin trading platform"
+    },
+    {
+      name: "RustLoot",
+      rating: 4.2,
+      bonus: "100%",
+      rarity: "milspec",
+      status: "online",
+      users: "6.8K",
+      description: "Rust skin cases and trading"
+    },
+    {
+      name: "TF2Central",
+      rating: 4.0,
+      bonus: "75%",
+      rarity: "industrial",
+      status: "online",
+      users: "4.2K",
+      description: "Team Fortress 2 unusual trading hub"
+    },
+    {
+      name: "CaseKing",
+      rating: 4.7,
+      bonus: "225%",
+      rarity: "covert",
+      status: "online",
+      users: "11.2K",
+      description: "Elite case opening experience"
+    },
+    {
+      name: "SkinVault",
+      rating: 4.5,
+      bonus: "180%",
+      rarity: "classified",
+      status: "online",
+      users: "9.8K",
+      description: "Secure skin storage and trading"
+    },
+    {
+      name: "LootBox Pro",
+      rating: 4.3,
+      bonus: "140%",
+      rarity: "restricted",
+      status: "online",
+      users: "7.5K",
+      description: "Professional loot box platform"
+    },
+    {
+      name: "CaseDrop",
+      rating: 4.6,
+      bonus: "190%",
+      rarity: "classified",
+      status: "online",
+      users: "10.1K",
+      description: "Daily case drops and rewards"
+    },
+    {
+      name: "SkinHub",
+      rating: 4.4,
+      bonus: "165%",
+      rarity: "restricted",
+      status: "online",
+      users: "8.9K",
+      description: "Community-driven skin marketplace"
+    },
+    {
+      name: "CaseRush",
+      rating: 4.1,
+      bonus: "120%",
+      rarity: "milspec",
+      status: "online",
+      users: "5.7K",
+      description: "Fast-paced case opening action"
+    },
+    {
+      name: "SkinElite",
+      rating: 4.8,
+      bonus: "260%",
+      rarity: "covert",
+      status: "online",
+      users: "13.4K",
+      description: "Premium skins and exclusive drops"
+    },
+    {
+      name: "LootMaster",
+      rating: 4.5,
+      bonus: "175%",
+      rarity: "classified",
+      status: "online",
+      users: "9.2K",
+      description: "Master your loot game"
     }
   ];
+
+  // Pagination
+  const totalPages = Math.ceil(featuredSites.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentSites = featuredSites.slice(startIndex, endIndex);
 
   const rarityColors = {
     covert: "rarity-covert",
@@ -90,7 +191,7 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 px-2 md:px-0">
-          {featuredSites.map((site, index) => (
+          {currentSites.map((site, index) => (
             <Card key={index} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group overflow-hidden">
               <CardContent className="p-4 md:p-6">
                 {/* Site Header */}
@@ -169,6 +270,39 @@ const Index = () => {
             </Card>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mb-8">
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious 
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+                {[...Array(totalPages)].map((_, i) => (
+                  <PaginationItem key={i}>
+                    <PaginationLink
+                      onClick={() => setCurrentPage(i + 1)}
+                      isActive={currentPage === i + 1}
+                      className="cursor-pointer"
+                    >
+                      {i + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                ))}
+                <PaginationItem>
+                  <PaginationNext 
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
+        )}
       </section>
 
       {/* Middle Gaming Ad */}
