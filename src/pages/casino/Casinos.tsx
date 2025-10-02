@@ -3,7 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Star, Trophy, Users, Clock, TrendingUp } from "lucide-react";
+import { Star, Trophy, Users, Clock, TrendingUp } from "lucide-react";
+import { CasinoLayout } from "@/components/casino/CasinoLayout";
+import { GamingAd } from "@/components/GamingAd";
 
 const Casinos = () => {
   const casinos = [
@@ -50,53 +52,23 @@ const Casinos = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Online Casino Reviews & Ratings | HealthyCasinos</title>
-        <meta
-          name="description"
-          content="Browse comprehensive reviews of licensed online casinos. Compare bonuses, games, withdrawal times, and user ratings to find your perfect casino."
-        />
-      </Helmet>
-
-      {/* Header */}
-      <header className="border-b border-casino-green/20 bg-casino-dark/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/healthy-casinos" className="flex items-center gap-2">
-              <Shield className="w-8 h-8 text-casino-green" />
-              <span className="text-2xl font-bold text-casino-green">
-                HealthyCasinos
-              </span>
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/healthy-casinos/casinos"
-                className="text-casino-green font-semibold"
-              >
-                Casinos
-              </Link>
-              <Link
-                to="/healthy-casinos/about"
-                className="text-foreground hover:text-casino-green transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                to="/"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                ← CaseHunters
-              </Link>
-            </nav>
-          </div>
+    <CasinoLayout
+      title="Online Casino Reviews & Ratings | HealthyCasinos"
+      description="Browse comprehensive reviews of licensed online casinos. Compare bonuses, games, withdrawal times, and user ratings to find your perfect casino."
+      keywords="casino reviews, online casinos, casino ratings, casino bonuses"
+    >
+      <div className="space-y-8">
+        <div>
+          <h1 className="text-4xl font-bold text-casino-green mb-4">
+            All Casino Reviews
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Compare licensed casinos, bonuses, and player ratings
+          </p>
         </div>
-      </header>
 
-      <div className="container mx-auto px-6 py-12">
-        <h1 className="text-4xl font-bold text-casino-green mb-8">
-          All Casino Reviews
-        </h1>
+        {/* Ad */}
+        <GamingAd variant="banner" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {casinos.map((casino) => (
@@ -164,7 +136,7 @@ const Casinos = () => {
           ))}
         </div>
       </div>
-    </div>
+    </CasinoLayout>
   );
 };
 

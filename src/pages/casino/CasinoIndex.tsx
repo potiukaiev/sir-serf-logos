@@ -3,7 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Shield, TrendingUp, Users, Clock, Trophy } from "lucide-react";
+import { Star, TrendingUp, Users, Clock, Trophy } from "lucide-react";
+import { CasinoLayout } from "@/components/casino/CasinoLayout";
+import { GamingAd } from "@/components/GamingAd";
 
 const CasinoIndex = () => {
   const featuredCasinos = [
@@ -43,7 +45,7 @@ const CasinoIndex = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <CasinoLayout showSidebar={false}>
       <Helmet>
         <title>HealthyCasinos - Trusted Online Casino Reviews & Ratings</title>
         <meta
@@ -61,40 +63,6 @@ const CasinoIndex = () => {
           })}
         </script>
       </Helmet>
-
-      {/* Header */}
-      <header className="border-b border-casino-green/20 bg-casino-dark/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/healthy-casinos" className="flex items-center gap-2">
-              <Shield className="w-8 h-8 text-casino-green" />
-              <span className="text-2xl font-bold text-casino-green">
-                HealthyCasinos
-              </span>
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/healthy-casinos/casinos"
-                className="text-foreground hover:text-casino-green transition-colors"
-              >
-                Casinos
-              </Link>
-              <Link
-                to="/healthy-casinos/about"
-                className="text-foreground hover:text-casino-green transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                to="/"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                ← CaseHunters
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 text-center">
@@ -184,16 +152,33 @@ const CasinoIndex = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-casino-green/20 bg-casino-darker py-8 mt-16">
-        <div className="container mx-auto px-6 text-center text-muted-foreground">
-          <p className="mb-2">© 2025 HealthyCasinos. All rights reserved.</p>
-          <p className="text-sm">
-            Play responsibly. Gambling can be addictive. 18+
-          </p>
+      {/* Banner Ad */}
+      <div className="container mx-auto px-6 mb-16">
+        <GamingAd variant="banner" />
+      </div>
+
+      {/* Trust Indicators */}
+      <section className="container mx-auto px-6 pb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="p-6">
+            <div className="text-3xl font-bold text-casino-green mb-2">250+</div>
+            <div className="text-sm text-muted-foreground">Licensed Casinos</div>
+          </div>
+          <div className="p-6">
+            <div className="text-3xl font-bold text-casino-gold mb-2">45K+</div>
+            <div className="text-sm text-muted-foreground">Verified Reviews</div>
+          </div>
+          <div className="p-6">
+            <div className="text-3xl font-bold text-casino-blue mb-2">1.2M+</div>
+            <div className="text-sm text-muted-foreground">Monthly Visitors</div>
+          </div>
+          <div className="p-6">
+            <div className="text-3xl font-bold text-casino-purple mb-2">98%</div>
+            <div className="text-sm text-muted-foreground">Trust Score</div>
+          </div>
         </div>
-      </footer>
-    </div>
+      </section>
+    </CasinoLayout>
   );
 };
 

@@ -4,7 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Shield, Star, Trophy, Users, Clock, TrendingUp, ExternalLink, CheckCircle, AlertTriangle } from "lucide-react";
+import { Star, Trophy, Users, Clock, TrendingUp, ExternalLink, CheckCircle, AlertTriangle, ChevronLeft } from "lucide-react";
+import { CasinoLayout } from "@/components/casino/CasinoLayout";
+import { GamingAd } from "@/components/GamingAd";
 
 const CasinoReview = () => {
   const { casinoId } = useParams();
@@ -40,13 +42,12 @@ const CasinoReview = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <CasinoLayout
+      title={`${casinoData.name} Review | HealthyCasinos`}
+      description={`Detailed review of ${casinoData.name} - ${casinoData.description}. Rating: ${casinoData.rating}/5 based on ${casinoData.reviews} reviews.`}
+      keywords={`${casinoData.name} review, ${casinoData.name} casino, casino bonus, online gambling`}
+    >
       <Helmet>
-        <title>{casinoData.name} Review | HealthyCasinos</title>
-        <meta
-          name="description"
-          content={`Detailed review of ${casinoData.name} - ${casinoData.description}. Rating: ${casinoData.rating}/5 based on ${casinoData.reviews} reviews.`}
-        />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -68,47 +69,14 @@ const CasinoReview = () => {
         </script>
       </Helmet>
 
-      {/* Header */}
-      <header className="border-b border-casino-green/20 bg-casino-dark/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/healthy-casinos" className="flex items-center gap-2">
-              <Shield className="w-8 h-8 text-casino-green" />
-              <span className="text-2xl font-bold text-casino-green">
-                HealthyCasinos
-              </span>
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/healthy-casinos/casinos"
-                className="text-foreground hover:text-casino-green transition-colors"
-              >
-                Casinos
-              </Link>
-              <Link
-                to="/healthy-casinos/about"
-                className="text-foreground hover:text-casino-green transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                to="/"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                ← CaseHunters
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <div className="container mx-auto px-6 py-12">
-        <Link to="/healthy-casinos/casinos" className="text-casino-green hover:underline mb-6 inline-block">
-          ← Back to Casinos
+      <div className="space-y-8">
+        <Link to="/healthy-casinos/casinos" className="inline-flex items-center text-casino-green hover:underline">
+          <ChevronLeft className="w-4 h-4 mr-1" />
+          Back to Casinos
         </Link>
 
         {/* Casino Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <Card className="bg-gradient-card border-casino-green/20">
               <CardContent className="p-8">
@@ -310,8 +278,46 @@ const CasinoReview = () => {
             </Card>
           </TabsContent>
         </Tabs>
+
+        {/* Ad */}
+        <GamingAd variant="banner" />
+
+        {/* Related Casinos */}
+        <div>
+          <h2 className="text-2xl font-bold text-casino-green mb-6">
+            Similar Casinos You Might Like
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { id: 2, name: "Golden Palace", rating: 4.7, bonus: "200%" },
+              { id: 3, name: "Diamond Casino", rating: 4.6, bonus: "150%" },
+              { id: 4, name: "Platinum Spins", rating: 4.5, bonus: "100%" }
+            ].map((casino) => (
+              <Card
+                key={casino.id}
+                className="bg-gradient-card border-casino-green/20 hover:shadow-casino transition-all"
+              >
+                <CardContent className="p-4">
+                  <h3 className="font-bold text-foreground mb-2">{casino.name}</h3>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Star className="w-4 h-4 text-casino-gold fill-current" />
+                    <span className="font-semibold">{casino.rating}</span>
+                  </div>
+                  <Badge className="bg-casino-green text-white mb-3">
+                    {casino.bonus} Bonus
+                  </Badge>
+                  <Link to={`/healthy-casinos/casino/${casino.id}`}>
+                    <Button size="sm" className="w-full bg-gradient-cta text-white">
+                      View Review
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </CasinoLayout>
   );
 };
 

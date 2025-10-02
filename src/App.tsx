@@ -23,6 +23,8 @@ import CasinoIndex from "./pages/casino/CasinoIndex";
 import Casinos from "./pages/casino/Casinos";
 import CasinoReview from "./pages/casino/CasinoReview";
 import CasinoAbout from "./pages/casino/CasinoAbout";
+import CasinoArticles from "./pages/casino/CasinoArticles";
+import CasinoArticle from "./pages/casino/CasinoArticle";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +49,8 @@ const AppContent = () => {
       <Route path="/healthy-casinos" element={<CasinoIndex />} />
       <Route path="/healthy-casinos/casinos" element={<Casinos />} />
       <Route path="/healthy-casinos/casino/:casinoId" element={<CasinoReview />} />
+      <Route path="/healthy-casinos/articles" element={<CasinoArticles />} />
+      <Route path="/healthy-casinos/article/:articleId" element={<CasinoArticle />} />
       <Route path="/healthy-casinos/about" element={<CasinoAbout />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />

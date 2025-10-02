@@ -1,54 +1,15 @@
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield } from "lucide-react";
+import { CasinoLayout } from "@/components/casino/CasinoLayout";
 
 const CasinoAbout = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>About HealthyCasinos | Our Mission</title>
-        <meta
-          name="description"
-          content="Learn about HealthyCasinos and our commitment to promoting responsible gambling and honest casino reviews."
-        />
-      </Helmet>
-
-      {/* Header */}
-      <header className="border-b border-casino-green/20 bg-casino-dark/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/healthy-casinos" className="flex items-center gap-2">
-              <Shield className="w-8 h-8 text-casino-green" />
-              <span className="text-2xl font-bold text-casino-green">
-                HealthyCasinos
-              </span>
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/healthy-casinos/casinos"
-                className="text-foreground hover:text-casino-green transition-colors"
-              >
-                Casinos
-              </Link>
-              <Link
-                to="/healthy-casinos/about"
-                className="text-casino-green font-semibold"
-              >
-                About
-              </Link>
-              <Link
-                to="/"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                ← CaseHunters
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <div className="container mx-auto px-6 py-12">
+    <CasinoLayout
+      title="About HealthyCasinos | Our Mission"
+      description="Learn about HealthyCasinos and our commitment to promoting responsible gambling and honest casino reviews."
+      keywords="about healthycasinos, responsible gambling, casino reviews"
+    >
+      <div className="space-y-6">
         <h1 className="text-4xl font-bold text-casino-green mb-8">
           About HealthyCasinos
         </h1>
@@ -105,7 +66,7 @@ const CasinoAbout = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </CasinoLayout>
   );
 };
 
