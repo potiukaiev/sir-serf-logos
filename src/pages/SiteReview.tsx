@@ -618,11 +618,23 @@ const SiteReview = () => {
                         </div>
                       </div>
 
-                      {/* CTA Button */}
-                      <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-                        View Site
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </Button>
+                      {/* CTA Buttons */}
+                      <div className="space-y-2">
+                        <Button 
+                          variant="outline"
+                          className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = `/review/${site.id}`;
+                          }}
+                        >
+                          Read Review
+                        </Button>
+                        <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
+                          Visit Site
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
