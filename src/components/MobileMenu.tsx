@@ -14,7 +14,8 @@ export const MobileMenu = () => {
   
   const navigation = [
     { name: t('nav.home'), href: "/" },
-    { name: t('nav.rating'), href: "/sites" },
+    { name: t('nav.sites'), href: "/sites" },
+    { name: t('nav.rating'), href: "/ratings" },
     { name: t('nav.tops'), href: "/top-sites" },
     { name: t('nav.faq'), href: "/faq" },
     { name: t('nav.responsibleGambling'), href: "/responsible-gambling" },
