@@ -181,87 +181,94 @@ const Sites = () => {
         </div>
       </section>
 
-      {/* Sites Grid */}
+      {/* Sites List */}
       <section className="container mx-auto px-6 pb-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col gap-6 max-w-6xl mx-auto">
           {sortedSites.map((site) => (
-            <Card key={site.id} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 group">
+            <Card key={site.id} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 group">
               <CardContent className="p-6">
-                {/* Site Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-gaming-green animate-pulse"></div>
-                    <span className="text-sm text-gaming-green font-medium">ONLINE</span>
-                  </div>
-                  {/* Welcome Bonus moved to top right */}
-                  <div className="flex items-center space-x-2 p-2 bg-gaming-darker/50 rounded-lg">
-                    <span className="text-sm">Welcome Bonus</span>
-                    <span className="font-bold text-gaming-green">{site.bonus}</span>
-                  </div>
-                </div>
+                <div className="flex flex-col lg:flex-row gap-6">
+                  {/* Left: Site Info */}
+                  <div className="flex-1 space-y-4">
+                    {/* Status & Name */}
+                    <div>
+                      <div className="flex items-center space-x-2 mb-2">
+                        <div className="w-3 h-3 rounded-full bg-gaming-green animate-pulse"></div>
+                        <span className="text-sm text-gaming-green font-medium">ONLINE</span>
+                      </div>
+                      <h4 className="text-2xl font-bold mb-2 group-hover:text-gaming-cyan transition-colors">
+                        {site.name}
+                      </h4>
+                    </div>
 
-                {/* Site Name & Rating */}
-                <div className="mb-4">
-                  <h4 className="text-xl font-bold mb-2 group-hover:text-gaming-cyan transition-colors">
-                    {site.name}
-                  </h4>
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(site.rating) ? 'text-gaming-orange fill-current' : 'text-muted-foreground'}`} 
-                        />
+                    {/* Rating */}
+                    <div className="flex items-center space-x-2">
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-4 h-4 ${i < Math.floor(site.rating) ? 'text-gaming-orange fill-current' : 'text-muted-foreground'}`} 
+                          />
+                        ))}
+                      </div>
+                      <span className="font-semibold text-gaming-orange">{site.rating}</span>
+                      <span className="text-sm text-muted-foreground">({site.users} users)</span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground">{site.description}</p>
+
+                    {/* Games & Rarity */}
+                    <div className="flex flex-wrap items-center gap-2">
+                      {site.games.map((game) => (
+                        <Badge key={game} variant="outline" className="text-xs border-gaming-purple text-gaming-purple">
+                          {gameLabels[game as keyof typeof gameLabels]}
+                        </Badge>
                       ))}
+                      <Badge className={`bg-${rarityColors[site.rarity as keyof typeof rarityColors]} text-white text-xs`}>
+                        {site.rarity.toUpperCase()}
+                      </Badge>
                     </div>
-                    <span className="font-semibold text-gaming-orange">{site.rating}</span>
-                    <span className="text-sm text-muted-foreground">({site.users} users)</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">{site.description}</p>
-                </div>
 
-                {/* Games & Rarity */}
-                <div className="flex flex-wrap items-center gap-2 mb-4">
-                  {site.games.map((game) => (
-                    <Badge key={game} variant="outline" className="text-xs border-gaming-purple text-gaming-purple">
-                      {gameLabels[game as keyof typeof gameLabels]}
-                    </Badge>
-                  ))}
-                  {/* Rarity badge moved here */}
-                  <Badge className={`bg-${rarityColors[site.rarity as keyof typeof rarityColors]} text-white text-xs`}>
-                    {site.rarity.toUpperCase()}
-                  </Badge>
-                </div>
-
-                {/* Features & Promocode */}
-                <div className="space-y-2 mb-4">
-                  {/* Welcome bonus section removed from here since it's now in top right */}
-                  {site.promocode && (
-                    <div className="flex items-center justify-between p-3 bg-gaming-orange/20 border-2 border-gaming-orange/40 rounded-lg shadow-lg">
-                      <span className="text-sm font-semibold text-gaming-orange">Promo Code</span>
-                      <code className="font-bold text-white bg-gaming-orange px-3 py-2 rounded-md text-sm shadow-md tracking-wider">{site.promocode}</code>
+                    {/* Features */}
+                    <div className="text-xs text-muted-foreground">
+                      {site.features.join(" • ")}
                     </div>
-                  )}
-                  <div className="text-xs text-muted-foreground">
-                    {site.features.join(" • ")}
                   </div>
-                </div>
 
-                {/* CTA Buttons */}
-                <div className="space-y-2">
-                  <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-                    Visit Site
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                  <Button 
-                    asChild
-                    variant="outline" 
-                    className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
-                  >
-                    <Link to={`/review/${site.id}`}>
-                      Read Review
-                    </Link>
-                  </Button>
+                  {/* Right: Bonus, Promo & Actions */}
+                  <div className="lg:w-80 space-y-4">
+                    {/* Welcome Bonus */}
+                    <div className="flex items-center justify-between p-3 bg-gaming-darker/50 rounded-lg">
+                      <span className="text-sm">Welcome Bonus</span>
+                      <span className="font-bold text-gaming-green text-lg">{site.bonus}</span>
+                    </div>
+
+                    {/* Promocode */}
+                    {site.promocode && (
+                      <div className="flex items-center justify-between p-3 bg-gaming-orange/20 border-2 border-gaming-orange/40 rounded-lg shadow-lg">
+                        <span className="text-sm font-semibold text-gaming-orange">Promo Code</span>
+                        <code className="font-bold text-white bg-gaming-orange px-3 py-2 rounded-md text-sm shadow-md tracking-wider">{site.promocode}</code>
+                      </div>
+                    )}
+
+                    {/* CTA Buttons */}
+                    <div className="space-y-2">
+                      <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
+                        Visit Site
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                      <Button 
+                        asChild
+                        variant="outline" 
+                        className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
+                      >
+                        <Link to={`/review/${site.id}`}>
+                          Read Review
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
