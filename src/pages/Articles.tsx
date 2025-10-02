@@ -48,13 +48,175 @@ const articlesData = [
     readTime: "7 min read",
     category: "Security",
     author: "David Security"
+  },
+  {
+    id: "rare-skin-values",
+    title: "Understanding Rare Skin Values in 2024",
+    description: "What makes a skin valuable? Dive deep into the factors that determine skin prices, from rarity and condition to market demand and trading history.",
+    publishDate: "2024-01-05",
+    readTime: "9 min read",
+    category: "Trading",
+    author: "Sarah Trader"
+  },
+  {
+    id: "cs2-meta-analysis",
+    title: "CS2 Meta Analysis: Best Cases to Open Now",
+    description: "Stay ahead of the curve with our monthly meta analysis. Discover which CS2 cases are trending and offering the best return on investment this month.",
+    publishDate: "2024-01-03",
+    readTime: "6 min read",
+    category: "Guide",
+    author: "Alex Gaming"
+  },
+  {
+    id: "bonus-optimization",
+    title: "How to Maximize Casino Site Bonuses",
+    description: "Master the art of bonus hunting with our comprehensive guide. Learn wagering requirements, terms and conditions, and strategies to get the most value from promotional offers.",
+    publishDate: "2024-01-01",
+    readTime: "7 min read",
+    category: "Strategy",
+    author: "Mike Esports"
+  },
+  {
+    id: "scam-prevention",
+    title: "Avoiding Common Gaming Scams in 2024",
+    description: "Protect yourself and your inventory. This guide covers the most common scams targeting gamers and case site users, with practical tips to stay safe online.",
+    publishDate: "2023-12-28",
+    readTime: "8 min read",
+    category: "Security",
+    author: "David Security"
+  },
+  {
+    id: "dota2-case-comparison",
+    title: "Dota 2 Treasure Comparison: Which Offers Best Value?",
+    description: "A detailed comparison of all current Dota 2 treasures and cases. Find out which containers give you the best chance at rare immortals and arcanas.",
+    publishDate: "2023-12-25",
+    readTime: "10 min read",
+    category: "Guide",
+    author: "Alex Gaming"
+  },
+  {
+    id: "steam-market-guide",
+    title: "Steam Community Market Trading Guide",
+    description: "Navigate the Steam Community Market like a pro. Learn about listing fees, price history, and timing strategies to buy low and sell high.",
+    publishDate: "2023-12-22",
+    readTime: "11 min read",
+    category: "Trading",
+    author: "Sarah Trader"
+  },
+  {
+    id: "responsible-gaming",
+    title: "Responsible Gaming: Setting Limits and Staying Safe",
+    description: "Gaming should always be fun. Learn how to set healthy limits, recognize warning signs, and maintain a balanced approach to case opening and betting.",
+    publishDate: "2023-12-20",
+    readTime: "6 min read",
+    category: "Guide",
+    author: "Mike Esports"
+  },
+  {
+    id: "knife-unboxing-odds",
+    title: "CS2 Knife Unboxing: Understanding the Odds",
+    description: "The dream of every case opener - getting a knife. This article breaks down the actual odds, expected value calculations, and whether knife hunting is worth it.",
+    publishDate: "2023-12-18",
+    readTime: "8 min read",
+    category: "Guide",
+    author: "Alex Gaming"
+  },
+  {
+    id: "payment-methods-guide",
+    title: "Best Payment Methods for Gaming Sites",
+    description: "Compare different payment options for depositing and withdrawing from gaming platforms. Learn about fees, processing times, and security considerations.",
+    publishDate: "2023-12-15",
+    readTime: "7 min read",
+    category: "Guide",
+    author: "David Security"
+  },
+  {
+    id: "skin-investment-2024",
+    title: "Skin Investment Strategies for 2024",
+    description: "Treating skins as investments requires knowledge and strategy. Discover which skins historically hold value and which factors predict future price increases.",
+    publishDate: "2023-12-12",
+    readTime: "12 min read",
+    category: "Trading",
+    author: "Sarah Trader"
+  },
+  {
+    id: "esports-betting-basics",
+    title: "Esports Betting 101: A Beginner's Guide",
+    description: "New to esports betting? Start here. This comprehensive guide covers betting types, odds reading, bankroll management, and finding value bets.",
+    publishDate: "2023-12-10",
+    readTime: "9 min read",
+    category: "Strategy",
+    author: "Mike Esports"
+  },
+  {
+    id: "site-verification-checklist",
+    title: "Gaming Site Verification Checklist",
+    description: "Before depositing on any gaming site, run through this essential verification checklist. Ensure licenses, reviews, and security measures meet standards.",
+    publishDate: "2023-12-08",
+    readTime: "5 min read",
+    category: "Security",
+    author: "David Security"
+  },
+  {
+    id: "case-opening-psychology",
+    title: "The Psychology Behind Case Opening",
+    description: "Why is case opening so addictive? Understand the psychological mechanisms at play and how to maintain control over your gaming habits.",
+    publishDate: "2023-12-05",
+    readTime: "10 min read",
+    category: "Guide",
+    author: "Alex Gaming"
+  },
+  {
+    id: "marketplace-comparison",
+    title: "Third-Party Marketplaces: A Comprehensive Comparison",
+    description: "Not all skin marketplaces are created equal. Compare fees, security, selection, and user experience across the major trading platforms.",
+    publishDate: "2023-12-03",
+    readTime: "8 min read",
+    category: "Trading",
+    author: "Sarah Trader"
+  },
+  {
+    id: "live-betting-strategies",
+    title: "Advanced Live Betting Strategies for Esports",
+    description: "Take your betting to the next level with live betting. Learn how to read momentum shifts, analyze in-game statistics, and make profitable live bets.",
+    publishDate: "2023-12-01",
+    readTime: "11 min read",
+    category: "Strategy",
+    author: "Mike Esports"
+  },
+  {
+    id: "account-security-guide",
+    title: "Ultimate Gaming Account Security Guide",
+    description: "Protect your valuable inventory and account with these essential security measures. From 2FA setup to phishing prevention, secure your gaming presence.",
+    publishDate: "2023-11-28",
+    readTime: "7 min read",
+    category: "Security",
+    author: "David Security"
+  },
+  {
+    id: "seasonal-case-analysis",
+    title: "Seasonal Case Analysis: Holiday Event Cases",
+    description: "Holiday and seasonal cases often offer unique opportunities. Analyze historical data to predict which seasonal cases will be most valuable this year.",
+    publishDate: "2023-11-25",
+    readTime: "9 min read",
+    category: "Guide",
+    author: "Alex Gaming"
+  },
+  {
+    id: "trading-bot-guide",
+    title: "Trading Bots: Should You Use Automated Trading?",
+    description: "Explore the world of automated skin trading. Learn about bot types, risks, benefits, and whether automation is right for your trading strategy.",
+    publishDate: "2023-11-22",
+    readTime: "10 min read",
+    category: "Trading",
+    author: "Sarah Trader"
   }
 ];
 
 export default function Articles() {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 6;
+  const articlesPerPage = 10;
   
   // Calculate pagination
   const totalPages = Math.ceil(articlesData.length / articlesPerPage);
