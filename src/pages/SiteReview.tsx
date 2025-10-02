@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Logo } from "@/components/Logo";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { ThemeSelector } from "@/components/ThemeSelector";
@@ -57,6 +58,29 @@ const SiteReview = () => {
       "Limited payment methods in some regions",
       "Higher house edge on some games",
       "Occasional server maintenance"
+    ],
+    
+    faqs: [
+      {
+        question: "How long does withdrawal take?",
+        answer: "Withdrawals are typically processed within 1-24 hours. The exact time depends on your chosen payment method and account verification status."
+      },
+      {
+        question: "Is this site safe and licensed?",
+        answer: "Yes, the site operates under a Curacao Gaming License and implements industry-standard security measures including SSL encryption and secure payment processing."
+      },
+      {
+        question: "What payment methods are accepted?",
+        answer: "The site accepts multiple payment methods including credit/debit cards, cryptocurrencies (BTC, ETH), and various e-wallets. Availability may vary by region."
+      },
+      {
+        question: "Can I play on mobile?",
+        answer: "Yes, the platform is fully optimized for mobile devices and also offers dedicated mobile apps for iOS and Android."
+      },
+      {
+        question: "What is the minimum deposit?",
+        answer: "The minimum deposit is $5, making it accessible for players with different budget levels."
+      }
     ],
     
     ratingBreakdown: {
@@ -362,6 +386,30 @@ const SiteReview = () => {
                 </CardContent>
               </Card>
             </div>
+            
+            {/* FAQ Section */}
+            <Card className="bg-gradient-card border-gaming-cyan/20">
+              <CardHeader>
+                <CardTitle className="text-gaming-cyan flex items-center">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  {t('review.faq')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  {siteData.faqs.map((faq, i) => (
+                    <AccordionItem key={i} value={`item-${i}`}>
+                      <AccordionTrigger className="text-left hover:text-gaming-cyan">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+            </Card>
           </TabsContent>
 
           <TabsContent value="ratings" className="space-y-6">
