@@ -8,6 +8,7 @@ import { VariantWrapper } from "@repo/ui";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import Index from "./pages/Index";
 import Sites from "./pages/Sites";
+import Ratings from "./pages/Ratings";
 import Categories from "./pages/Categories";
 import About from "./pages/About";
 import SiteReview from "./pages/SiteReview";
@@ -22,6 +23,7 @@ const AppContent = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/sites" element={<Sites />} />
+      <Route path="/ratings" element={<Ratings />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/about" element={<About />} />
       <Route path="/review/:siteId" element={<SiteReview />} />

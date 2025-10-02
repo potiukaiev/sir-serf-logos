@@ -1,288 +1,352 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { GamingAd } from "@/components/GamingAd";
-import { Layout } from "@/components/Layout";
-import { Star, Trophy, Shield, Zap, ExternalLink, TrendingUp, Filter, Search, Users } from "lucide-react";
+import { Button } from "@repo/ui";
+import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
+import { Badge } from "@repo/ui";
+import { Input } from "@repo/ui";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui";
+import { GamingAd } from "@repo/ui";
+import { Layout } from "@repo/ui";
+import { Star, Gift, Gamepad2, Shield, Zap, Trophy, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@repo/ui";
 
 const Sites = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGame, setSelectedGame] = useState("all");
   const [selectedSort, setSelectedSort] = useState("rating");
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 10;
 
   const allSites = [
     {
       id: 1,
       name: "CSGOEmpire",
-      rating: 4.8,
-      bonus: "250%",
-      promocode: "HUNT250",
-      rarity: "covert",
-      status: "online",
-      users: "12.5K",
-      description: "Premium case opening with guaranteed drops",
-      games: ["cs2"],
-      features: ["Instant Withdrawals", "Live Chat", "Mobile App"]
+      rating: 9.8,
+      bonus: "$500",
+      promoCode: "HUNTER500",
+      games: ["CS2", "Dota 2"],
+      features: ["Instant Withdrawals", "Live Support", "Mobile App"],
+      popularity: 50000,
     },
     {
       id: 2,
-      name: "DotaSkins",
-      rating: 4.6,
-      bonus: "200%",
-      promocode: "DOTA200",
-      rarity: "classified",
-      status: "online", 
-      users: "8.3K",
-      description: "Best Dota 2 cosmetic marketplace",
-      games: ["dota2"],
-      features: ["Steam API", "Price Tracking", "Trade History"]
+      name: "RustClash",
+      rating: 9.5,
+      bonus: "$300",
+      promoCode: "RUST300",
+      games: ["CS2", "Rust"],
+      features: ["Daily Bonuses", "VIP Program", "Fast Deposits"],
+      popularity: 35000,
     },
     {
       id: 3,
-      name: "SkinClub",
-      rating: 4.4,
-      bonus: "150%",
-      promocode: "CLUB150",
-      rarity: "restricted",
-      status: "online",
-      users: "15.2K",
-      description: "Multi-game skin trading platform",
-      games: ["cs2", "dota2", "rust"],
-      features: ["Multi-Game", "Crypto Support", "VIP Program"]
+      name: "DotaGems",
+      rating: 9.3,
+      bonus: "$400",
+      promoCode: "DOTA400",
+      games: ["Dota 2"],
+      features: ["Exclusive Skins", "Tournaments", "Cashback"],
+      popularity: 28000,
     },
     {
       id: 4,
-      name: "RustLoot",
-      rating: 4.2,
-      bonus: "100%",
-      promocode: "RUST100",
-      rarity: "milspec",
-      status: "online",
-      users: "6.8K",
-      description: "Rust skin cases and trading",
-      games: ["rust"],
-      features: ["Rust Exclusive", "Weekly Events", "Referral Bonus"]
+      name: "SkinArena",
+      rating: 9.1,
+      bonus: "$250",
+      promoCode: "ARENA250",
+      games: ["CS2", "Dota 2", "Rust"],
+      features: ["Multi-Game", "Live Chat", "Quick Payouts"],
+      popularity: 42000,
     },
     {
       id: 5,
-      name: "TF2Central",
-      rating: 4.0,
-      bonus: "75%",
-      promocode: "TF2DEAL",
-      rarity: "industrial",
-      status: "online",
-      users: "4.2K",
-      description: "Team Fortress 2 unusual trading hub",
-      games: ["tf2"],
-      features: ["Unusual Calculator", "Price History", "Safe Trading"]
-    }
+      name: "CaseRoyale",
+      rating: 8.9,
+      bonus: "$350",
+      promoCode: "ROYAL350",
+      games: ["CS2"],
+      features: ["Battle Royale Mode", "Trade System", "Referral Rewards"],
+      popularity: 31000,
+    },
+    {
+      id: 6,
+      name: "LootBattles",
+      rating: 8.7,
+      bonus: "$200",
+      promoCode: "LOOT200",
+      games: ["CS2", "Dota 2"],
+      features: ["PvP Battles", "Leaderboards", "Daily Drops"],
+      popularity: 25000,
+    },
+    {
+      id: 7,
+      name: "GambleBox",
+      rating: 8.5,
+      bonus: "$450",
+      promoCode: "GAMBLE450",
+      games: ["CS2", "Rust"],
+      features: ["High Roller Bonuses", "VIP Support", "Premium Cases"],
+      popularity: 38000,
+    },
+    {
+      id: 8,
+      name: "CrateKing",
+      rating: 8.3,
+      bonus: "$275",
+      promoCode: "KING275",
+      games: ["CS2"],
+      features: ["Loyalty Program", "Instant Payouts", "Mobile Optimized"],
+      popularity: 22000,
+    },
+    {
+      id: 9,
+      name: "SkinVault",
+      rating: 8.1,
+      bonus: "$325",
+      promoCode: "VAULT325",
+      games: ["CS2", "Dota 2", "Rust"],
+      features: ["Secure Storage", "Trade Lock", "Multi-Currency"],
+      popularity: 27000,
+    },
+    {
+      id: 10,
+      name: "TreasureHunt",
+      rating: 7.9,
+      bonus: "$225",
+      promoCode: "HUNT225",
+      games: ["Dota 2"],
+      features: ["Daily Quests", "Achievement System", "Community Events"],
+      popularity: 19000,
+    },
+    {
+      id: 11,
+      name: "MegaCases",
+      rating: 7.7,
+      bonus: "$380",
+      promoCode: "MEGA380",
+      games: ["CS2", "Rust"],
+      features: ["Giant Cases", "Progressive Jackpots", "Weekly Tournaments"],
+      popularity: 33000,
+    },
+    {
+      id: 12,
+      name: "ProSkins",
+      rating: 7.5,
+      bonus: "$290",
+      promoCode: "PRO290",
+      games: ["CS2", "Dota 2"],
+      features: ["Pro Player Cases", "Esports Betting", "Stream Integration"],
+      popularity: 24000,
+    },
   ];
 
-  const rarityColors = {
-    covert: "rarity-covert",
-    classified: "rarity-classified", 
-    restricted: "rarity-restricted",
-    milspec: "rarity-milspec",
-    industrial: "rarity-industrial",
-    consumer: "rarity-consumer"
+  const filteredAndSortedSites = allSites
+    .filter((site) => {
+      const matchesSearch = site.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesGame = selectedGame === "all" || site.games.includes(selectedGame);
+      return matchesSearch && matchesGame;
+    })
+    .sort((a, b) => {
+      switch (selectedSort) {
+        case "rating":
+          return b.rating - a.rating;
+        case "popularity":
+          return b.popularity - a.popularity;
+        case "bonus":
+          return parseInt(b.bonus.replace("$", "")) - parseInt(a.bonus.replace("$", ""));
+        default:
+          return 0;
+      }
+    });
+
+  const totalPages = Math.ceil(filteredAndSortedSites.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentSites = filteredAndSortedSites.slice(startIndex, endIndex);
+
+  const handleFilterChange = () => {
+    setCurrentPage(1);
   };
-
-  const gameLabels = {
-    all: "All Games",
-    cs2: "CS2",
-    dota2: "Dota 2",
-    rust: "Rust",
-    tf2: "Team Fortress 2"
-  };
-
-  const filteredSites = allSites.filter(site => {
-    const matchesSearch = site.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         site.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesGame = selectedGame === "all" || site.games.includes(selectedGame);
-    return matchesSearch && matchesGame;
-  });
-
-  const sortedSites = [...filteredSites].sort((a, b) => {
-    switch (selectedSort) {
-      case "rating":
-        return b.rating - a.rating;
-      case "users":
-        return parseFloat(b.users.replace('K', '')) - parseFloat(a.users.replace('K', ''));
-      case "bonus":
-        return parseFloat(b.bonus.replace('%', '')) - parseFloat(a.bonus.replace('%', ''));
-      default:
-        return 0;
-    }
-  });
 
   return (
     <Layout
-      title="All Case Sites | CaseHunters - CS2, Dota 2 & Gaming Platforms"
-      description="Browse our complete directory of verified CS2, Dota 2, and gaming case sites. Find platforms with best bonuses, instant withdrawals, and trusted reviews."
-      keywords="case sites directory, CS2 case sites list, Dota 2 case platforms, gaming case sites, verified case sites, skin gambling sites"
+      title="All Gaming Case Sites | CaseHunters"
+      description="Browse our complete directory of verified CS2, Dota 2, and Rust case opening sites. Compare ratings, bonuses, and features."
+      keywords="case sites, CS2 sites, Dota 2 platforms, Rust cases, gaming sites directory"
     >
-
-      {/* Page Header */}
       <section className="container mx-auto px-6 py-12">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-gaming bg-clip-text text-transparent">
-            All Case Sites
+            All Gaming Case Sites
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Browse our complete directory of verified gaming case sites. Find the perfect platform for your skin hunting adventures.
+            Browse our complete directory of verified gaming case sites. Use filters to find the perfect platform for you.
           </p>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
-          <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-            <Input
-              placeholder="Search sites..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 bg-gaming-dark/50 border-gaming-cyan/20"
-            />
+        <div className="max-w-6xl mx-auto mb-8">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <Input
+                placeholder="Search sites..."
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  handleFilterChange();
+                }}
+                className="pl-10 bg-background/50 border-gaming-cyan/20"
+              />
+            </div>
+            <Select value={selectedGame} onValueChange={(value) => {
+              setSelectedGame(value);
+              handleFilterChange();
+            }}>
+              <SelectTrigger className="bg-background/50 border-gaming-cyan/20">
+                <SelectValue placeholder="Filter by game" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Games</SelectItem>
+                <SelectItem value="CS2">CS2</SelectItem>
+                <SelectItem value="Dota 2">Dota 2</SelectItem>
+                <SelectItem value="Rust">Rust</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select value={selectedSort} onValueChange={setSelectedSort}>
+              <SelectTrigger className="bg-background/50 border-gaming-cyan/20">
+                <SelectValue placeholder="Sort by" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="rating">Highest Rated</SelectItem>
+                <SelectItem value="popularity">Most Popular</SelectItem>
+                <SelectItem value="bonus">Best Bonus</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
-          <Select value={selectedGame} onValueChange={setSelectedGame}>
-            <SelectTrigger className="w-full md:w-48 bg-gaming-dark/50 border-gaming-cyan/20">
-              <SelectValue placeholder="Select game" />
-            </SelectTrigger>
-            <SelectContent>
-              {Object.entries(gameLabels).map(([value, label]) => (
-                <SelectItem key={value} value={value}>{label}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Select value={selectedSort} onValueChange={setSelectedSort}>
-            <SelectTrigger className="w-full md:w-48 bg-gaming-dark/50 border-gaming-cyan/20">
-              <SelectValue placeholder="Sort by" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="rating">Top Rated</SelectItem>
-              <SelectItem value="users">Most Popular</SelectItem>
-              <SelectItem value="bonus">Best Bonus</SelectItem>
-            </SelectContent>
-          </Select>
         </div>
 
-        {/* Gaming Ad Banner */}
         <div className="mb-8">
           <GamingAd variant="banner" />
         </div>
-        <div className="text-center mb-8">
-          <p className="text-muted-foreground">
-            Showing {sortedSites.length} of {allSites.length} verified sites
-          </p>
-        </div>
-      </section>
 
-      {/* Sites Grid */}
-      <section className="container mx-auto px-6 pb-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sortedSites.map((site) => (
-            <Card key={site.id} className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300 hover:-translate-y-2 group">
-              <CardContent className="p-6">
-                {/* Site Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-gaming-green animate-pulse"></div>
-                    <span className="text-sm text-gaming-green font-medium">ONLINE</span>
-                  </div>
-                  {/* Welcome Bonus moved to top right */}
-                  <div className="flex items-center space-x-2 p-2 bg-gaming-darker/50 rounded-lg">
-                    <span className="text-sm">Welcome Bonus</span>
-                    <span className="font-bold text-gaming-green">{site.bonus}</span>
-                  </div>
-                </div>
-
-                {/* Site Name & Rating */}
-                <div className="mb-4">
-                  <h4 className="text-xl font-bold mb-2 group-hover:text-gaming-cyan transition-colors">
-                    {site.name}
-                  </h4>
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(site.rating) ? 'text-gaming-orange fill-current' : 'text-muted-foreground'}`} 
-                        />
-                      ))}
+        {currentSites.length > 0 ? (
+          <>
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-8">
+              {currentSites.map((site) => (
+                <Card
+                  key={site.id}
+                  className="bg-gradient-card border-gaming-cyan/20 shadow-gaming hover:shadow-elevated transition-all duration-300"
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-2">
+                      <CardTitle className="text-2xl">{site.name}</CardTitle>
+                      <div className="flex items-center gap-1 bg-gaming-orange/20 px-3 py-1 rounded-full">
+                        <Star className="w-4 h-4 text-gaming-orange fill-gaming-orange" />
+                        <span className="font-bold text-gaming-orange">{site.rating}</span>
+                      </div>
                     </div>
-                    <span className="font-semibold text-gaming-orange">{site.rating}</span>
-                    <span className="text-sm text-muted-foreground">({site.users} users)</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">{site.description}</p>
-                </div>
-
-                {/* Games & Rarity */}
-                <div className="flex flex-wrap items-center gap-2 mb-4">
-                  {site.games.map((game) => (
-                    <Badge key={game} variant="outline" className="text-xs border-gaming-purple text-gaming-purple">
-                      {gameLabels[game as keyof typeof gameLabels]}
-                    </Badge>
-                  ))}
-                  {/* Rarity badge moved here */}
-                  <Badge className={`bg-${rarityColors[site.rarity as keyof typeof rarityColors]} text-white text-xs`}>
-                    {site.rarity.toUpperCase()}
-                  </Badge>
-                </div>
-
-                {/* Features & Promocode */}
-                <div className="space-y-2 mb-4">
-                  {/* Welcome bonus section removed from here since it's now in top right */}
-                  {site.promocode && (
-                    <div className="flex items-center justify-between p-3 bg-gaming-orange/20 border-2 border-gaming-orange/40 rounded-lg shadow-lg">
-                      <span className="text-sm font-semibold text-gaming-orange">Promo Code</span>
-                      <code className="font-bold text-white bg-gaming-orange px-3 py-2 rounded-md text-sm shadow-md tracking-wider">{site.promocode}</code>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Trophy className="w-4 h-4" />
+                      {site.popularity.toLocaleString()} active users
                     </div>
-                  )}
-                  <div className="text-xs text-muted-foreground">
-                    {site.features.join(" • ")}
-                  </div>
-                </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center gap-2 p-3 bg-gaming-cyan/10 rounded-lg border border-gaming-cyan/20">
+                      <Gift className="w-5 h-5 text-gaming-cyan" />
+                      <div>
+                        <p className="text-sm text-muted-foreground">Welcome Bonus</p>
+                        <p className="font-bold text-gaming-cyan">{site.bonus}</p>
+                      </div>
+                      <Badge className="ml-auto bg-gaming-orange text-white">
+                        Code: {site.promoCode}
+                      </Badge>
+                    </div>
 
-                {/* CTA Buttons */}
-                <div className="space-y-2">
-                  <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-                    Visit Site
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                  <Button 
-                    asChild
-                    variant="outline" 
-                    className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
-                  >
-                    <Link to={`/review/${site.id}`}>
-                      Read Review
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <Gamepad2 className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm text-muted-foreground">Games:</span>
+                        {site.games.map((game) => (
+                          <Badge key={game} variant="outline" className="border-gaming-cyan/50">
+                            {game}
+                          </Badge>
+                        ))}
+                      </div>
 
-        {filteredSites.length === 0 && (
-          <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gradient-gaming rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Search className="w-8 h-8 text-white" />
+                      <div className="space-y-1">
+                        {site.features.map((feature) => (
+                          <div key={feature} className="flex items-center gap-2 text-sm">
+                            {feature.includes("Instant") || feature.includes("Fast") ? (
+                              <Zap className="w-4 h-4 text-gaming-cyan" />
+                            ) : (
+                              <Shield className="w-4 h-4 text-gaming-green" />
+                            )}
+                            <span className="text-muted-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Button
+                      asChild
+                      className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated"
+                    >
+                      <Link to={`/review/${site.id}`}>View Full Review</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-            <h3 className="text-xl font-bold mb-2">No sites found</h3>
-            <p className="text-muted-foreground mb-4">
-              Try adjusting your search criteria or browse all sites.
-            </p>
-            <Button 
+
+            {totalPages > 1 && (
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious
+                      onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+                      className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                    />
+                  </PaginationItem>
+                  {[...Array(totalPages)].map((_, index) => (
+                    <PaginationItem key={index}>
+                      <PaginationLink
+                        onClick={() => setCurrentPage(index + 1)}
+                        isActive={currentPage === index + 1}
+                        className="cursor-pointer"
+                      >
+                        {index + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  ))}
+                  <PaginationItem>
+                    <PaginationNext
+                      onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+                      className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                    />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            )}
+          </>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground mb-4">No sites found matching your criteria.</p>
+            <Button
               onClick={() => {
                 setSearchTerm("");
                 setSelectedGame("all");
+                setCurrentPage(1);
               }}
-              className="bg-gaming-cyan hover:bg-gaming-cyan/90 text-gaming-dark"
+              variant="outline"
+              className="border-gaming-cyan text-gaming-cyan"
             >
               Clear Filters
             </Button>

@@ -234,7 +234,7 @@ const RatingDetail = () => {
           variant="ghost" 
           className="mb-6 hover:bg-gaming-cyan/10"
         >
-          <Link to="/sites">
+          <Link to="/ratings">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Rankings
           </Link>
