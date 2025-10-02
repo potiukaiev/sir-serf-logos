@@ -569,7 +569,7 @@ const SiteReview = () => {
         {/* Users Also Like Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gaming-cyan mb-6">Users Also Like</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {[
               { id: 2, name: "SkinBattle Elite", rating: 4.8, bonus: "300%", users: "95k" },
               { id: 3, name: "DragonLoot", rating: 4.7, bonus: "200%", users: "88k" },
@@ -577,68 +577,67 @@ const SiteReview = () => {
               { id: 5, name: "LootVault", rating: 4.6, bonus: "250%", users: "70k" },
               { id: 6, name: "SkinArena", rating: 4.5, bonus: "100%", users: "65k" }
             ].map((site) => (
-              <Link key={site.id} to={`/review/${site.id}`}>
-                <Card className="bg-gradient-card border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 cursor-pointer h-full">
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      {/* Logo/Image Placeholder */}
-                      <div className="w-full h-32 bg-gaming-darker/50 rounded-lg flex items-center justify-center border border-gaming-cyan/20">
-                        <div className="text-4xl font-bold text-gaming-cyan/30">
-                          {site.name.charAt(0)}
-                        </div>
-                      </div>
+              <Card key={site.id} className="bg-gradient-card border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 group">
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-4">
+                    {/* Left: Site Info */}
+                    <div className="flex-1 space-y-2">
+                      <h3 className="font-semibold text-foreground group-hover:text-gaming-cyan transition-colors">
+                        {site.name}
+                      </h3>
                       
-                      {/* Site Info */}
-                      <div className="space-y-2">
-                        <h3 className="font-semibold text-foreground text-lg hover:text-gaming-cyan transition-colors">
-                          {site.name}
-                        </h3>
-                        
-                        <div className="flex items-center gap-2">
-                          <div className="flex items-center">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`w-3 h-3 ${
-                                  i < Math.floor(site.rating)
-                                    ? "text-gaming-orange fill-current"
-                                    : "text-muted-foreground"
-                                }`}
-                              />
-                            ))}
-                          </div>
-                          <span className="text-sm font-bold text-gaming-orange">{site.rating}</span>
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`w-3 h-3 ${
+                                i < Math.floor(site.rating)
+                                  ? "text-gaming-orange fill-current"
+                                  : "text-muted-foreground"
+                              }`}
+                            />
+                          ))}
                         </div>
-
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-muted-foreground">{site.users} users</span>
-                          <Badge className="bg-gaming-green/20 text-gaming-green border-gaming-green/40">
-                            {site.bonus}
-                          </Badge>
-                        </div>
+                        <span className="text-sm font-bold text-gaming-orange">{site.rating}</span>
                       </div>
 
-                      {/* CTA Buttons */}
-                      <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <span>{site.users} users</span>
+                        <span>•</span>
+                        <span className="text-gaming-green">{site.bonus} bonus</span>
+                      </div>
+
+                      <div className="flex gap-2 pt-2">
                         <Button 
+                          size="sm"
                           variant="outline"
-                          className="w-full border-gaming-purple text-gaming-purple hover:bg-gaming-purple/10"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.location.href = `/review/${site.id}`;
-                          }}
+                          className="border-gaming-purple/50 text-gaming-purple hover:bg-gaming-purple/10"
+                          asChild
                         >
-                          Read Review
+                          <Link to={`/review/${site.id}`}>
+                            Read Review
+                          </Link>
                         </Button>
-                        <Button className="w-full bg-gradient-cta text-white shadow-neon hover:shadow-elevated">
-                          Visit Site
-                          <ExternalLink className="w-4 h-4 ml-2" />
+                        <Button 
+                          size="sm"
+                          className="bg-gradient-cta text-white shadow-neon hover:shadow-elevated"
+                        >
+                          Visit
+                          <ExternalLink className="w-3 h-3 ml-1" />
                         </Button>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </Link>
+
+                    {/* Right: Logo/Image */}
+                    <div className="w-20 h-20 bg-gaming-darker/50 rounded-lg flex items-center justify-center border border-gaming-cyan/20 flex-shrink-0">
+                      <div className="text-2xl font-bold text-gaming-cyan/30">
+                        {site.name.charAt(0)}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
