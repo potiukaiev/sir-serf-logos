@@ -137,6 +137,106 @@ const articlesData = [
     date: "2024-12-18",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop"
+  },
+  {
+    id: "13",
+    title: "Poker Tournaments Online: Beginner's Strategy",
+    excerpt: "Essential strategies for playing in online poker tournaments. Learn about stack management, position play, and tournament phases.",
+    category: "Strategy",
+    author: "Robert Taylor",
+    date: "2024-12-15",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1541278107931-e006523892df?w=800&h=400&fit=crop"
+  },
+  {
+    id: "14",
+    title: "Best Casino Apps for Android and iOS",
+    excerpt: "Comprehensive review of top-rated casino apps across both platforms. Compare features, game selection, and user experience.",
+    category: "Reviews",
+    author: "Jennifer Lee",
+    date: "2024-12-12",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop"
+  },
+  {
+    id: "15",
+    title: "Understanding House Edge in Popular Casino Games",
+    excerpt: "Learn how house edge affects your odds in different casino games. Discover which games offer the best player advantage.",
+    category: "Education",
+    author: "Sarah Johnson",
+    date: "2024-12-10",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop"
+  },
+  {
+    id: "16",
+    title: "Baccarat: A Complete Guide for Beginners",
+    excerpt: "Master the elegant game of Baccarat with our comprehensive guide. Learn rules, betting options, and winning strategies.",
+    category: "Guide",
+    author: "Mike Chen",
+    date: "2024-12-08",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1571864669734-67b5c2d2f45c?w=800&h=400&fit=crop"
+  },
+  {
+    id: "17",
+    title: "Casino Loyalty Programs: Maximizing Your Rewards",
+    excerpt: "Get the most value from casino loyalty programs. Learn about point systems, tier benefits, and exclusive perks.",
+    category: "Tips",
+    author: "Emma Davis",
+    date: "2024-12-05",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=400&fit=crop"
+  },
+  {
+    id: "18",
+    title: "Live Casino vs Virtual: Which Should You Choose?",
+    excerpt: "Compare live dealer games with virtual casino games. Understand the pros and cons of each gaming format.",
+    category: "Trends",
+    author: "Alex Turner",
+    date: "2024-12-03",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&h=400&fit=crop"
+  },
+  {
+    id: "19",
+    title: "Banking Methods at Online Casinos",
+    excerpt: "Complete guide to deposit and withdrawal methods. Compare fees, processing times, and security features of different payment options.",
+    category: "Guide",
+    author: "David Brown",
+    date: "2024-12-01",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=800&h=400&fit=crop"
+  },
+  {
+    id: "20",
+    title: "Identifying Problem Gambling: Warning Signs",
+    excerpt: "Learn to recognize the early warning signs of problem gambling. Find resources and support for responsible gaming.",
+    category: "Guide",
+    author: "Sarah Johnson",
+    date: "2024-11-28",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=800&h=400&fit=crop"
+  },
+  {
+    id: "21",
+    title: "Craps Strategy: Mastering the Dice",
+    excerpt: "Learn the best bets and strategies for playing craps online. Understand odds, payouts, and betting systems.",
+    category: "Strategy",
+    author: "Robert Taylor",
+    date: "2024-11-25",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1594911772125-07fc7c9eac6a?w=800&h=400&fit=crop"
+  },
+  {
+    id: "22",
+    title: "Video Poker: Perfect Strategy Charts",
+    excerpt: "Master video poker with our complete strategy charts. Learn which cards to hold for maximum expected value.",
+    category: "Strategy",
+    author: "Mike Chen",
+    date: "2024-11-22",
+    readTime: "11 min read",
+    image: "https://images.unsplash.com/photo-1541278107931-e006523892df?w=800&h=400&fit=crop"
   }
 ];
 
@@ -178,6 +278,7 @@ export default function CasinoArticles() {
       "Trends": "bg-pink-500/20 text-pink-400 border-pink-500/30",
       "Strategy": "bg-orange-500/20 text-orange-400 border-orange-500/30",
       "Security": "bg-red-500/20 text-red-400 border-red-500/30",
+      "Tips": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
     };
     return colors[category] || "bg-gray-500/20 text-gray-400 border-gray-500/30";
   };
