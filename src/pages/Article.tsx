@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 interface ArticleData {
@@ -474,6 +474,44 @@ export default function Article() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Related Articles Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gaming-cyan mb-6">Related Articles</h2>
+          <div className="grid gap-4">
+            {articlesData
+              .filter(a => a.id !== article.id)
+              .slice(0, 3)
+              .map((relatedArticle) => (
+                <Link key={relatedArticle.id} to={`/article/${relatedArticle.id}`}>
+                  <Card className="bg-gaming-dark/30 border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 cursor-pointer">
+                    <CardContent className="p-4">
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <Badge 
+                            variant="secondary" 
+                            className="bg-gaming-cyan/20 text-gaming-cyan border-gaming-cyan/30"
+                          >
+                            {relatedArticle.category}
+                          </Badge>
+                          <span className="text-xs text-muted-foreground flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            {relatedArticle.readTime}
+                          </span>
+                        </div>
+                        <h3 className="font-semibold text-foreground hover:text-gaming-cyan transition-colors">
+                          {relatedArticle.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {relatedArticle.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+          </div>
+        </div>
 
         {/* Back to Articles */}
         <div className="text-center pt-8">

@@ -565,6 +565,42 @@ const SiteReview = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Users Also Like Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gaming-cyan mb-6">Users Also Like</h2>
+          <div className="grid gap-4">
+            {[
+              { id: 2, name: "SkinBattle Elite", rating: 4.8, bonus: "300%", users: "95k" },
+              { id: 3, name: "DragonLoot", rating: 4.7, bonus: "200%", users: "88k" },
+              { id: 4, name: "RareDrop Casino", rating: 4.6, bonus: "150%", users: "75k" },
+              { id: 5, name: "LootVault", rating: 4.6, bonus: "250%", users: "70k" },
+              { id: 6, name: "SkinArena", rating: 4.5, bonus: "100%", users: "65k" }
+            ].map((site) => (
+              <Link key={site.id} to={`/review/${site.id}`}>
+                <Card className="bg-gradient-card border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2">
+                          <Star className="w-4 h-4 text-gaming-orange fill-current" />
+                          <span className="font-bold text-gaming-orange">{site.rating}</span>
+                        </div>
+                        <h3 className="font-semibold text-foreground">{site.name}</h3>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span>{site.users} users</span>
+                        <Badge className="bg-gaming-green/20 text-gaming-green border-gaming-green/40">
+                          {site.bonus} Bonus
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

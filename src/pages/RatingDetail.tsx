@@ -374,6 +374,40 @@ const RatingDetail = () => {
           ))}
         </div>
       </section>
+
+      {/* Other Ratings Section */}
+      <section className="container mx-auto px-6 pb-16">
+        <h2 className="text-2xl font-bold text-gaming-cyan mb-6">Other Ratings</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Object.entries(categoryConfig)
+            .filter(([key]) => key !== categoryId)
+            .slice(0, 6)
+            .map(([key, cat]) => {
+              const IconComp = cat.icon;
+              return (
+                <Link key={key} to={`/ratings/${key}`}>
+                  <Card className="bg-gradient-card border-gaming-cyan/20 hover:shadow-gaming transition-all duration-300 cursor-pointer h-full">
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-gaming flex items-center justify-center flex-shrink-0">
+                          <IconComp className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-semibold text-foreground text-sm mb-1 line-clamp-2">
+                            {cat.title}
+                          </h3>
+                          <p className="text-xs text-muted-foreground line-clamp-2">
+                            {cat.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
+        </div>
+      </section>
     </Layout>
   );
 };
