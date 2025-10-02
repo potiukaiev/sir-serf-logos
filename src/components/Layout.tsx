@@ -7,6 +7,7 @@ import { ThemeSelector } from "@/components/ThemeSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MobileMenu } from "@/components/MobileMenu";
 import { Top10Sidebar } from "@/components/Top10Sidebar";
+import { CookieConsent } from "@/components/CookieConsent";
 import { useTranslation } from 'react-i18next';
 
 interface LayoutProps {
@@ -116,6 +117,8 @@ export const Layout = ({
         </main>
         <Top10Sidebar />
       </div>
+      
+      <CookieConsent />
     </div>
   );
 };

@@ -241,5 +241,11 @@
     "subtitle": "CS2 ve Dota 2 kasa açma, skin ticareti ve gaming için kapsamlı rehberler, stratejiler ve ipuçlarını keşfedin.",
     "readMore": "Devamını Oku",
     "backToArticles": "Makalelere Dön"
+  },
+  "cookie": {
+    "title": "Çerez kullanıyoruz",
+    "description": "Tarayıcı deneyiminizi geliştirmek ve trafiğimizi analiz etmek için çerezler kullanıyoruz. 'Kabul Et'e tıklayarak çerez kullanımımızı kabul etmiş olursunuz.",
+    "accept": "Kabul Et",
+    "decline": "Reddet"
   }
 }

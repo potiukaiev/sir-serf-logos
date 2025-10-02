@@ -241,5 +241,11 @@
     "subtitle": "Explorez des guides complets, des stratégies et des conseils pour l'ouverture de caisses CS2 et Dota 2, le trading de skins et le gaming.",
     "readMore": "Lire Plus",
     "backToArticles": "Retour aux Articles"
+  },
+  "cookie": {
+    "title": "Nous utilisons des cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. En cliquant sur 'Accepter', vous consentez à notre utilisation des cookies.",
+    "accept": "Accepter",
+    "decline": "Refuser"
   }
 }

@@ -241,5 +241,11 @@
     "subtitle": "Poznaj kompleksowe przewodniki, strategie i wskazówki dotyczące otwierania skrzynek CS2 i Dota 2, handlu skinami i gamingu.",
     "readMore": "Czytaj Więcej",
     "backToArticles": "Powrót do Artykułów"
+  },
+  "cookie": {
+    "title": "Używamy plików cookie",
+    "description": "Używamy plików cookie, aby poprawić Twoje wrażenia z przeglądania i analizować nasz ruch. Klikając 'Akceptuj', wyrażasz zgodę na używanie plików cookie.",
+    "accept": "Akceptuj",
+    "decline": "Odrzuć"
   }
 }

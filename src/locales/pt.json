@@ -241,5 +241,11 @@
     "subtitle": "Explore guias abrangentes, estratégias e dicas para abertura de caixas CS2 e Dota 2, trading de skins e gaming.",
     "readMore": "Ler Mais",
     "backToArticles": "Voltar aos Artigos"
+  },
+  "cookie": {
+    "title": "Usamos cookies",
+    "description": "Usamos cookies para melhorar sua experiência de navegação e analisar nosso tráfego. Ao clicar em 'Aceitar', você concorda com o uso de cookies.",
+    "accept": "Aceitar",
+    "decline": "Recusar"
   }
 }

@@ -241,5 +241,11 @@
     "subtitle": "Entdecke umfassende Leitfäden, Strategien und Tipps für CS2 und Dota 2 Case Opening, Skin Trading und Gaming.",
     "readMore": "Weiterlesen",
     "backToArticles": "Zurück zu Artikeln"
+  },
+  "cookie": {
+    "title": "Wir verwenden Cookies",
+    "description": "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern und unseren Datenverkehr zu analysieren. Durch Klicken auf 'Akzeptieren' stimmen Sie unserer Verwendung von Cookies zu.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
   }
 }
