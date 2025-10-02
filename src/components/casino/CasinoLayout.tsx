@@ -80,28 +80,28 @@ export const CasinoLayout = ({
       </header>
 
       {/* Subheader Navigation */}
-      <nav className="border-b border-casino-green/10 bg-casino-dark/80 backdrop-blur-sm hidden md:block">
+      <nav className="border-b border-casino-green/20 bg-casino-dark/90 backdrop-blur-md hidden md:block shadow-[0_2px_10px_hsl(142_76%_36%/0.1)]">
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-center space-x-8">
+          <div className="flex items-center justify-center space-x-2">
             {navigation.map((item) => (
               <Link 
                 key={item.href}
                 to={item.href} 
-                className={`text-sm font-medium transition-colors duration-200 relative group ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative ${
                   isActiveRoute(item.href) 
-                    ? 'text-casino-green' 
-                    : 'text-muted-foreground hover:text-casino-green'
+                    ? 'text-casino-green bg-casino-green/10 shadow-[0_0_15px_hsl(142_76%_36%/0.2)]' 
+                    : 'text-muted-foreground hover:text-casino-green hover:bg-casino-green/5'
                 }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-casino-green transition-all duration-200 ${
-                  isActiveRoute(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
+                {isActiveRoute(item.href) && (
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-casino-green rounded-full shadow-[0_0_8px_hsl(142_76%_36%/0.6)]"></span>
+                )}
               </Link>
             ))}
             <Link 
               to="/" 
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              className="ml-4 px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-white/5 rounded transition-all border border-transparent hover:border-muted-foreground/20"
             >
               ← CaseHunters
             </Link>
