@@ -605,7 +605,7 @@ const SiteReview = () => {
                           size="sm"
                           className="bg-gradient-cta text-white shadow-neon hover:shadow-elevated"
                         >
-                          Visit
+                          Visit Site
                           <ExternalLink className="w-3 h-3 ml-1" />
                         </Button>
                       </div>
