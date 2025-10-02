@@ -548,26 +548,8 @@ const SiteReview = () => {
           </TabsContent>
         </Tabs>
 
-        {/* Author Section */}
-        <Card className="bg-gradient-card border-gaming-cyan/20 shadow-gaming mt-8">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-4">
-              <Avatar className="w-16 h-16 border-2 border-gaming-cyan/30">
-                <AvatarImage src="" />
-                <AvatarFallback className="bg-gradient-gaming text-white text-xl font-bold">
-                  KD
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Kate Drane</h3>
-                <p className="text-muted-foreground">Chief Editor</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Users Also Like Section */}
-        <div className="mt-12">
+        <div className="mt-8">
           <h2 className="text-2xl font-bold text-gaming-cyan mb-6">Users Also Like</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {[
@@ -641,6 +623,24 @@ const SiteReview = () => {
             ))}
           </div>
         </div>
+
+        {/* Author Section */}
+        <Card className="bg-gradient-card border-gaming-cyan/20 shadow-gaming mt-8">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-16 h-16 border-2 border-gaming-cyan/30">
+                <AvatarImage src="" />
+                <AvatarFallback className="bg-gradient-gaming text-white text-xl font-bold">
+                  KD
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">Kate Drane</h3>
+                <p className="text-muted-foreground">Chief Editor</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
