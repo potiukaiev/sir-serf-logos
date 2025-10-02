@@ -77,7 +77,8 @@
     "supportedCurrencies": "Desteklenen Para Birimleri",
     "localization": "Yerelleştirme",
     "supportedLanguages": "Desteklenen Diller",
-    "customerSupport": "Müşteri Desteği"
+    "customerSupport": "Müşteri Desteği",
+    "faq": "Sık Sorulan Sorular"
   },
   "theme": {
     "theme": "Tema",

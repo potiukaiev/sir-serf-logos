@@ -77,7 +77,8 @@
     "supportedCurrencies": "Moedas Suportadas",
     "localization": "Localização",
     "supportedLanguages": "Idiomas Suportados",
-    "customerSupport": "Atendimento ao Cliente"
+    "customerSupport": "Atendimento ao Cliente",
+    "faq": "Perguntas Frequentes"
   },
   "theme": {
     "theme": "Tema",

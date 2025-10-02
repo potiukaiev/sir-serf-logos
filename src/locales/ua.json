@@ -77,7 +77,8 @@
     "supportedCurrencies": "Підтримувані Валюти",
     "localization": "Локалізація",
     "supportedLanguages": "Підтримувані Мови",
-    "customerSupport": "Служба Підтримки"
+    "customerSupport": "Служба Підтримки",
+    "faq": "Часті Запитання"
   },
   "theme": {
     "theme": "Тема",
