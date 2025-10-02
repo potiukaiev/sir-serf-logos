@@ -19,6 +19,10 @@ import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import RatingDetail from "./pages/RatingDetail";
 import NotFound from "./pages/NotFound";
+import CasinoIndex from "./pages/casino/CasinoIndex";
+import Casinos from "./pages/casino/Casinos";
+import CasinoReview from "./pages/casino/CasinoReview";
+import CasinoAbout from "./pages/casino/CasinoAbout";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +43,11 @@ const AppContent = () => {
       <Route path="/article/:articleId" element={<Article />} />
       <Route path="/review/:siteId" element={<SiteReview />} />
       <Route path="/ratings/:categoryId" element={<RatingDetail />} />
+      {/* HealthyCasinos Routes */}
+      <Route path="/healthy-casinos" element={<CasinoIndex />} />
+      <Route path="/healthy-casinos/casinos" element={<Casinos />} />
+      <Route path="/healthy-casinos/casino/:casinoId" element={<CasinoReview />} />
+      <Route path="/healthy-casinos/about" element={<CasinoAbout />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
